@@ -1,14 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
-  const [pathname, setPathname] = useState("");
-
-  useEffect(() => {
-    // This will only run on the client side
-    setPathname(window.location.pathname.split("/")[1]);
-  }, []);
+  const pathname = usePathname();
 
   const menuItems = [
     {
@@ -61,13 +57,13 @@ const Header = () => {
         />
       </div>
       <nav className="flex w-full max-w-[1080px] items-center justify-center">
-        <ul className="flex w-full flex-col lg:flex-row items-center justify-between gap-4 py-4 font-bold">
+        <ul className="flex w-full flex-col items-center justify-between gap-4 py-4 font-bold lg:flex-row">
           {menuItems.map((item) => (
             <li key={item.title}>
               <a
                 href={item.link}
                 className={`rounded-md px-2 py-1 font-extrabold ${
-                  pathname === item.link.split("/")[1]
+                  pathname.split("/")[1] === item.link.split("/")[1]
                     ? "bg-black text-white"
                     : ""
                 }`}
