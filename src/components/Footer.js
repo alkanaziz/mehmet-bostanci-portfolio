@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="w-full">
+    <footer className="flex w-full flex-col items-center">
       <div className="inline-flex w-full items-center justify-center">
         <hr className="my-8 h-[2px] w-full rounded border-0 bg-black" />
         <div className="absolute left-1/2 -translate-x-1/2 bg-slate-100 px-1">
@@ -15,7 +15,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:items-start">
+      <div className="flex flex-col items-start gap-5 lg:flex-row lg:items-start">
         <div className="font-extrabold">
           <a href="/impressum">Impressum</a>
         </div>
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="font-extrabold">Soziale Medien:</p>
-          <div className="flex justify-center gap-3">
+          <div className="flex flex-col justify-center gap-3 lg:flex-row">
             <span>@aqueralllkunst</span>
             <span>@grafikermehmet</span>
             <span>@ebrulikunst</span>
