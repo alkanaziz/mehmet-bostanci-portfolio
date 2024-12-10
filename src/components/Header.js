@@ -1,9 +1,15 @@
 "use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const Header = () => {
-  const pathname = window.location.pathname.split("/")[1];
-  console.log(pathname);
+  const [pathname, setPathname] = useState("");
+
+  useEffect(() => {
+    // This will only run on the client side
+    setPathname(window.location.pathname.split("/")[1]);
+  }, []);
+
   const menuItems = [
     {
       title: "Home",
@@ -42,8 +48,9 @@ const Header = () => {
       link: "/kontakt",
     },
   ];
+
   return (
-    <header className="w-full flex flex-col items-center justify-center">
+    <header className="flex w-full flex-col items-center justify-center">
       <div className="logo_header relative h-52 w-full bg-[url('/banner.png')] bg-cover bg-[center_top_40%]">
         <Image
           className="absolute bottom-0 lg:left-[200px]"
@@ -55,11 +62,15 @@ const Header = () => {
       </div>
       <nav className="flex w-full max-w-[1080px] items-center justify-center">
         <ul className="flex w-full items-center justify-between space-x-4 p-4 font-bold">
-          {menuItems.map((item, index) => (
+          {menuItems.map((item) => (
             <li key={item.title}>
               <a
                 href={item.link}
-                className={`rounded-md px-2 py-1 font-extrabold ${pathname === item.link.split("/")[1] ? "bg-black text-white" : ""}`}
+                className={`rounded-md px-2 py-1 font-extrabold ${
+                  pathname === item.link.split("/")[1]
+                    ? "bg-black text-white"
+                    : ""
+                }`}
               >
                 {item.title}
               </a>
