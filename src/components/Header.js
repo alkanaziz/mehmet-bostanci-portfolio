@@ -61,7 +61,7 @@ const Header = () => {
         />
       </div>
       <nav className="flex w-full max-w-[1080px] items-center justify-center">
-        <ul className="flex w-full items-center justify-between space-x-4 p-4 font-bold">
+        <ul className="flex w-full flex-col lg:flex-row items-center justify-between gap-4 py-4 font-bold">
           {menuItems.map((item) => (
             <li key={item.title}>
               <a
