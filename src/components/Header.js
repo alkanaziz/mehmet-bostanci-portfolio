@@ -1,8 +1,49 @@
+"use client";
 import Image from "next/image";
 
 const Header = () => {
+  const pathname = window.location.pathname.split("/")[1];
+  console.log(pathname);
+  const menuItems = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "Über mich",
+      link: "/ueber-mich",
+    },
+    {
+      title: "Werke",
+      link: "/werke",
+    },
+    {
+      title: "Workshop",
+      link: "/workshop",
+    },
+    {
+      title: "Shop",
+      link: "/shop",
+    },
+    {
+      title: "Aktuelle Ausstellung",
+      link: "/aktuelle-ausstellung",
+    },
+    {
+      title: "Neues",
+      link: "/neues",
+    },
+    {
+      title: "Wita",
+      link: "/wita",
+    },
+    {
+      title: "Kontakt",
+      link: "/kontakt",
+    },
+  ];
   return (
-    <header className="flex flex-col items-center justify-center">
+    <header className="w-full flex flex-col items-center justify-center">
       <div className="logo_header relative h-52 w-full bg-[url('/banner.png')] bg-cover bg-[center_top_40%]">
         <Image
           className="absolute bottom-0 lg:left-[200px]"
@@ -14,27 +55,16 @@ const Header = () => {
       </div>
       <nav className="flex w-full max-w-[1080px] items-center justify-center">
         <ul className="flex w-full items-center justify-between space-x-4 p-4 font-bold">
-          <li>
-            <a href="#werke">Werke</a>
-          </li>
-          <li>
-            <a href="#workshop">Workshop</a>
-          </li>
-          <li>
-            <a href="#shop">Shop</a>
-          </li>
-          <li>
-            <a href="#aktuelle_ausstellung">Aktuelle Ausstellung</a>
-          </li>
-          <li>
-            <a href="#neues">Neues</a>
-          </li>
-          <li>
-            <a href="#wita">Wita</a>
-          </li>
-          <li>
-            <a href="#kontakt">Kontakt</a>
-          </li>
+          {menuItems.map((item, index) => (
+            <li key={item.title}>
+              <a
+                href={item.link}
+                className={`rounded-md px-2 py-1 font-extrabold ${pathname === item.link.split("/")[1] ? "bg-black text-white" : ""}`}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

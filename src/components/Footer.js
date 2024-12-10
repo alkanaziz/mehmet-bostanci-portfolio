@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="-z-10">
+    <footer className="w-full">
       <div className="inline-flex w-full items-center justify-center">
         <hr className="my-8 h-[2px] w-full rounded border-0 bg-black" />
         <div className="absolute left-1/2 -translate-x-1/2 bg-slate-100 px-1">
@@ -15,9 +15,9 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="flex items-start justify-center gap-10">
+      <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:items-start">
         <div className="font-extrabold">
-          <a href="#impressum">Impressum</a>
+          <a href="/impressum">Impressum</a>
         </div>
         <div>
           <p className="font-extrabold">Address:</p>{" "}
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full justify-center">
+      <div className="flex w-full flex-col items-center justify-center">
         <Image
           className="w-72"
           src="/logo_footer.png"
@@ -48,6 +48,9 @@ const Footer = () => {
           width={500}
           height={200}
         />
+        <p className="text-sm text-gray-500">
+          {new Date().getFullYear()} &copy; Alle Rechte vorbehalten
+        </p>
       </div>
     </footer>
   );
