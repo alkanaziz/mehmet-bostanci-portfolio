@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { BiRightArrow } from "react-icons/bi";
 
 const Werke = () => {
   return (
-    <div className="flex w-full flex-col items-center gap-10 sm:h-[80rem]">
-      <div className="h-3/5 w-full overflow-hidden">
+    <div className="flex w-full flex-col items-center gap-10">
+      <div className="w-full overflow-hidden">
         <Image
           className="w-full object-cover object-top"
           src="/home_img.png"
@@ -33,16 +34,40 @@ const Werke = () => {
           </p>
           <ul>
             <li>
-              <a href="/werke/digitale-werke">Digitale Werke</a>
+              <a
+                className="flex items-center gap-1 hover:underline"
+                href="/werke/digitale-werke"
+              >
+                <BiRightArrow />
+                Digitale Werke
+              </a>
             </li>
             <li>
-              <a href="/werke/aquarelle">Aquarelle</a>
+              <a
+                className="flex items-center gap-1 hover:underline"
+                href="/werke/aquarelle"
+              >
+                <BiRightArrow />
+                Aquarelle
+              </a>
             </li>
             <li>
-              <a href="/werke/gemaelde">Gemälde</a>
+              <a
+                className="flex items-center gap-1 hover:underline"
+                href="/werke/gemaelde"
+              >
+                <BiRightArrow />
+                Gemälde
+              </a>
             </li>
             <li>
-              <a href="/werke/pastellarbeiten">Pastellarbeiten</a>
+              <a
+                className="flex items-center gap-1 hover:underline"
+                href="/werke/pastellarbeiten"
+              >
+                <BiRightArrow />
+                Pastellarbeiten
+              </a>
             </li>
           </ul>
         </div>
