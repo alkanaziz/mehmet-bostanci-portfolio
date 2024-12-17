@@ -36,10 +36,6 @@ const Header = () => {
       link: "/neues",
     },
     {
-      title: "Wita",
-      link: "/wita",
-    },
-    {
       title: "Kontakt",
       link: "/kontakt",
     },
