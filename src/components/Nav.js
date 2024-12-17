@@ -49,7 +49,7 @@ const Nav = () => {
               className={`rounded-md px-2 py-1 font-extrabold ${
                 pathname.split("/")[1] === item.link.split("/")[1]
                   ? "bg-black text-white"
-                  : ""
+                  : "hover:underline"
               }`}
             >
               {item.title}
