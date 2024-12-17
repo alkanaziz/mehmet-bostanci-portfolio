@@ -41,7 +41,7 @@ const Nav = () => {
   ];
   return (
     <nav className="sticky top-0 z-50 flex w-full items-center justify-center bg-white bg-opacity-80 shadow-xl">
-      <ul className="flex w-full max-w-screen-lg flex-col items-center justify-between gap-4 py-4 font-bold lg:flex-row">
+      <ul className="hidden w-full max-w-screen-lg items-center justify-between gap-4 py-4 font-bold lg:flex">
         {menuItems.map((item) => (
           <li key={item.title}>
             <a
