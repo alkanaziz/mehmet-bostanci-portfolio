@@ -11,6 +11,57 @@ const Breadcrumb = function () {
 
   if (pathNames.length === 0) return null;
 
+  const menuItems = [
+    {
+      title: "Home",
+      link: "/",
+    },
+    {
+      title: "Über mich",
+      link: "/ueber-mich",
+    },
+    {
+      title: "Werke",
+      link: "/werke",
+    },
+    {
+      title: "Workshop",
+      link: "/workshop",
+    },
+    {
+      title: "Shop",
+      link: "/shop",
+    },
+    {
+      title: "Aktuelle Ausstellung",
+      link: "/aktuelle-ausstellung",
+    },
+    {
+      title: "Neues",
+      link: "/neues",
+    },
+    {
+      title: "Kontakt",
+      link: "/kontakt",
+    },
+    {
+      title: "Digitale Werke",
+      link: "/werke/digitale-werke",
+    },
+    {
+      title: "Aquarelle",
+      link: "/werke/aquarelle",
+    },
+    {
+      title: "Gemälde",
+      link: "/werke/gemaelde",
+    },
+    {
+      title: "Pastellarbeiten",
+      link: "/werke/pastellarbeiten",
+    },
+  ];
+
   return (
     <nav
       aria-label="breadcrumb"
@@ -20,14 +71,14 @@ const Breadcrumb = function () {
         <li className="mx-2 font-bold hover:underline">
           <Link href="/">Home</Link>
         </li>
-        {pathNames.length > 0 && <span key="seperator"> {">"} </span>}
+        {pathNames.length > 0 && <span> {">"} </span>}
         {pathNames.map((link, index) => {
           const href = "/" + pathNames.slice(0, index + 1).join("/");
           const itemClasses =
             paths === href
               ? `hover:underline mx-2 font-bold underline`
               : "hover:underline mx-2 font-bold";
-          const itemLink = link.charAt(0).toUpperCase() + link.slice(1);
+          const itemLink = menuItems.find((item) => item.link === href)?.title;
           return (
             <React.Fragment key={href}>
               <li className={itemClasses}>
