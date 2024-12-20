@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BiRightArrow } from "react-icons/bi";
 
 const Werke = () => {
@@ -25,7 +26,7 @@ const Werke = () => {
             auf grafische Arbeiten, insbesondere Aquarelle. Zu seinem Werk
             zählen auch Zeichnungen und digitale Arbeiten, die in verschiedenen
             Techniken realisiert wurden. Darüber hinaus widmet er sich
-            Pastellzei- chnungen und Ölgemälden.
+            Pastellzeichnungen und Ölgemälden.
           </p>
           <p>
             Ein umfassender Überblick über sein bisheriges Schaffen wird in den
@@ -34,40 +35,40 @@ const Werke = () => {
           </p>
           <ul>
             <li>
-              <a
+              <Link
                 className="flex items-center gap-1 hover:underline"
                 href="/werke/digitale-werke"
               >
                 <BiRightArrow />
                 Digitale Werke
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="flex items-center gap-1 hover:underline"
                 href="/werke/aquarelle"
               >
                 <BiRightArrow />
                 Aquarelle
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="flex items-center gap-1 hover:underline"
                 href="/werke/gemaelde"
               >
                 <BiRightArrow />
                 Gemälde
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="flex items-center gap-1 hover:underline"
                 href="/werke/pastellarbeiten"
               >
                 <BiRightArrow />
                 Pastellarbeiten
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
