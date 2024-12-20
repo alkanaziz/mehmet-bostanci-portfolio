@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
 import Sidebar from "@/components/sidebar/Sidebar";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,11 +26,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col items-center bg-white text-black antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col bg-white text-black antialiased`}
       >
         <Header />
         <Nav />
         <Sidebar />
+        <Breadcrumb />
         {children}
         <Footer />
       </body>
