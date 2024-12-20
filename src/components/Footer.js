@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
@@ -18,7 +19,7 @@ const Footer = () => {
       </div>
       <div className="m-auto flex w-3/5 flex-col gap-5">
         <div className="font-extrabold">
-          <a href="/impressum">Impressum</a>
+          <Link href="/impressum">Impressum</Link>
         </div>
         <div>
           <p className="font-extrabold">Address:</p>{" "}

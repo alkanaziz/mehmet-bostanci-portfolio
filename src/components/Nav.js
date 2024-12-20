@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Nav = () => {
@@ -44,7 +45,7 @@ const Nav = () => {
       <ul className="hidden w-full max-w-screen-lg items-center justify-between gap-4 py-4 font-bold lg:flex">
         {menuItems.map((item) => (
           <li key={item.title}>
-            <a
+            <Link
               href={item.link}
               className={`rounded-md px-2 py-1 font-extrabold ${
                 pathname.split("/")[1] === item.link.split("/")[1]
@@ -53,7 +54,7 @@ const Nav = () => {
               }`}
             >
               {item.title}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
