@@ -42,12 +42,12 @@ const Nav = () => {
   ];
   return (
     <nav className="sticky top-0 z-50 flex w-full items-center justify-center bg-white bg-opacity-80 shadow-xl sm:px-10">
-      <ul className="hidden w-full max-w-screen-lg items-center justify-between gap-4 py-4 font-bold lg:flex">
+      <ul className="hidden w-full max-w-screen-lg items-center justify-between gap-4 py-4 lg:flex">
         {menuItems.map((item) => (
           <li key={item.title}>
             <Link
               href={item.link}
-              className={`rounded-md px-2 py-1 font-extrabold ${
+              className={`rounded-md px-2 py-1 font-bold ${
                 pathname.split("/")[1] === item.link.split("/")[1]
                   ? "bg-black text-white"
                   : "hover:underline"
