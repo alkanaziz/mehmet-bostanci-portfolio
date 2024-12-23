@@ -36,30 +36,30 @@ const Footer = () => {
         <div>
           <p className="font-extrabold">Soziale Medien:</p>
           <div className="flex flex-col justify-center">
-            <a
+            <Link
               href="https://www.instagram.com/aquarelllkunst/"
               target="_blank"
               className="flex items-center gap-2 hover:underline"
             >
               <FaInstagram className="text-xl" />
               @aqueralllkunst
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.instagram.com/grafikermehmet/"
               target="_blank"
               className="flex items-center gap-2 hover:underline"
             >
               <FaInstagram className="text-xl" />
               @grafikermehmet
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.instagram.com/ebrulikunst/"
               target="_blank"
               className="flex items-center gap-2 hover:underline"
             >
               <FaInstagram className="text-xl" />
               @ebrulikunst
-            </a>
+            </Link>
           </div>
         </div>
       </div>
