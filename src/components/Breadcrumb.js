@@ -65,9 +65,9 @@ const Breadcrumb = function () {
   return (
     <nav
       aria-label="breadcrumb"
-      className="flex w-full items-center justify-center bg-white bg-opacity-80 shadow-sm sm:px-10"
+      className="flex w-full px-2 items-center justify-center bg-white bg-opacity-80 shadow-sm sm:px-10"
     >
-      <ul className="flex w-full max-w-screen-lg py-3 sm:py-5">
+      <ul className="flex w-full py-3 sm:py-5">
         <li className="mx-2 font-bold hover:underline">
           <Link href="/">Home</Link>
         </li>
