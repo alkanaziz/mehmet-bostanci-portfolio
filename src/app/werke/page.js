@@ -37,15 +37,6 @@ const Werke = () => {
             <li>
               <Link
                 className="flex items-center gap-1 hover:underline"
-                href="/werke/digitale-werke"
-              >
-                <BiRightArrow />
-                Digitale Werke
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="flex items-center gap-1 hover:underline"
                 href="/werke/aquarelle"
               >
                 <BiRightArrow />
@@ -55,19 +46,19 @@ const Werke = () => {
             <li>
               <Link
                 className="flex items-center gap-1 hover:underline"
-                href="/werke/gemaelde"
+                href="/werke/digitale-werke"
               >
                 <BiRightArrow />
-                Gemälde
+                Digitale Werke
               </Link>
             </li>
             <li>
               <Link
                 className="flex items-center gap-1 hover:underline"
-                href="/werke/pastellarbeiten"
+                href="/werke/gemaelde"
               >
                 <BiRightArrow />
-                Pastellarbeiten
+                Gemälde
               </Link>
             </li>
           </ul>
