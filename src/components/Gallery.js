@@ -445,7 +445,7 @@ export default async function Gallery({ topic }) {
   );
 
   return (
-    <section className="my-3 grid grid-cols-gallery auto-rows-[10px]">
+    <section className="my-3 mx-10 grid grid-cols-gallery auto-rows-[10px]">
       {photosWithBlur.map((photo) => (
         <ImgContainer key={photo.id} photo={photo} />
       ))}
