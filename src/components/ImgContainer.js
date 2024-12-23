@@ -12,7 +12,7 @@ export default function ImgContainer({ photo }) {
       className="w-[250px] justify-self-center"
       style={{ gridRow: `span ${photoSpans}` }}
     >
-      <div className="rounded-2xl overflow-hidden group">
+      <div className="rounded-xl overflow-hidden group">
         <Image
           src={photo.src.large}
           alt={photo.alt}
@@ -21,10 +21,7 @@ export default function ImgContainer({ photo }) {
           placeholder="blur"
           blurDataURL={photo.blurredDataUrl}
           sizes="250px"
-          className="group-hover:opacity-75 object-cover clip-path-inset"
-          style={{
-            clipPath: 'inset(7px 7px 12px 7px)'
-          }}
+          className="group-hover:opacity-75"
         />
       </div>
     </div>
