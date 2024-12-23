@@ -65,7 +65,7 @@ const Footer = () => {
       </div>
       <div className="flex w-full flex-col items-center justify-center">
         <Image
-          className="w-72"
+          className="w-48"
           src="/logo_footer.png"
           alt="Bostanci Art"
           width={500}
