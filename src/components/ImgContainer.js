@@ -9,12 +9,12 @@ export default function ImgContainer({ photo }) {
 
   return (
     <div
-      className="w-[250px] justify-self-center"
+      className="w-[250px] justify-self-end"
       style={{ gridRow: `span ${photoSpans}` }}
     >
-      <div className="rounded-xl overflow-hidden group">
+      <div className="rounded-lg overflow-hidden group">
         <Image
-          src={photo.src.large}
+          src={photo.src}
           alt={photo.alt}
           width={photo.width}
           height={photo.height}
