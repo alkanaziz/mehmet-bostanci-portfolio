@@ -14,12 +14,16 @@ async function getBase64(imagePath) {
 }
 
 export default async function addBlurredDataUrl(photo, baseImagePath) {
-  if (!photo.src?.large) {
+  if (!photo.src) {
     console.error("Geçersiz resim yolu:", photo);
     return photo;
   }
 
-  const base64 = await getBase64(path.join(baseImagePath, photo.src.large));
+  const relativePath = photo.src.startsWith("/")
+    ? photo.src.slice(1)
+    : photo.src;
+
+  const base64 = await getBase64(path.join(baseImagePath, relativePath));
 
   if (base64) {
     photo.blurredDataUrl = base64;
