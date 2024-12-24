@@ -12,7 +12,7 @@ export default function Aquarelle() {
 
   return (
     <>
-      <Gallery topic="aquarelle" />
+      <Gallery topic="aquarell" />
     </>
   );
 }
