@@ -29,7 +29,7 @@ const Sidebar = () => {
 
   return (
     <motion.div
-      className="sidebar w-full lg:hidden"
+      className="sidebar bg-white sticky top-0 right-0  w-full lg:hidden"
       animate={open ? "open" : "closed"}
     >
       <div className="flex w-full items-center justify-end">
