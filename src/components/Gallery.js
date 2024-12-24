@@ -44,6 +44,8 @@ async function getPhotos(topic) {
       return acc;
     }, {});
 
+    console.log("Photo data:", JSON.stringify(photos, null, 2));
+
     return {
       page: 1,
       per_page: 15,
