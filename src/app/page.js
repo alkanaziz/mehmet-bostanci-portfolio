@@ -4,9 +4,7 @@ import path from "path";
 
 export default async function Home() {
   const photo = {
-    src: {
-      large: "/banner.png"
-    }
+    src: "/banner.png"
   };
 
   const photoWithBlur = await addBlurredDataUrl(photo, process.cwd() + "/public");
