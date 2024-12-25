@@ -60,6 +60,10 @@ const Breadcrumb = function () {
       title: "Pastellarbeiten",
       link: "/werke/pastellarbeiten",
     },
+    {
+      title: "Impressum",
+      link: "/impressum",
+    }
   ];
 
   return (
