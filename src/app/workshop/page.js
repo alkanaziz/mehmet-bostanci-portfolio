@@ -1,8 +1,10 @@
+import Gallery from "@/components/Gallery";
+
 const Workshop = () => {
   return (
-    <div className="h-[calc(100vh-320px)] mx-auto flex justify-center items-center">
-      In Bearbeitung...
-    </div>
+    <>
+    <Gallery topic={"workshop"} />
+    </>
   )
 }
 
