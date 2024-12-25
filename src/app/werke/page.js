@@ -61,6 +61,15 @@ const Werke = () => {
                 Gemälde
               </Link>
             </li>
+            <li>
+              <Link
+                className="flex items-center gap-1 hover:underline"
+                href="/werke/logo"
+              >
+                <BiRightArrow />
+                Logo
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
