@@ -3,7 +3,7 @@ import Gallery from "@/components/Gallery";
 const Workshop = () => {
   return (
     <>
-    <Gallery topic={"workshop"} />
+    <Gallery topic="workshop" />
     </>
   )
 }
