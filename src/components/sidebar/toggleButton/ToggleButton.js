@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const ToggleButton = ({ setOpen }) => {
+const ToggleButton = ({ setOpen, open }) => {
   return (
     <button
       className="z-20 flex size-12 items-center justify-center rounded-full text-black hover:scale-110 active:scale-95"
@@ -18,6 +18,7 @@ const ToggleButton = ({ setOpen }) => {
           strokeLinejoin="round"
           strokeWidth={3}
           initial={{ d: "M 2 2.5 L 20 2.5" }}
+          animate={open ? "open" : "closed"}
           variants={{
             closed: { d: "M 2 2.5 L 20 2.5" },
             open: { d: "M 3 16.5 L 17 2.5" },
@@ -29,6 +30,7 @@ const ToggleButton = ({ setOpen }) => {
           strokeWidth={3}
           d="M 2 9.423 L 20 9.423"
           initial={{ opacity: 1 }}
+          animate={open ? "open" : "closed"}
           variants={{
             closed: { opacity: 1 },
             open: { opacity: 0 },
@@ -39,6 +41,7 @@ const ToggleButton = ({ setOpen }) => {
           strokeLinejoin="round"
           strokeWidth={3}
           initial={{ d: "M 2 16.346 L 20 16.346" }}
+          animate={open ? "open" : "closed"}
           variants={{
             closed: { d: "M 2 16.346 L 20 16.346" },
             open: { d: "M 3 2.5 L 17 16.346" },
