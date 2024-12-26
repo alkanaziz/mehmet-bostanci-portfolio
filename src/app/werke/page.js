@@ -1,6 +1,13 @@
+import addBlurredDataUrl from "@/lib/getBase64";
 import Image from "next/image";
 import Link from "next/link";
 import { BiRightArrow } from "react-icons/bi";
+
+const photo = {
+  src: "/home_img.png",
+};
+
+const photoWithBlur = await addBlurredDataUrl(photo, process.cwd() + "/public");
 
 const Werke = () => {
   return (
@@ -12,6 +19,8 @@ const Werke = () => {
           alt="Bostanci Art"
           width={1500}
           height={2024}
+          placeholder="blur"
+          blurDataURL={photoWithBlur.blurredDataUrl}
         />
       </div>
 
