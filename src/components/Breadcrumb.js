@@ -57,8 +57,8 @@ const Breadcrumb = function () {
       link: "/werke/gemaelde",
     },
     {
-      title: "Pastellarbeiten",
-      link: "/werke/pastellarbeiten",
+      title: "Logo",
+      link: "/werke/logo",
     },
     {
       title: "Impressum",
