@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         <Nav />
-        <Sidebar />
+        {/* <Sidebar /> */}
         <Breadcrumb />
         {children}
         <Footer />
