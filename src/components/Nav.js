@@ -80,7 +80,7 @@ const Nav = () => {
               <div ref={dropdownRef}>
                 <button
                   onClick={() => setIsWerkeOpen(!isWerkeOpen)}
-                  className={`rounded-md px-2 py-1 font-bold flex items-center gap-1 ${pathname.startsWith(item.link)
+                  className={`px-2 py-1 font-bold flex items-center gap-1 ${pathname.startsWith(item.link)
                       ? "bg-black text-white"
                       : "hover:underline"
                     }`}
@@ -93,7 +93,7 @@ const Nav = () => {
                   )}
                 </button>
                 {isWerkeOpen && (
-                  <ul className="absolute left-0 mt-2 w-48 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                  <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg ring-1 ring-black ring-opacity-5">
                     {item.subMenu.map((subItem) => (
                       <li key={subItem.title}>
                         <Link
@@ -114,7 +114,7 @@ const Nav = () => {
             ) : (
               <Link
                 href={item.link}
-                className={`rounded-md px-2 py-1 font-bold ${pathname.split("/")[1] === item.link.split("/")[1]
+                className={`px-2 py-1 font-bold ${pathname.split("/")[1] === item.link.split("/")[1]
                     ? "bg-black text-white"
                     : "hover:underline"
                   }`}
