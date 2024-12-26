@@ -76,7 +76,7 @@ export default async function Gallery({ topic }) {
     <div className="my-3 mx-10 flex flex-col gap-3">
       {Object.entries(groupedPhotosWithBlur).map(([prefix, photos]) => (
         <div key={prefix}>
-          <div className="flex flex-wrap justify-center md:justify-end gap-3">
+          <div className="flex flex-wrap justify-center sm:justify-end gap-3">
             {photos.map((photo) => (
               <ImgContainer key={photo.id} photo={photo} />
             ))}
