@@ -10,11 +10,11 @@ const MobileNav = ({ menuItems, pathname }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuRef = useRef(null); // Menü referansı
+  const wrapperRef = useRef(null);
 
-  // Menü dışına tıklamayı yakalama
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         setIsMobileMenuOpen(false);
         setIsWerkeOpen(false);
       }
@@ -30,11 +30,12 @@ const MobileNav = ({ menuItems, pathname }) => {
   }, [isMobileMenuOpen]);
 
   return (
-    <div className="lg:hidden w-full">
+    <div className="lg:hidden w-full" ref={wrapperRef}>
       <div className="z-50 relative w-full flex justify-end">
         <ToggleButton
           setOpen={setIsMobileMenuOpen}
           open={isMobileMenuOpen}
+          onClick={(event) => event.stopPropagation()}
         />
       </div>
 
