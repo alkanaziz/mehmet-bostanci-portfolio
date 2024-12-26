@@ -1,6 +1,5 @@
 import Image from "next/image";
 import addBlurredDataUrl from "@/lib/getBase64";
-import path from "path";
 
 export default async function Home() {
   const photo = {
