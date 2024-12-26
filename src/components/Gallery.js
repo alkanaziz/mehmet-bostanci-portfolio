@@ -44,7 +44,7 @@ async function getPhotos(topic) {
       return acc;
     }, {});
 
-    console.log("Photo data:", JSON.stringify(photos, null, 2));
+    // console.log("Photo data:", JSON.stringify(photos, null, 2));
 
     return {
       page: 1,
@@ -63,7 +63,7 @@ export default async function Gallery({ topic }) {
   const images = await getPhotos(topic);
 
   if (!images)
-    return <h2 className="m-4 text-2xl-font-bold">Resim bulunamadı</h2>;
+    return <h2 className="m-4 text-2xl-font-bold">Kein Bild gefunden!</h2>;
 
   const groupedPhotosWithBlur = {};
   for (const [prefix, photos] of Object.entries(images.photos)) {
@@ -73,10 +73,10 @@ export default async function Gallery({ topic }) {
   }
 
   return (
-    <div className="my-3 mx-10">
+    <div className="my-3 mx-10 flex flex-col gap-3">
       {Object.entries(groupedPhotosWithBlur).map(([prefix, photos]) => (
-        <div key={prefix} className="">
-          <div className="grid grid-cols-gallery auto-rows-[10px]">
+        <div key={prefix}>
+          <div className="flex flex-wrap justify-center md:justify-end gap-3">
             {photos.map((photo) => (
               <ImgContainer key={photo.id} photo={photo} />
             ))}
