@@ -2,11 +2,13 @@
   "name": "mehmet-bostanci-portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 3000",
-    "serve": "npm run build && pm2 start npm --name 'bostanci-art' -- run start"
+    "serve": "npm run generate-image-meta && npm run build && pm2 start npm --name 'bostanci-art' -- run start",
+    "generate-image-meta": "node ./scripts/generateImageMeta.js"
   },
   "dependencies": {
     "image-size": "^1.2.0",
