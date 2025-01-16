@@ -82,7 +82,7 @@ const Breadcrumb = function () {
             paths === href
               ? `hover:underline mx-2 font-bold underline`
               : "hover:underline mx-2 font-bold";
-          const itemLink = menuItems.find((item) => item.link === href)?.title;
+          const itemLink = menuItems.find((item) => item.link.toLowerCase() === href.toLowerCase())?.title;
           return (
             <React.Fragment key={href}>
               <li className={itemClasses}>
