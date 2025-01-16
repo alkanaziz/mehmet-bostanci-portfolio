@@ -1,0 +1,882 @@
+{
+  "A001": {
+    "id": "A001",
+    "width": 1000,
+    "height": 1467,
+    "alt": "Kleine Synagoge / ERFURT / 2021 / 20 x 30 cm",
+    "src": "/aquarell/A001.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AP7+/7a+x/Hz9gDz7+5OQkTe3eEA6enpFAAAvLq8AOXk5GZoZNXV1iTMGbF9qIDeAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A001"
+  },
+  "A002": {
+    "id": "A002",
+    "width": 1000,
+    "height": 1171,
+    "alt": "Alte Synagoge / ERFURT / 2024 / 20 x 30 cm",
+    "src": "/aquarell/A002.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AH+yyABKYdj//wAmNjptbWvI5fEAHxAAycCv2+brAEhHRpqalvT174AfFH7G/3u0AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A002"
+  },
+  "A003": {
+    "id": "A003",
+    "width": 950,
+    "height": 1094,
+    "alt": "Anger 1 / ERFURT / 2021 / 30 x 40 cm",
+    "src": "/aquarell/A003.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AOjx+/H4+tLe2QD45Nu7mIqPgXkA4dLC0MKyPzAjAPvu4oR1bRAAADGkF+qJkKxBAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A003"
+  },
+  "A004": {
+    "id": "A004",
+    "width": 1100,
+    "height": 813,
+    "alt": "Erfurter Weihnachtsmarkt / 2023 / 60 x 40 cm",
+    "src": "/aquarell/A004.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/ALW7u9vo7trp9fH//wCAem+2sqnu7ujR0s0ABwMATkpEfHdyjo+JB5gXI+WDouIAAAAASUVORK5CYII=",
+    "topic": "aquarell",
+    "prefix": "A004"
+  },
+  "A005-1": {
+    "id": "A005-1",
+    "width": 1771,
+    "height": 2509,
+    "alt": "Krämerbrücke / ERFURT / 2023 / 20 x 29,5 cm",
+    "src": "/aquarell/A005-1.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/APT39rrCwubr5gDu7+6SiYPm5eIA19rXDgcD0c7MAO309JSjpuzv7jYLG3OfDrzzAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A005"
+  },
+  "A005-2": {
+    "id": "A005-2",
+    "width": 1000,
+    "height": 1417,
+    "alt": "Krämerbrücke / ERFURT / 2023 / 20 x 29,5 cm",
+    "src": "/aquarell/A005-2.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAABcSAAAXEgFnn9JSAAAAP0lEQVR4nAE0AMv/APL6+f/N3+n/7Pb0/QDw8e//hH14/9jd2v0A2dvV/wMMCP+jrKr9AKqxr/5MZWr+o6+s/AgUJM6etWCKAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A005"
+  },
+  "A005-3": {
+    "id": "A005-3",
+    "width": 1500,
+    "height": 2125,
+    "alt": "Krämerbrücke / ERFURT / 2023 / 20 x 29,5 cm",
+    "src": "/aquarell/A005-3.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcSAAAXEgFnn9JSAAAAM0lEQVR4nAEoANf/APT5+7XJ1dve3ADi5ONQWGDOzssA2NbSDwIAp6imANDU0EJJSq2ysA0EF8eicD+dAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A005"
+  },
+  "A006": {
+    "id": "A006",
+    "width": 1433,
+    "height": 2160,
+    "alt": "Reglerkirche / ERFURT / 2024 / 30 x 40 cm",
+    "src": "/aquarell/A006.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/APT399Df5dHX1QD6//+Vn6fO1dYAyMfHFAcCra2qAODi35uYm9fV1DZzGqYNgYP5AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A006"
+  },
+  "A007-1": {
+    "id": "A007-1",
+    "width": 1206,
+    "height": 1779,
+    "alt": "Lost Place  / 2023 / 30 x 40 cm",
+    "src": "/aquarell/A007-1.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/APv7+tXW0+nq5wDX19dFQUHFwsEAx8HCHQAHn5mZAO3t7p+goNLV0BBeGRqbTV61AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A007"
+  },
+  "A007-2": {
+    "id": "A007-2",
+    "width": 1206,
+    "height": 1779,
+    "alt": "Lost Place  / 2023 / 30 x 40 cm",
+    "src": "/aquarell/A007-2.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/AODj4OLk4/3+/gC3trVtamrw8PAAqqmqHQAKysXHAMPJyZmJk9nZ3RwjGYws9J/4AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A007"
+  },
+  "A007-3": {
+    "id": "A007-3",
+    "width": 3507,
+    "height": 5173,
+    "alt": "A007-3",
+    "src": "/aquarell/A007-3.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/AP388/Lv5IqKhgDf2tRrWFF9fHkAzcHCJAAAYlZaAMK5uoFpbktHR9jbFEulHSimAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A007"
+  },
+  "A008": {
+    "id": "A008",
+    "width": 1200,
+    "height": 1625,
+    "alt": "Ägidienkirche / ERFURT  / 2023 / 30 x 40 cm",
+    "src": "/aquarell/A008.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAM0lEQVR4nAEoANf/ALmzrY+QjMDHxwBDPDkAAQCzwMIAenNwLC8v0NPTAP39/L7Bwa2vr34GFJ/99mDlAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A008"
+  },
+  "A009": {
+    "id": "A009",
+    "width": 1200,
+    "height": 1583,
+    "alt": "Neutorturm / Arnstadt / ERFURT / 2024 / 30 x 40 cm",
+    "src": "/aquarell/A009.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAM0lEQVR4nAEoANf/AM/OzcbO0vr9/gCqqakoJiXs8PAAtrazGQAA5+LiALOyspKNjuPj5fUGGFM5fY2XAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A009"
+  },
+  "A010": {
+    "id": "A010",
+    "width": 1150,
+    "height": 897,
+    "alt": "Schlösserstraße / ERFURT / 2023 / 60 x 40 cm",
+    "src": "/aquarell/A010.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/ALnDwNv//9L26er73AAwJhfa29mKiWZrdDIAAgsEAAcGPDUuIhoHw8YRDWWs9ZcAAAAASUVORK5CYII=",
+    "topic": "aquarell",
+    "prefix": "A010"
+  },
+  "A011": {
+    "id": "A011",
+    "width": 1200,
+    "height": 1025,
+    "alt": "Rathaus / ERFURT  / 2023 / 60 x 40 cm",
+    "src": "/aquarell/A011.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGN4+fnD1OnTQiOi9EyMGXbvPdxUU+Zka8XCy8/g5mAT4OFqa26ipiQPAEnxDWEKQLOHAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A011"
+  },
+  "A012-1": {
+    "id": "A012-1",
+    "width": 2069,
+    "height": 2760,
+    "alt": "Das Juwel der Natur / 2023 / 12,5 x 17,5 cm",
+    "src": "/aquarell/A012-1.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/AP/03OjJlv/77QDbzrsmGQDbya4A2MeuGwAA0sKuAN2/oMebY+fWxPuiGB+JGeV1AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A012"
+  },
+  "A012-2": {
+    "id": "A012-2",
+    "width": 2069,
+    "height": 2760,
+    "alt": "Violette Glanz /  2023 / 12,5 x 17,5 cm",
+    "src": "/aquarell/A012-2.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/APr6+6WnrfXw5gCXmJ8ACBff2dQApKGkWmBmzsXDAO/p5ePa0tDHu/J1GSr7VQb5AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A012"
+  },
+  "A012-3": {
+    "id": "A012-3",
+    "width": 2069,
+    "height": 2760,
+    "alt": "Das Juwel der Natur / 2023 / 12,5 x 17,5 cm",
+    "src": "/aquarell/A012-3.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/ANvZ0oyblMfNyACyrqckAACqp6IAp6ObMxEVubKtAPDx6b7HvvX38LeXFvtYWw5TAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A012"
+  },
+  "A012-4": {
+    "id": "A012-4",
+    "width": 2069,
+    "height": 2760,
+    "alt": "Greenback / 2023 / 12,5 x 17,5 cm",
+    "src": "/aquarell/A012-4.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/AODax87AnPz46QCWi2wABACvn3sAhHlcRTgYrJ15AI+Od5BzPM3Ap6j/E5q/bLZXAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A012"
+  },
+  "A013": {
+    "id": "A013",
+    "width": 1000,
+    "height": 1358,
+    "alt": "Loranzkirche / ERFURT / 2022 / 30 x 40 cm",
+    "src": "/aquarell/A013.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAP0lEQVR4nAE0AMv/AJ+ur//T4uT/9vr6/gBqcG//EwAA/7aqqP4AeXJt/zEdHf+XjIv+AJ6lpP7s7u7+6uzr/VsaIbJE1r7tAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A013"
+  },
+  "A014": {
+    "id": "A014",
+    "width": 900,
+    "height": 1125,
+    "alt": "Benediktsplatz / ERFURT  / 2024 / 30 x 40 cm",
+    "src": "/aquarell/A014.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AOz//6K2xNXn7gBzcXNlZmO0ubcAGAwAHREDj5KDAKOno0E/O8PHx7DaE0zCK9v/AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A014"
+  },
+  "A015-1": {
+    "id": "A015-1",
+    "width": 1771,
+    "height": 3084,
+    "alt": "Gleichgewicht und Tiefe / 2023 / 12,5 x 9 cm",
+    "src": "/aquarell/A015-1.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAIAAAArjXluAAAACXBIWXMAABcSAAAXEgFnn9JSAAAAJUlEQVR4nGN49eXr8w+fGRYuX79qw04GBU5BVTEphuSw4LSoSADdWwxc+ALWbAAAAABJRU5ErkJggg==",
+    "topic": "aquarell",
+    "prefix": "A015"
+  },
+  "A015-2": {
+    "id": "A015-2",
+    "width": 1771,
+    "height": 3084,
+    "alt": "Lange Nägel / 2023 / 12,5 x 9 cm",
+    "src": "/aquarell/A015-2.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAIAAAArjXluAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAJUlEQVR4nGPIKKqobp/E8O7//9e//jME+PuLCXAyHD9y4NnTJwDJ7w7OFOcl/QAAAABJRU5ErkJggg==",
+    "topic": "aquarell",
+    "prefix": "A015"
+  },
+  "A015-3": {
+    "id": "A015-3",
+    "width": 1771,
+    "height": 3084,
+    "alt": "Gleichgewicht und Tiefe / 2023 / 12,5 x 9 cm",
+    "src": "/aquarell/A015-3.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAIAAAArjXluAAAACXBIWXMAABcSAAAXEgFnn9JSAAAAJUlEQVR4nGOY2z/r68svDHJcyuYq1gwWWnplOUUMR3Ye+v/jPwCh7QyTp68pngAAAABJRU5ErkJggg==",
+    "topic": "aquarell",
+    "prefix": "A015"
+  },
+  "A015-4": {
+    "id": "A015-4",
+    "width": 1771,
+    "height": 3084,
+    "alt": "Ein Warmes Herz im Kalten / 2023 / 12,5 x 9 cm",
+    "src": "/aquarell/A015-4.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAIAAAArjXluAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAJ0lEQVR4nAEcAOP/AMTFxb7AwgAzMDYQCxIA8/Hygn2AAO7x9NDU1cBxDvYv9QJfAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A015"
+  },
+  "A016": {
+    "id": "A016",
+    "width": 900,
+    "height": 1261,
+    "alt": "Augustinerkloster / ERFURT  / 2023 / 30 x 40 cm",
+    "src": "/aquarell/A016.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/APD4/52yu8DFwwCcnaI9TUg6RicAa19WFgkAQUAyAKqsrC4uL4qMkYo7ELQU084gAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A016"
+  },
+  "A017": {
+    "id": "A017",
+    "width": 900,
+    "height": 1378,
+    "alt": "Der Rosa Traum / 2024 / 10 x 20 cm",
+    "src": "/aquarell/A017.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AMrf3LfR0v759gDBys1AD0jHsscA17vIKgAtvbfDAMHCv4KCg7i5uPmWF9YUGiqtAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A017"
+  },
+  "A018": {
+    "id": "A018",
+    "width": 1200,
+    "height": 931,
+    "alt": "Natur und Traumharmonie / 2024 / 9 x 9 cm",
+    "src": "/aquarell/A018.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AOvs7rmpslxTU4yOkwDUyNJdJ0ojABJbbXoA8vj4y7nHuqi4sLi+nioVqaQflF0AAAAASUVORK5CYII=",
+    "topic": "aquarell",
+    "prefix": "A018"
+  },
+  "A019": {
+    "id": "A019",
+    "width": 2500,
+    "height": 1719,
+    "alt": "Pastell Frühling / 2024 / 14 x 9 cm",
+    "src": "/aquarell/A019.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAMklEQVR4nAEnANj/AP7++6ydn45wZsvLvgDd39ddSUcaAAW0r6YA7u/q5enj1uDdy8/J0zIYrluu06wAAAAASUVORK5CYII=",
+    "topic": "aquarell",
+    "prefix": "A019"
+  },
+  "A020-1": {
+    "id": "A020-1",
+    "width": 2084,
+    "height": 3150,
+    "alt": "Gleichgewicht und Tiefe / 2024 / 9 x 14 cm",
+    "src": "/aquarell/A020-1.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/APT3/ZS1vNzs7QDb0N4ACyFbfH0A//v+cU51y8POAMC0t62cps3O0febGLpSagtGAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A020"
+  },
+  "A020-2": {
+    "id": "A020-2",
+    "width": 1000,
+    "height": 1512,
+    "alt": "Gleichgewicht und Tiefe / 2024 / 14 x 9 cm",
+    "src": "/aquarell/A020-2.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/APf4993W4ujp7gDizddbEUnDr7sAz8DCMAAAj3V6AKCkqXNsdZ+anwFjFrsz4xbEAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A020"
+  },
+  "A021": {
+    "id": "A021",
+    "width": 1000,
+    "height": 1374,
+    "alt": "Die Poesie der Natur / 2024 / 9 x 9 cm",
+    "src": "/aquarell/A021.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/APr9+tXV2uzt6gBDYnwQM1C8v8AAXXCAHAAdmI+dAMfGwFpTU6Cin8nzFKBAZi4SAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A021"
+  },
+  "A022": {
+    "id": "A022",
+    "width": 1000,
+    "height": 1323,
+    "alt": "Tiefe Träume / 2024 / 9 x 14 cm",
+    "src": "/aquarell/A022.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/APb29v/Ou9b//fr//gCvn67/Zyhc//fq8f4AoYKT/yoAK/+WiKj+ALOqs/5LM2L+rqm0/cbYIqrlvSp2AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A022"
+  },
+  "A023": {
+    "id": "A023",
+    "width": 1500,
+    "height": 2024,
+    "alt": "Im Schatten der roten Sonne / 2024 / 30 x 40 cm",
+    "src": "/aquarell/A023.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/AJydlP9/f3j/+vr5/wCAgH7/EAUG/6Sdn/8ATE1M/w4HCv+Yk5T/AHBycv8iJSf/qq2v//n+HCnU4HsYAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A023"
+  },
+  "A024": {
+    "id": "A024",
+    "width": 900,
+    "height": 1260,
+    "alt": "Stille Natur  / 2024 /  12,5 x 17,5 cm",
+    "src": "/aquarell/A024.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AOLj4356eePc2ADMzc4EBAXW1NQA9vn8d3d39fPwAP7//8TEw+Dd1/n9GqYLre4oAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A024"
+  },
+  "A025": {
+    "id": "A025",
+    "width": 900,
+    "height": 1275,
+    "alt": "Insel der Träume / 2024 / 30 x 40 cm",
+    "src": "/aquarell/A025.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/APH6973CvaGjnADHx8eZl5KVlY4AkY+ODwQAYmFaAIiIgzQwKm9sYMnTEwhbzySbAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A025"
+  },
+  "A026": {
+    "id": "A026",
+    "width": 1300,
+    "height": 981,
+    "alt": "Stilles Tal/ 2024 / 40 x 30 cm",
+    "src": "/aquarell/A026.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AKOgncO/vqOhn7azswBZVVAOBwcnHx6lnZwAg395LCkoo6Gf///+aKgSU3Y+e6wAAAAASUVORK5CYII=",
+    "topic": "aquarell",
+    "prefix": "A026"
+  },
+  "A027": {
+    "id": "A027",
+    "width": 1000,
+    "height": 1439,
+    "alt": "Der Traum eines Bootsmannes / 2024 / 12,5 x 17,5 cm",
+    "src": "/aquarell/A027.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AM/PzaKjpOvt7gDFxcQJCAjc3d0Ay8bGioaF+vv8AMzIxqKfoNfa2/oNGby+gop4AAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A027"
+  },
+  "A028": {
+    "id": "A028",
+    "width": 900,
+    "height": 1260,
+    "alt": "Die Stille des Verfalls / 2024 / 12,5 x 17,5 cm",
+    "src": "/aquarell/A028.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AMvMzZubm+zs6wB2dngHBATk4+IAsrO1Ozs79vb2AMLCxLK1ud7f3srGF8WnCuudAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A028"
+  },
+  "D001": {
+    "id": "D001",
+    "width": 2500,
+    "height": 3536,
+    "alt": "Objektmodellierung",
+    "src": "/digitale-werke/D001.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMElEQVR4nGNgYmJkYGAAkYnxMRXlxckJMQw7t6w9enDvzk1rGP7/+fjpzeP/fz4CAOgDErUrUYXaAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D001"
+  },
+  "D002": {
+    "id": "D002",
+    "width": 2123,
+    "height": 3000,
+    "alt": "Objektmodellierung",
+    "src": "/digitale-werke/D002.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMUlEQVR4nGNgZGFhYGZhYGBksNNXy7TX8rIxZ5iQErFBW3xtQznD/9/v31w98f/fZwCcGw54wV7ZGgAAAABJRU5ErkJggg==",
+    "topic": "digitale-werke",
+    "prefix": "D002"
+  },
+  "D003": {
+    "id": "D003",
+    "width": 3000,
+    "height": 4243,
+    "alt": "Objektmodellierung",
+    "src": "/digitale-werke/D003.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAM0lEQVR4nAEoANf/AOjn6Pj6/ubj5gC7uLR2Y1XCv78AiIF1OgAAdWprAC0sLBsEABcNCeLQEb+MfTk+AAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D003"
+  },
+  "D004": {
+    "id": "D004",
+    "width": 2121,
+    "height": 3000,
+    "alt": "Objektmodellierung",
+    "src": "/digitale-werke/D004.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAM0lEQVR4nAEoANf/ABUiIxIfHUJRWgBHTTERDwCdo2wA1tbQi5FjpKeIAOXl4Onp6f////W2Ele4FV3JAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D004"
+  },
+  "D005": {
+    "id": "D005",
+    "width": 3000,
+    "height": 4242,
+    "alt": "Objektmodellierung",
+    "src": "/digitale-werke/D005.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAHUwAAB1MAHdM3LNAAAAM0lEQVR4nAEoANf/AAAOOAARPQAROwAAV3paa1AAX3MAq8rTvaNbpcLIAP/3+urj3/719+kvElHeOIEiAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D005"
+  },
+  "D006": {
+    "id": "D006",
+    "width": 2500,
+    "height": 3888,
+    "alt": "Objektmodellierung",
+    "src": "/digitale-werke/D006.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAM0lEQVR4nAEoANf/AAoKCE1OTgQEAwA7Ozi8v8A7OzoAcG9u///7jYyKAKKin93e2q+vqvdCERPleyMnAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D006"
+  },
+  "D007": {
+    "id": "D007",
+    "width": 2250,
+    "height": 1629,
+    "alt": "Kinderbuchillustration",
+    "src": "/digitale-werke/D007.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMElEQVR4nGNgMGdgkGA4cOHGpf//GZJqbGTsmNadvXPt438GuXAGBgEGNmOGzDlxACOiDjzLuLqKAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D007"
+  },
+  "D008": {
+    "id": "D008",
+    "width": 2000,
+    "height": 1400,
+    "alt": "Kinderbuchillustration",
+    "src": "/digitale-werke/D008.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMElEQVR4nGP4/7hinRTnlMkB1YsaGP7fryjVkvUOMpMPEWRIbo+xavRlMONg4GEAAEWGDUFGQEFoAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D008"
+  },
+  "D009": {
+    "id": "D009",
+    "width": 2000,
+    "height": 1500,
+    "alt": "Kinderbuchillustration",
+    "src": "/digitale-werke/D009.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMklEQVR4nAEnANj/AKvr/wBKfF2evv/87wAqpdkkADAPQ2yT4P8Af3ZgPAAVlndFcrGfesoR5RCq7fkAAAAASUVORK5CYII=",
+    "topic": "digitale-werke",
+    "prefix": "D009"
+  },
+  "D010": {
+    "id": "D010",
+    "width": 1500,
+    "height": 1050,
+    "alt": "Kinderbuchillustration",
+    "src": "/digitale-werke/D010.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAL0lEQVR4nGNImlfLYMQQU5HWe2APA0O4HoMYQ0xpxM1//xkYzBkYJBgYpBh4jRgA7hYKNZvfwCkAAAAASUVORK5CYII=",
+    "topic": "digitale-werke",
+    "prefix": "D010"
+  },
+  "D011": {
+    "id": "D011",
+    "width": 1500,
+    "height": 1125,
+    "alt": "Kinderbuchillustration",
+    "src": "/digitale-werke/D011.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMElEQVR4nGNY/PAzQ+bcmA3X3v7/y9BZ2OOp6SDKoFvsVMCwNiNsS51FZ45yfEQMAHVFEOhUlpioAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D011"
+  },
+  "D012": {
+    "id": "D012",
+    "width": 2000,
+    "height": 1344,
+    "alt": "Kinderbuchillustration",
+    "src": "/digitale-werke/D012.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMklEQVR4nAEnANj/AAB5sW6EvHOcxb7//wB2iLZGAB8qLRWj/+MAjnN9m5SvebTKsf//dD8UdSACgoEAAAAASUVORK5CYII=",
+    "topic": "digitale-werke",
+    "prefix": "D012"
+  },
+  "D013": {
+    "id": "D013",
+    "width": 2000,
+    "height": 2665,
+    "alt": "Kinderbuchillustration",
+    "src": "/digitale-werke/D013.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAM0lEQVR4nAEoANf/AACTuwBzlgBwmwCIz80/AAAAPWgAYJ6pHgoAksDQANL7/5/Mz9f//yU9EjcX+9XKAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D013"
+  },
+  "D014": {
+    "id": "D014",
+    "width": 1500,
+    "height": 3154,
+    "alt": "Ex-Libris",
+    "src": "/digitale-werke/D014.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAIAAAArjXluAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAJUlEQVR4nGNobO9evHwlw4evP77+/stQWFHb3NnDwMDMzcLNDwDabQx7E06abwAAAABJRU5ErkJggg==",
+    "topic": "digitale-werke",
+    "prefix": "D014"
+  },
+  "D015": {
+    "id": "D015",
+    "width": 1000,
+    "height": 1389,
+    "alt": "Ex-Libris",
+    "src": "/digitale-werke/D015.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAABwgAAAcIAHND5ueAAAAP0lEQVR4nAE0AMv/AJqy3f+LrMj/wv///QAAAxn/TUlH/5KzxP0ABxAg/0c/Rv9VWVL9AGhfdv53Ljz+wV2Y/PiaG6tNv80dAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D015"
+  },
+  "D016": {
+    "id": "D016",
+    "width": 900,
+    "height": 2449,
+    "alt": "Ex-Libris",
+    "src": "/digitale-werke/D016.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAIAAADAusJtAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAGElEQVR4nGNgEFVmePD+DwODuhUDg6AUACEXA5DSykbTAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D016"
+  },
+  "D017": {
+    "id": "D017",
+    "width": 2000,
+    "height": 1652,
+    "alt": "Konzeptdesign",
+    "src": "/digitale-werke/D017.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMElEQVR4nGN4+//XhiM77316VDFvNoNdqC8DN8+09fOs8nIZBKX4GXjZJfVVVRzMAYcqDrxnRKCKAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D017"
+  },
+  "D018": {
+    "id": "D018",
+    "width": 2000,
+    "height": 1366,
+    "alt": "Konzeptdesign",
+    "src": "/digitale-werke/D018.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAHUwAAB1MAHdM3LNAAAAMElEQVR4nGPIaYr7/3vTtwezE0uCGI72hf1/2vb/Zt3BrkAGRXkOFTlWaVk2Bm4GAJ0+EG5j+oAMAAAAAElFTkSuQmCC",
+    "topic": "digitale-werke",
+    "prefix": "D018"
+  },
+  "G001": {
+    "id": "G001",
+    "width": 1000,
+    "height": 1432,
+    "alt": "Öl auf Leinwand / 70 X 100 cm",
+    "src": "/gemaelde/G001.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/AGFuf6ba95vV9gCtq6/5//+9xskAjXhf9uO+NSgeADMdAGdNCRsAANaSExSuL3htAAAAAElFTkSuQmCC",
+    "topic": "gemaelde",
+    "prefix": "G001"
+  },
+  "G002": {
+    "id": "G002",
+    "width": 3348,
+    "height": 1753,
+    "alt": "Acryl auf Leinwand / 70 X 140 cm",
+    "src": "/gemaelde/G002.jpg",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGNQdPSv7pi8YN/p1///MzAIKzt7BzZX1Nz/+R8AmgUMvbSBej0AAAAASUVORK5CYII=",
+    "topic": "gemaelde",
+    "prefix": "G002"
+  },
+  "G003": {
+    "id": "G003",
+    "width": 1000,
+    "height": 1426,
+    "alt": "Öl auf Leinwand / 50 X 70 cm",
+    "src": "/gemaelde/G003.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMUlEQVR4nGO4urTo/8+r84tdGToy9Y4eblRT4GRwN2MId1PSZ2BgYBdk0GZg8GZgAABKWwuBlMwlYAAAAABJRU5ErkJggg==",
+    "topic": "gemaelde",
+    "prefix": "G003"
+  },
+  "G004": {
+    "id": "G004",
+    "width": 1200,
+    "height": 772,
+    "alt": "Acryl auf Leinwand / 40 x 60 cm",
+    "src": "/gemaelde/G004.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAABcSAAAXEgFnn9JSAAAAL0lEQVR4nGOwszD89v9qXYdG73RXBj5uhtgYLWlRBiUlBgYhlxgG5yS9pvkMGoIA82YKWNOkZh8AAAAASUVORK5CYII=",
+    "topic": "gemaelde",
+    "prefix": "G004"
+  },
+  "G005": {
+    "id": "G005",
+    "width": 3000,
+    "height": 4246,
+    "alt": "Öl auf Leinwand / 30 x 45 cm",
+    "src": "/gemaelde/G005.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAM0lEQVR4nAEoANf/AN3u0/D/3KfJpwDE2Lnp7dDb7tEAWWxzt83Y9PHfAAACLk5sgrKUcyq+GJMyG+QKAAAAAElFTkSuQmCC",
+    "topic": "gemaelde",
+    "prefix": "G005"
+  },
+  "G006": {
+    "id": "G006",
+    "width": 1134,
+    "height": 836,
+    "alt": "Acryl auf Leinwand / 70 X 50 cm",
+    "src": "/gemaelde/G006.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGPQ6Zwy9f//6f//t52+ysDAJ2RaXtiyanHTnBkMfDZuXrGBxj6OkUXpAHnmENbokFztAAAAAElFTkSuQmCC",
+    "topic": "gemaelde",
+    "prefix": "G006"
+  },
+  "G007": {
+    "id": "G007",
+    "width": 6000,
+    "height": 7963,
+    "alt": "Öl auf Leinwand / 50 x 70 cm",
+    "src": "/gemaelde/G007.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAHUwAAB1MAHdM3LNAAAAMUlEQVR4nGNY9O7/6f//N337z9BWbbdp25TG+koGPW6G+FiGnCAGBjU1hrxENyUmBgCtqg/sml9AmgAAAABJRU5ErkJggg==",
+    "topic": "gemaelde",
+    "prefix": "G007"
+  },
+  "G008": {
+    "id": "G008",
+    "width": 6000,
+    "height": 8103,
+    "alt": "Öl auf Leinwand / 35 x 50 cm",
+    "src": "/gemaelde/G008.jpg",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAHUwAAB1MAHdM3LNAAAAMUlEQVR4nGP4+vv/mZvXlOzEGPJqdH0iGRgEGRgmT4jPjlMU4WZgKKipTMxNCXbWBwBDgg2VS1YALQAAAABJRU5ErkJggg==",
+    "topic": "gemaelde",
+    "prefix": "G008"
+  },
+  "G009": {
+    "id": "G009",
+    "width": 1180,
+    "height": 1525,
+    "alt": "Acryl auf Papier / 20 x 25 cm",
+    "src": "/gemaelde/G009.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/AOr9/cDg5sTRygC72d9Jd4KRqq8AqbS0AAsOcHx+ANTm6XWHjrW+ufgTF1b9YihdAAAAAElFTkSuQmCC",
+    "topic": "gemaelde",
+    "prefix": "G009"
+  },
+  "G010": {
+    "id": "G010",
+    "width": 1000,
+    "height": 1468,
+    "alt": "Acryl auf Papier / 20 x 25 cm",
+    "src": "/gemaelde/G010.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AGtVO0Q5A2NUEQAOCgAeEgB2Y1MAr8m+r7y24//2AG6ovl+bkGnEzfUnED+75nkmAAAAAElFTkSuQmCC",
+    "topic": "gemaelde",
+    "prefix": "G010"
+  },
+  "G011": {
+    "id": "G011",
+    "width": 1000,
+    "height": 1314,
+    "alt": "Acryl auf Papier / 20 x 25 cm",
+    "src": "/gemaelde/G011.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/ALW5dvH8wqayaQBweVmWnYZue2MAnranuM621OSvAAUNAHGKbJCrfLcFFGoKsk8HAAAAAElFTkSuQmCC",
+    "topic": "gemaelde",
+    "prefix": "G011"
+  },
+  "G012": {
+    "id": "G012",
+    "width": 1000,
+    "height": 1329,
+    "alt": "Acryl auf Papier / 20 x 25 cm",
+    "src": "/gemaelde/G012.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMElEQVR4nGOoLLP///+4tpY8g5U5f26yt7ggLwM3A0NscqxjWCSDRWiSeUgMk4QsAPQcCl26OPJkAAAAAElFTkSuQmCC",
+    "topic": "gemaelde",
+    "prefix": "G012"
+  },
+  "L001": {
+    "id": "L001",
+    "width": 2426,
+    "height": 965,
+    "alt": "Marke des Epilationsgeräts",
+    "src": "/logo/L001.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAI0lEQVR4nGN4+/athLi4ACfX27dvGV6+emWgr2+oo3vnzh0AnxMMYRWW/l8AAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L001"
+  },
+  "L002": {
+    "id": "L002",
+    "width": 2426,
+    "height": 965,
+    "alt": "Architekturbüro",
+    "src": "/logo/L002.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAIElEQVR4nAXBMQ0AAAgDMAzsnRYS/Osq7SDJ7mLQ9u7wsAYNtxUpmowAAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L002"
+  },
+  "L003": {
+    "id": "L003",
+    "width": 2426,
+    "height": 965,
+    "alt": "Friseurgeschäft",
+    "src": "/logo/L003.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAI0lEQVR4nGN4+vSpoqKira3tx48fGd6+e6uoqKijo/P06VMAqX4M+6Ra7VIAAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L003"
+  },
+  "L004": {
+    "id": "L004",
+    "width": 2426,
+    "height": 965,
+    "alt": "VIP-Service",
+    "src": "/logo/L004.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAI0lEQVR4nGP4//8/Pz9/bGzs////GT5//hwfH19UVPTs2TMAwEEPPRFyhTEAAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L004"
+  },
+  "L005": {
+    "id": "L005",
+    "width": 2426,
+    "height": 965,
+    "alt": "Heil- und Aromapflanzen Produkte",
+    "src": "/logo/L005.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAI0lEQVR4nGP4/PmzjLQMFw/X58+fGf7//29qaqqkpPT//38ApgcNJTzFc6QAAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L005"
+  },
+  "L006": {
+    "id": "L006",
+    "width": 2426,
+    "height": 965,
+    "alt": "Kosmetiksalon",
+    "src": "/logo/L006.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAIUlEQVR4nAXBMQEAAAgDIEssxuL42f8kgzBI0haDu9tdPK1mDgLl+PeWAAAAAElFTkSuQmCC",
+    "topic": "logo",
+    "prefix": "L006"
+  },
+  "L007": {
+    "id": "L007",
+    "width": 2426,
+    "height": 965,
+    "alt": "Juwelier",
+    "src": "/logo/L007.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAI0lEQVR4nGO4d+8eDw+Ph4fHly9fGO7du2dubm5vb//lyxcApsENS8eqqygAAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L007"
+  },
+  "L008": {
+    "id": "L008",
+    "width": 2426,
+    "height": 965,
+    "alt": "Naturstein-Landschaftsfirma",
+    "src": "/logo/L008.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAI0lEQVR4nGNYv369pKREZWXlgwcPGA4fPqyurt7U1PTq1SsAojANZT7BXNsAAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L008"
+  },
+  "L009": {
+    "id": "L009",
+    "width": 2426,
+    "height": 965,
+    "alt": "Sportmarke",
+    "src": "/logo/L009.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAH0lEQVR4nAXBAQEAAAgCoC64wy296jfB4O52F4O2SfDRPw8c/5lSkAAAAABJRU5ErkJggg==",
+    "topic": "logo",
+    "prefix": "L009"
+  },
+  "L010": {
+    "id": "L010",
+    "width": 2426,
+    "height": 965,
+    "alt": "Maschinenhersteller",
+    "src": "/logo/L010.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAI0lEQVR4nGP48uWLvb29mJjYy5cvGb58+RIVFWVubv7y5UsAsmcN4er+vtYAAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L010"
+  },
+  "L011": {
+    "id": "L011",
+    "width": 2426,
+    "height": 965,
+    "alt": "Autozubehör",
+    "src": "/logo/L011.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAIElEQVR4nGN49uwZPz+/pKTkrVu3GG7duiUJBrdu3QIAlRgLa9FBfSUAAAAASUVORK5CYII=",
+    "topic": "logo",
+    "prefix": "L011"
+  },
+  "L012": {
+    "id": "L012",
+    "width": 2426,
+    "height": 965,
+    "alt": "Friseurgeschäft",
+    "src": "/logo/L012.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAH0lEQVR4nAXBMQEAAAwCoNUwg7f9Q1FgcNjWFoe2SfCvyg1RjdvAsQAAAABJRU5ErkJggg==",
+    "topic": "logo",
+    "prefix": "L012"
+  },
+  "W001": {
+    "id": "W001",
+    "width": 1500,
+    "height": 1941,
+    "alt": "Ebru-Workshop / 2023",
+    "src": "/workshop/W001.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMUlEQVR4nGNIzUjo7GpYOLuPQU1bg5OF4dDG2QwupkZd/dMn9k5k+P/jyf/fH8NstQA6DxGslJViUwAAAABJRU5ErkJggg==",
+    "topic": "workshop",
+    "prefix": "W001"
+  },
+  "W002": {
+    "id": "W002",
+    "width": 1039,
+    "height": 1548,
+    "alt": "Präsentation der Marmorierungskunst / 2023",
+    "src": "/workshop/W002.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNY3+Dx//urrJgghv5Uswt7tqjKqzA0Z2a2VFRZmVkxlBXmHjl6WpKBAQBu5BB4XWF6/QAAAABJRU5ErkJggg==",
+    "topic": "workshop",
+    "prefix": "W002"
+  },
+  "W003": {
+    "id": "W003",
+    "width": 1000,
+    "height": 1333,
+    "alt": "Präsentation der Marmorierungskunst / 2023",
+    "src": "/workshop/W003.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AFxIQLuzlPj8vwCxn7NPOkIHBgEASjMlYzwZmoeMANHFvbKfi76pq1e4Eb6J6KrSAAAAAElFTkSuQmCC",
+    "topic": "workshop",
+    "prefix": "W003"
+  },
+  "W004": {
+    "id": "W004",
+    "width": 1500,
+    "height": 2000,
+    "alt": "Marmorierungswerkstatt / 2024",
+    "src": "/workshop/W004.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AJOKdmlhSyMbAABrY0+OhnoOAQAAmpWLs6mlcW1lAP79+9PS1MvHvCbCElxBN3j0AAAAAElFTkSuQmCC",
+    "topic": "workshop",
+    "prefix": "W004"
+  },
+  "W005": {
+    "id": "W005",
+    "width": 1000,
+    "height": 1333,
+    "alt": "Marmorierungswerkstatt / 2024",
+    "src": "/workshop/W005.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAM0lEQVR4nAEoANf/AJucm9DQ0KejnwAaDgCRiYQWBgAAc3Fgin9vY1dUAP368p+bkJCJgmSbEia1WSClAAAAAElFTkSuQmCC",
+    "topic": "workshop",
+    "prefix": "W005"
+  },
+  "W006": {
+    "id": "W006",
+    "width": 1000,
+    "height": 1778,
+    "alt": "Marmorierungswerkstatt / 2024",
+    "src": "/workshop/W006.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAIAAAArjXluAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAJUlEQVR4nGPQU5X+/eYNQ5ytxv+vjxnmNVcUBIQxKDMwmHErAgCndwoQQm3RPgAAAABJRU5ErkJggg==",
+    "topic": "workshop",
+    "prefix": "W006"
+  },
+  "W007": {
+    "id": "W007",
+    "width": 1500,
+    "height": 1125,
+    "alt": "Marmorierungswerkstatt / 2024",
+    "src": "/workshop/W007.png",
+    "blurredDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGNori1qbCidvWCeAC8bQ02yX1F+oqKUIDcLA4OxvlRNvM/OVX2/f94GAABDDhJykj5bAAAAAElFTkSuQmCC",
+    "topic": "workshop",
+    "prefix": "W007"
+  }
+}
