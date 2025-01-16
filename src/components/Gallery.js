@@ -1,80 +1,48 @@
+"use client"
+
 import ImgContainer from "./ImgContainer";
-import addBlurredDataUrl from "@/lib/getBase64";
-import sizeOf from "image-size";
-import path from "path";
-import fs from "fs/promises";
-import imageAlts from "@/data/imageAlts.json";
+import { useEffect, useState } from "react";
 
-async function getPhotos(topic) {
-  const photosDir = path.join(process.cwd(), "public", topic);
-
-  try {
-    const files = await fs.readdir(photosDir);
-    const imageFiles = files.filter(file =>
-      /\.(png|jpe?g)$/i.test(file)
-    );
-
-    const photos = await Promise.all(
-      imageFiles.map(async (file) => {
-        const imagePath = path.join(photosDir, file);
-        const imageBuffer = await fs.readFile(imagePath);
-        const dimensions = sizeOf(imageBuffer);
-        const fileName = file.replace(/\.[^/.]+$/, "");
-        const altText = imageAlts[fileName] || fileName;
-        const prefix = fileName.substring(0, 4); // A001, A002 gibi prefix'leri al
-
-        return {
-          id: fileName,
-          src: `/${topic}/${file}`,
-          alt: altText,
-          width: dimensions.width || 0,
-          height: dimensions.height || 0,
-          prefix: prefix,
-          url: ""
-        };
-      })
-    );
-
-    // Resimleri prefix'lerine göre grupla
-    const groupedPhotos = photos.reduce((acc, photo) => {
-      if (!acc[photo.prefix]) {
-        acc[photo.prefix] = [];
-      }
-      acc[photo.prefix].push(photo);
-      return acc;
-    }, {});
-
-    // console.log("Photo data:", JSON.stringify(photos, null, 2));
-
-    return {
-      page: 1,
-      per_page: 15,
-      total_results: photos.length,
-      photos: groupedPhotos
-    };
-
-  } catch (error) {
-    console.error("Error reading photos directory:", error);
-    return null;
+async function fetchImages(topic) {
+  const response = await fetch(`/api/photos?topic=${topic}`);
+  if (!response.ok) {
+    throw new Error("Failed to fetch images");
   }
+  return await response.json();
 }
 
-export default async function Gallery({ topic }) {
-  const images = await getPhotos(topic);
+export default function Gallery({ topic }) {
+  const [images, setImages] = useState(null);
+  const [error, setError] = useState(null);
 
-  if (!images)
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const data = await fetchImages(topic);
+        setImages(data);
+      } catch (err) {
+        setError(err);
+      }
+    };
+    
+    loadImages();
+  }, [topic]);
+
+  if (error) {
     return <h2 className="m-4 text-2xl-font-bold">Kein Bild gefunden!</h2>;
+  }
 
-  const groupedPhotosWithBlur = {};
-  for (const [prefix, photos] of Object.entries(images.photos)) {
-    groupedPhotosWithBlur[prefix] = await Promise.all(
-      photos.map(photo => addBlurredDataUrl(photo, process.cwd() + `/public`))
+  if (!images) {
+    return (
+      <div className="flex justify-center items-center h-96">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+      </div>
     );
   }
 
   return (
     <div className="my-3 mx-10 flex flex-col gap-3">
-      {Object.entries(groupedPhotosWithBlur).map(([prefix, photos]) => (
+      {Object.entries(images).map(([prefix, photos]) => (
         <div key={prefix}>
           <div className="flex flex-wrap justify-center sm:justify-end gap-3">
             {photos.map((photo) => (
