@@ -7,7 +7,6 @@ import Link from "next/link";
 const Breadcrumb = function () {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
-  console.log({ paths, pathNames });
 
   if (pathNames.length === 0) return null;
 

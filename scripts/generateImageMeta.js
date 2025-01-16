@@ -10,7 +10,6 @@ async function generateImageMeta() {
 
   try {
     const topics = await fs.readdir(photosDir);
-    console.log("Topics found:", topics);
     for (const topic of topics) {
       const topicDir = path.join(photosDir, topic);
       const stat = await fs.stat(topicDir);
@@ -20,9 +19,7 @@ async function generateImageMeta() {
       }
 
       const files = await fs.readdir(topicDir);
-      console.log(`Files found in ${topic}:`, files);
       const imageFiles = files.filter((file) => /\.(png|jpe?g)$/i.test(file));
-      console.log(`Image files in ${topic}:`, imageFiles);
 
       for (const file of imageFiles) {
         const imagePath = path.join(topicDir, file);
