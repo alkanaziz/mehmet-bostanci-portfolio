@@ -11,6 +11,7 @@ export async function GET(req) {
 
   try {
     const photos = await getProcessedPhotos(topic);
+    console.log({topic, photos});
     if (!photos) {
       return NextResponse.json({ error: "Photos not found" }, { status: 404 });
     }
