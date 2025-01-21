@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import ImgContainer from "./ImgContainer";
 import { useEffect, useState } from "react";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
@@ -17,10 +18,7 @@ export default function Gallery({ topic }) {
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const prefixesPerPage = 6;
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [topic, currentPage]);
+  const router = useRouter();
 
   useEffect(() => {
     const loadImages = async () => {
@@ -34,6 +32,21 @@ export default function Gallery({ topic }) {
 
     loadImages();
   }, [topic]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("page");
+    const pageNumber = parseInt(page) || 1;
+    const prefixes = Object.keys(images || {});
+    const totalPages = Math.ceil(prefixes.length / prefixesPerPage);
+    setCurrentPage(pageNumber > totalPages ? 1 : pageNumber);
+  }, [images]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    params.set("page", currentPage.toString());
+    router.push(`${window.location.pathname}?${params}`);
+  }, [currentPage, router]);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -59,7 +72,7 @@ export default function Gallery({ topic }) {
   const totalPages = Math.ceil(prefixes.length / prefixesPerPage);
   const displayedPrefixes = prefixes.slice(
     (currentPage - 1) * prefixesPerPage,
-    currentPage * prefixesPerPage,
+    currentPage * prefixesPerPage
   );
 
   return (
@@ -87,10 +100,10 @@ export default function Gallery({ topic }) {
             return (
               <button
                 key={i + 1}
-                className={`rounded-sm px-2 text-xl font-extrabold text-white ${currentPage === i + 1 ? "bg-gray-900" : "bg-gray-400 hover:scale-90"}`}
+                className={`rounded-sm px-2 text-xl font-extrabold text-white ${currentPage === pageIndex ? "bg-gray-900" : "bg-gray-400 hover:scale-90"}`}
                 onClick={() => setCurrentPage(pageIndex)}
               >
-                {i + 1}
+                {pageIndex}
               </button>
             );
           })}
