@@ -12,8 +12,13 @@ module.exports = {
         foreground: "var(--foreground)",
       },
       gridTemplateColumns: {
-        'gallery': 'repeat(auto-fit, minmax(250px, 1fr))',
-      }
+        gallery: "repeat(auto-fit, minmax(250px, 1fr))",
+      },
+      screens: {
+        narrow: { raw: "(max-aspect-ratio: 3 / 2)" },
+        wide: { raw: "(min-aspect-ratio: 3 / 2)" },
+        "taller-than-854": { raw: "(min-height: 854px)" },
+      },
     },
   },
   plugins: [],
