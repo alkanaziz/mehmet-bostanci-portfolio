@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
@@ -18,7 +18,13 @@ async function fetchImages(topic) {
   return await response.json();
 }
 
-const Gallery = ({ topic }) => {
+const LoadingState = () => (
+  <div className="flex h-96 items-center justify-center">
+    <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-gray-900"></div>
+  </div>
+);
+
+const GalleryContent = ({ topic }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -158,6 +164,14 @@ const Gallery = ({ topic }) => {
         </button>
       </div>
     </div>
+  );
+};
+
+const Gallery = ({ topic }) => {
+  return (
+    <Suspense fallback={<LoadingState />}>
+      <GalleryContent topic={topic} />
+    </Suspense>
   );
 };
 
