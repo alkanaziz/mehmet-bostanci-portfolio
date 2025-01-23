@@ -19,7 +19,7 @@ export default function ImgContainer({ photo }) {
           width={photo.width}
           height={photo.height}
           placeholder="blur"
-          blurDataURL={photo.blurredDataUrl}
+          blurDataURL={photo.blurDataUrl}
           sizes="250px"
           className="group-hover:opacity-75"
         />
