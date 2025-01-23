@@ -1,9 +1,14 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import ImgContainer from "./ImgContainer";
-import { useEffect, useState } from "react";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
+import Modal from "@/components/carousel/Modal";
+import { useLastViewedPhoto } from "@/lib/useLastViewedPhoto";
+import imageMeta from "@/data/imageMeta";
+import ImgContainer from "./ImgContainer";
 
 async function fetchImages(topic) {
   const response = await fetch(`/api/photos?topic=${topic}`);
@@ -13,12 +18,15 @@ async function fetchImages(topic) {
   return await response.json();
 }
 
-export default function Gallery({ topic }) {
+const Gallery = ({ topic }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const photoId = searchParams.get("photoId");
+  const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto();
+  const lastViewedPhotoRef = useRef(null);
   const [images, setImages] = useState(null);
   const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const prefixesPerPage = 6;
-  const router = useRouter();
 
   useEffect(() => {
     const loadImages = async () => {
@@ -33,14 +41,34 @@ export default function Gallery({ topic }) {
     loadImages();
   }, [topic]);
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const prefixesPerPage = 6;
+
+  // Calculate pagination for prefixes
+  const prefixes = Object.keys(images || {});
+  const totalPages = Math.ceil(prefixes.length / prefixesPerPage);
+  const displayedPrefixes = prefixes.slice(
+    (currentPage - 1) * prefixesPerPage,
+    currentPage * prefixesPerPage,
+  );
+
+  // Navigation handlers
+  const handleNextPage = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
+  };
+
+  // Sync last viewed photo
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get("page");
-    const pageNumber = parseInt(page) || 1;
-    const prefixes = Object.keys(images || {});
-    const totalPages = Math.ceil(prefixes.length / prefixesPerPage);
-    setCurrentPage(pageNumber > totalPages ? 1 : pageNumber);
-  }, [images]);
+    if (lastViewedPhoto && !photoId) {
+      lastViewedPhotoRef.current?.scrollIntoView({ block: "center" });
+      setLastViewedPhoto(null);
+    }
+  }, [photoId, lastViewedPhoto, setLastViewedPhoto]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -48,13 +76,8 @@ export default function Gallery({ topic }) {
     router.push(`${window.location.pathname}?${params}`);
   }, [currentPage, router]);
 
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
-
-  const handlePrevPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-  };
+  // Flatten images for modal
+  const flattenedImages = images ? Object.values(images).flat() : [];
 
   if (error) {
     return <h2 className="text-2xl-font-bold m-4">Kein Bild gefunden!</h2>;
@@ -68,25 +91,42 @@ export default function Gallery({ topic }) {
     );
   }
 
-  const prefixes = Object.keys(images);
-  const totalPages = Math.ceil(prefixes.length / prefixesPerPage);
-  const displayedPrefixes = prefixes.slice(
-    (currentPage - 1) * prefixesPerPage,
-    currentPage * prefixesPerPage
-  );
-
   return (
-    <div className="mx-10 my-3 flex flex-col gap-3">
-      {displayedPrefixes.map((prefix) => (
-        <div key={prefix}>
-          <div className="flex flex-wrap justify-center gap-3 sm:justify-end">
-            {images[prefix].map((photo) => (
-              <ImgContainer key={photo.id} photo={photo} />
+    <div className="mx-auto w-full max-w-[1960px] p-4">
+      {photoId && (
+        <Modal
+          images={flattenedImages}
+          onClose={() => {
+            setLastViewedPhoto(photoId);
+          }}
+          topic={topic}
+        />
+      )}
+
+      <div className="mx-10 my-3 flex flex-col gap-3">
+        {displayedPrefixes.map((prefix) => (
+          <div
+            key={prefix}
+            className="flex flex-wrap items-center justify-center gap-3 sm:justify-end"
+          >
+            {images[prefix].map((img) => (
+              <Link
+                key={img.id}
+                href={`${pathname}?photoId=${img.id}`}
+                ref={
+                  img.id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null
+                }
+                shallow
+                className="flex-shrink-0"
+              >
+                <ImgContainer key={img.id} photo={img} />
+              </Link>
             ))}
           </div>
-        </div>
-      ))}
-      <div className="mt-4 flex justify-center gap-3 sm:justify-end">
+        ))}
+      </div>
+
+      <div className="mt-8 flex justify-center gap-3">
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
@@ -94,19 +134,20 @@ export default function Gallery({ topic }) {
         >
           <BiSolidLeftArrow />
         </button>
-        <div className="flex items-center justify-center gap-2 text-sm">
-          {Array.from({ length: totalPages }).map((_, i) => {
-            const pageIndex = i + 1;
-            return (
-              <button
-                key={i + 1}
-                className={`rounded-sm px-2 text-xl font-extrabold text-white ${currentPage === pageIndex ? "bg-gray-900" : "bg-gray-400 hover:scale-90"}`}
-                onClick={() => setCurrentPage(pageIndex)}
-              >
-                {pageIndex}
-              </button>
-            );
-          })}
+        <div className="flex items-center gap-2">
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <button
+              key={i + 1}
+              className={`rounded-sm px-2 text-xl font-extrabold text-white ${
+                currentPage === i + 1
+                  ? "bg-gray-900"
+                  : "bg-gray-400 hover:scale-90"
+              }`}
+              onClick={() => setCurrentPage(i + 1)}
+            >
+              {i + 1}
+            </button>
+          ))}
         </div>
         <button
           onClick={handleNextPage}
@@ -118,4 +159,6 @@ export default function Gallery({ topic }) {
       </div>
     </div>
   );
-}
+};
+
+export default Gallery;
