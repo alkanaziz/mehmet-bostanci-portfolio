@@ -70,7 +70,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav className="sticky sm:px-10 top-0 z-50 flex w-full items-center justify-end bg-white bg-opacity-80 shadow-xl">
+    <nav className="sticky sm:px-10 top-0 z-40 flex w-full items-center justify-end bg-white bg-opacity-80 shadow-xl">
       <MobileNav menuItems={menuItems} pathname={pathname} />
 
       <ul className="hidden w-full items-center justify-between gap-4 py-4 lg:flex">
