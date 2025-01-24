@@ -10,6 +10,7 @@ async function generateImageMeta() {
 
   try {
     const topics = await fs.readdir(photosDir);
+    let i = 0;
     for (const topic of topics) {
       const topicDir = path.join(photosDir, topic);
       const stat = await fs.stat(topicDir);
@@ -31,15 +32,18 @@ async function generateImageMeta() {
           photosDir,
         );
         imageMeta[fileName] = {
-          id: fileName,
-          src: `/${topic}/${file}`,
-          alt: altText,
+          id: i,
+          public_id: fileName,
           width: dimensions.width,
           height: dimensions.height,
-          prefix: fileName.substring(0, 4),
-          blurredDataUrl: blurredDataUrl.blurredDataUrl,
+          alt: altText,
+          src: `/${topic}/${file}`,
+          blurDataUrl: blurredDataUrl.blurredDataUrl,
           topic,
+          prefix: fileName.substring(0, 4),
+          format: file.split(".").pop(),
         };
+        i++;
       }
     }
 
