@@ -66,7 +66,7 @@ export default function SharedModal({
       }}
     >
       <div
-        className="wide:h-full xl:taller-than-854:h-auto relative z-50 flex aspect-[3/2] w-full max-w-7xl items-center"
+        className="wide:h-full xl:taller-than-854:h-auto relative z-50 flex w-full max-w-7xl items-center"
         {...handlers}
       >
         {/* Main image */}
@@ -80,17 +80,32 @@ export default function SharedModal({
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="absolute h-full w-full"
+                className="absolute flex h-full w-full flex-col items-center justify-center"
               >
-                <Image
-                  src={currentImage.src}
-                  priority
-                  alt={currentImage.alt}
-                  onLoad={() => setLoaded(true)}
-                  fill
-                  style={{ objectFit: "contain" }}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, (max-width: 1536px) 33vw, 25vw"
-                />
+                <div className="relative flex h-full flex-col items-center justify-center">
+                  {!loaded && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-gray-900"></div>
+                    </div>
+                  )}
+                  <Image
+                    src={currentImage.src}
+                    priority
+                    alt={currentImage.alt}
+                    onLoad={() => setLoaded(true)}
+                    width={currentImage.width}
+                    height={currentImage.height}
+                    className={`h-auto max-h-[90%] w-auto max-w-full border-[1em] border-white ${
+                      !loaded ? "hidden" : ""
+                    }`}
+                    style={{ objectFit: "contain" }}
+                  />
+                  {loaded && (
+                    <p className="w-full text-wrap break-words bg-white pb-3 text-center text-sm sm:text-[1rem]">
+                      {currentImage.alt}
+                    </p>
+                  )}
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
