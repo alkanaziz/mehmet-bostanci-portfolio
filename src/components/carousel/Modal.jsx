@@ -59,7 +59,7 @@ export default function Modal({ images, onClose, topic }) {
       className="fixed inset-0 z-40 flex items-center justify-center"
     >
       <div className="fixed inset-0">
-        <div className="fixed inset-0 z-30 bg-black/70 backdrop-blur-2xl" />
+        <div className="fixed inset-0 z-30 bg-black/70" />
       </div>
 
       <div className="relative z-50 w-full max-w-7xl">
