@@ -110,11 +110,11 @@
   "A007-2": {
     "id": 9,
     "public_id": "A007-2",
-    "width": 1206,
-    "height": 1779,
+    "width": 3507,
+    "height": 5173,
     "alt": "Lost Place  / 2023 / 30 x 40 cm",
     "src": "/aquarell/A007-2.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/AODj4OLk4/3+/gC3trVtamrw8PAAqqmqHQAKysXHAMPJyZmJk9nZ3RwjGYws9J/4AAAAAElFTkSuQmCC",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/ANrc2Nvd3Pn6+gCwr69nZWPs7OwApKKjGgADxsHDALvAwI5/iNbV2QuhGLU07qNCAAAAAElFTkSuQmCC",
     "topic": "aquarell",
     "prefix": "A007",
     "format": "png"
@@ -126,7 +126,7 @@
     "height": 5173,
     "alt": "A007-3",
     "src": "/aquarell/A007-3.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/AP388/Lv5IqKhgDf2tRrWFF9fHkAzcHCJAAAYlZaAMK5uoFpbktHR9jbFEulHSimAAAAAElFTkSuQmCC",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/APb27cfDuPz79gDd2NFfS0X18+8Ay72/JQAA0cPHAOTb24VpcNzW2B5pGZ6wnvscAAAAAElFTkSuQmCC",
     "topic": "aquarell",
     "prefix": "A007",
     "format": "png"
@@ -827,8 +827,32 @@
     "prefix": "G012",
     "format": "png"
   },
-  "L001": {
+  "G013": {
     "id": 69,
+    "public_id": "G013",
+    "width": 1000,
+    "height": 843,
+    "alt": "Acryl auf Papier / 60 x 50 cm",
+    "src": "/gemaelde/G013.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAABcSAAAXEgFnn9JSAAAAMElEQVR4nGO4+Pv//f//Z+7sKW2KY8jNj6goCMyLtWlqTWAQYBQ3UlFP8rFRFOEGAJGBD4YjondLAAAAAElFTkSuQmCC",
+    "topic": "gemaelde",
+    "prefix": "G013",
+    "format": "png"
+  },
+  "G014": {
+    "id": 70,
+    "public_id": "G014",
+    "width": 3290,
+    "height": 2722,
+    "alt": "Acryl auf Papier / 60 x 50 cm",
+    "src": "/gemaelde/G014.jpg",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AOHt+Pf//9/u897n3gCytpvU06zY3ci+waUAQjAARjIANiIAIAMAJDUVe/J89mUAAAAASUVORK5CYII=",
+    "topic": "gemaelde",
+    "prefix": "G014",
+    "format": "jpg"
+  },
+  "L001": {
+    "id": 71,
     "public_id": "L001",
     "width": 2426,
     "height": 965,
@@ -840,7 +864,7 @@
     "format": "png"
   },
   "L002": {
-    "id": 70,
+    "id": 72,
     "public_id": "L002",
     "width": 2426,
     "height": 965,
@@ -852,7 +876,7 @@
     "format": "png"
   },
   "L003": {
-    "id": 71,
+    "id": 73,
     "public_id": "L003",
     "width": 2426,
     "height": 965,
@@ -864,7 +888,7 @@
     "format": "png"
   },
   "L004": {
-    "id": 72,
+    "id": 74,
     "public_id": "L004",
     "width": 2426,
     "height": 965,
@@ -876,7 +900,7 @@
     "format": "png"
   },
   "L005": {
-    "id": 73,
+    "id": 75,
     "public_id": "L005",
     "width": 2426,
     "height": 965,
@@ -888,7 +912,7 @@
     "format": "png"
   },
   "L006": {
-    "id": 74,
+    "id": 76,
     "public_id": "L006",
     "width": 2426,
     "height": 965,
@@ -900,7 +924,7 @@
     "format": "png"
   },
   "L007": {
-    "id": 75,
+    "id": 77,
     "public_id": "L007",
     "width": 2426,
     "height": 965,
@@ -912,7 +936,7 @@
     "format": "png"
   },
   "L008": {
-    "id": 76,
+    "id": 78,
     "public_id": "L008",
     "width": 2426,
     "height": 965,
@@ -924,7 +948,7 @@
     "format": "png"
   },
   "L009": {
-    "id": 77,
+    "id": 79,
     "public_id": "L009",
     "width": 2426,
     "height": 965,
@@ -936,7 +960,7 @@
     "format": "png"
   },
   "L010": {
-    "id": 78,
+    "id": 80,
     "public_id": "L010",
     "width": 2426,
     "height": 965,
@@ -948,7 +972,7 @@
     "format": "png"
   },
   "L011": {
-    "id": 79,
+    "id": 81,
     "public_id": "L011",
     "width": 2426,
     "height": 965,
@@ -960,7 +984,7 @@
     "format": "png"
   },
   "L012": {
-    "id": 80,
+    "id": 82,
     "public_id": "L012",
     "width": 2426,
     "height": 965,
@@ -972,7 +996,7 @@
     "format": "png"
   },
   "W001": {
-    "id": 81,
+    "id": 83,
     "public_id": "W001",
     "width": 1500,
     "height": 1941,
@@ -984,7 +1008,7 @@
     "format": "png"
   },
   "W002": {
-    "id": 82,
+    "id": 84,
     "public_id": "W002",
     "width": 1039,
     "height": 1548,
@@ -996,7 +1020,7 @@
     "format": "png"
   },
   "W003": {
-    "id": 83,
+    "id": 85,
     "public_id": "W003",
     "width": 1000,
     "height": 1333,
@@ -1008,7 +1032,7 @@
     "format": "png"
   },
   "W004": {
-    "id": 84,
+    "id": 86,
     "public_id": "W004",
     "width": 1500,
     "height": 2000,
@@ -1020,7 +1044,7 @@
     "format": "png"
   },
   "W005": {
-    "id": 85,
+    "id": 87,
     "public_id": "W005",
     "width": 1000,
     "height": 1333,
@@ -1032,7 +1056,7 @@
     "format": "png"
   },
   "W006": {
-    "id": 86,
+    "id": 88,
     "public_id": "W006",
     "width": 1000,
     "height": 1778,
@@ -1044,7 +1068,7 @@
     "format": "png"
   },
   "W007": {
-    "id": 87,
+    "id": 89,
     "public_id": "W007",
     "width": 1500,
     "height": 1125,
