@@ -27,6 +27,26 @@ export default function SharedModal({
 }) {
   const [loaded, setLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [controlsVisible, setControlsVisible] = useState(true);
+
+  // Hide controls after 1 second on initial load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setControlsVisible(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Hide controls when photo changes
+  // useEffect(() => {
+  //   setControlsVisible(false);
+  // }, [index]);
+
+  // Toggle controls visibility on click
+  const handleContainerClick = (e) => {
+    e.stopPropagation();
+    setControlsVisible(!controlsVisible);
+  };
 
   // if index is changed, set loaded to false
   useEffect(() => {
@@ -46,12 +66,14 @@ export default function SharedModal({
       if (currentIndex < images.length - 1) {
         changePhotoId(images[currentIndex + 1].id);
       }
+      setControlsVisible(true);
     },
     onSwipedRight: () => {
       const currentIndex = images.findIndex((img) => img.id === index);
       if (currentIndex > 0) {
         changePhotoId(images[currentIndex - 1].id);
       }
+      setControlsVisible(true);
     },
     trackMouse: true,
   });
@@ -74,6 +96,7 @@ export default function SharedModal({
       <div
         className="wide:h-full xl:taller-than-854:h-auto relative z-50 flex w-full max-w-7xl items-center"
         {...handlers}
+        onClick={handleContainerClick}
       >
         {/* Main image */}
         <div className="imageContainer h-[90vh] w-full overflow-hidden md:h-[80vh] lg:h-[70vh] xl:h-[80vh]">
@@ -129,68 +152,80 @@ export default function SharedModal({
           {/* Buttons */}
           {loaded && (
             <div className="relative h-screen max-h-[90vh] w-full">
-              {navigation && (
-                <>
-                  {arrayIndex > 0 && (
-                    <button
-                      className="absolute left-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
-                      style={{ transform: "translate3d(0, 0, 0)" }}
-                      onClick={() => changePhotoId(images[arrayIndex - 1].id)}
-                    >
-                      <ChevronLeftIcon className="h-6 w-6" />
-                    </button>
-                  )}
-                  {arrayIndex + 1 < images.length && (
-                    <button
-                      className="absolute right-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
-                      style={{ transform: "translate3d(0, 0, 0)" }}
-                      onClick={() => changePhotoId(images[arrayIndex + 1].id)}
-                    >
-                      <ChevronRightIcon className="h-6 w-6" />
-                    </button>
-                  )}
-                </>
-              )}
-              <div className="absolute right-0 top-0 flex items-center gap-2 p-3 text-white">
-                <a
-                  href={currentImage.src}
-                  className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
-                  target="_blank"
-                  title="Open fullsize version"
-                  rel="noreferrer"
-                >
-                  <ArrowTopRightOnSquareIcon className="h-5 w-5" />
-                </a>
-                <button
-                  onClick={() =>
-                    downloadPhoto(
-                      currentImage.src,
-                      `${index}.${currentImage.format}`,
-                    )
-                  }
-                  className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
-                  title="Download fullsize version"
-                >
-                  <ArrowDownTrayIcon className="h-5 w-5" />
-                </button>
-              </div>
-              <div className="absolute left-0 top-0 flex items-center gap-2 p-3 text-white">
-                <button
-                  onClick={() => closeModal()}
-                  className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
-                >
-                  {navigation ? (
-                    <XMarkIcon className="h-5 w-5" />
-                  ) : (
-                    <ArrowUturnLeftIcon className="h-5 w-5" />
-                  )}
-                </button>
+              <div
+                className={`transition-opacity duration-300 ${controlsVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+              >
+                {navigation && (
+                  <>
+                    {arrayIndex > 0 && (
+                      <button
+                        className="absolute left-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
+                        style={{ transform: "translate3d(0, 0, 0)" }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          changePhotoId(images[arrayIndex - 1].id);
+                        }}
+                      >
+                        <ChevronLeftIcon className="h-6 w-6" />
+                      </button>
+                    )}
+                    {arrayIndex + 1 < images.length && (
+                      <button
+                        className="absolute right-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
+                        style={{ transform: "translate3d(0, 0, 0)" }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          changePhotoId(images[arrayIndex + 1].id);
+                        }}
+                      >
+                        <ChevronRightIcon className="h-6 w-6" />
+                      </button>
+                    )}
+                  </>
+                )}
+                <div className="absolute right-0 top-0 flex items-center gap-2 p-3 text-white">
+                  <a
+                    href={currentImage.src}
+                    className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
+                    target="_blank"
+                    title="Open fullsize version"
+                    rel="noreferrer"
+                  >
+                    <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+                  </a>
+                  <button
+                    onClick={() =>
+                      downloadPhoto(
+                        currentImage.src,
+                        `${index}.${currentImage.format}`,
+                      )
+                    }
+                    className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
+                    title="Download fullsize version"
+                  >
+                    <ArrowDownTrayIcon className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="absolute left-0 top-0 flex items-center gap-2 p-3 text-white">
+                  <button
+                    onClick={() => closeModal()}
+                    className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
+                  >
+                    {navigation ? (
+                      <XMarkIcon className="h-5 w-5" />
+                    ) : (
+                      <ArrowUturnLeftIcon className="h-5 w-5" />
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
           )}
           {/* Bottom Nav bar */}
           {navigation && (
-            <div className="fixed inset-x-0 bottom-0 z-40 overflow-hidden bg-gradient-to-b from-black/0 to-black/60">
+            <div
+              className={`fixed inset-x-0 bottom-0 z-40 overflow-hidden bg-gradient-to-b from-black/0 to-black/60 transition-opacity duration-300 ${controlsVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+            >
               <motion.div
                 initial={false}
                 className="mx-auto mb-6 mt-6 flex aspect-[3/2] h-14"
