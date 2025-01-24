@@ -114,7 +114,7 @@ export default function SharedModal({
                   />
 
                   {!isLoading && (
-                    <p className="w-full text-wrap break-words bg-white pb-3 text-center text-sm sm:text-[1rem]">
+                    <p className="w-full text-wrap break-words bg-white pb-3 text-center text-xs md:text-sm lg:text-[1rem]">
                       {currentImage.alt}
                     </p>
                   )}
