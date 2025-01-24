@@ -10,7 +10,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { variants } from "@/lib/animationVariants";
 import downloadPhoto from "@/lib/downloadPhoto";
@@ -26,6 +26,11 @@ export default function SharedModal({
   direction,
 }) {
   const [loaded, setLoaded] = useState(false);
+
+  // if index is changed, set loaded to false
+  useEffect(() => {
+    setLoaded(false);
+  }, [index]);
 
   // Find the current image's index in the array
   const arrayIndex = images.findIndex((img) => img.id === index);
@@ -96,10 +101,14 @@ export default function SharedModal({
                     width={currentImage.width}
                     height={currentImage.height}
                     className={`h-auto max-h-[90%] w-auto max-w-full border-[1em] border-white ${
-                      !loaded ? "hidden" : ""
+                      !loaded ? "opacity-0" : "opacity-100"
                     }`}
-                    style={{ objectFit: "contain" }}
+                    style={{
+                      objectFit: "contain",
+                      transition: "opacity 0.3s ease-in-out",
+                    }}
                   />
+
                   {loaded && (
                     <p className="w-full text-wrap break-words bg-white pb-3 text-center text-sm sm:text-[1rem]">
                       {currentImage.alt}
