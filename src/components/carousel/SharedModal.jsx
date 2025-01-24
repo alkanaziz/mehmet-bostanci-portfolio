@@ -26,10 +26,11 @@ export default function SharedModal({
   direction,
 }) {
   const [loaded, setLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // if index is changed, set loaded to false
   useEffect(() => {
-    setLoaded(false);
+    setIsLoading(true);
   }, [index]);
 
   // Find the current image's index in the array
@@ -88,7 +89,7 @@ export default function SharedModal({
                 className="absolute flex h-full w-full flex-col items-center justify-center"
               >
                 <div className="relative flex h-full flex-col items-center justify-center">
-                  {!loaded && (
+                  {isLoading && (
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-gray-900"></div>
                     </div>
@@ -97,11 +98,14 @@ export default function SharedModal({
                     src={currentImage.src}
                     priority
                     alt={currentImage.alt}
-                    onLoad={() => setLoaded(true)}
+                    onLoad={() => {
+                      setLoaded(true);
+                      setIsLoading(false);
+                    }}
                     width={currentImage.width}
                     height={currentImage.height}
                     className={`h-auto max-h-[90%] w-auto max-w-full border-[1em] border-white ${
-                      !loaded ? "opacity-0" : "opacity-100"
+                      isLoading ? "opacity-0" : "opacity-100"
                     }`}
                     style={{
                       objectFit: "contain",
@@ -109,7 +113,7 @@ export default function SharedModal({
                     }}
                   />
 
-                  {loaded && (
+                  {!isLoading && (
                     <p className="w-full text-wrap break-words bg-white pb-3 text-center text-sm sm:text-[1rem]">
                       {currentImage.alt}
                     </p>
