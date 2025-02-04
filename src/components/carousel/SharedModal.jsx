@@ -94,7 +94,7 @@ export default function SharedModal({
       }}
     >
       <div
-        className="wide:h-full xl:taller-than-854:h-auto relative z-50 flex w-full max-w-7xl items-center"
+        className="relative z-50 flex w-full max-w-7xl items-center"
         {...handlers}
         onClick={handleContainerClick}
       >
@@ -117,30 +117,58 @@ export default function SharedModal({
                       <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-gray-900"></div>
                     </div>
                   )}
-                  <Image
-                    src={currentImage.src}
-                    priority
-                    alt={currentImage.alt}
-                    onLoad={() => {
-                      setLoaded(true);
-                      setIsLoading(false);
-                    }}
-                    width={currentImage.width}
-                    height={currentImage.height}
-                    className={`h-auto max-h-[90%] w-auto max-w-full border-[1em] border-white ${
-                      isLoading ? "opacity-0" : "opacity-100"
-                    }`}
-                    style={{
-                      objectFit: "contain",
-                      transition: "opacity 0.3s ease-in-out",
-                    }}
-                  />
-
-                  {!isLoading && (
-                    <p className="w-full text-wrap break-words bg-white pb-3 text-center text-xs md:text-sm lg:text-[1rem]">
-                      {currentImage.alt}
-                    </p>
-                  )}
+                  <div className="relative flex h-auto max-h-[90%] max-w-full flex-col items-center justify-center bg-white">
+                    <div className="absolute -right-5 sm:-right-12 -top-12 flex flex-row items-center gap-3 p-3 text-white">
+                      <button
+                        onClick={() => closeModal()}
+                        className="z-50 rounded-full p-2 font-extrabold text-white/75 transition hover:text-white"
+                      >
+                        {navigation ? (
+                          <XMarkIcon className="h-7 w-7 stroke-[4]" />
+                        ) : (
+                          <ArrowUturnLeftIcon className="h-5 w-5" />
+                        )}
+                      </button>
+                    </div>
+                    <div
+                      className={`absolute -left-5 -top-12 flex flex-row items-center gap-3 p-3 text-white ${controlsVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                    >
+                      <a
+                        href={currentImage.src}
+                        className="z-50 rounded-full p-2 font-extrabold text-white/75 transition hover:text-white"
+                        target="_blank"
+                        title="Open fullsize version"
+                        rel="noreferrer"
+                      >
+                        <ArrowTopRightOnSquareIcon className="h-6 w-6 stroke-[2]" />
+                      </a>
+                    </div>
+                    <Image
+                      src={currentImage.src}
+                      priority
+                      alt={currentImage.alt}
+                      onLoad={() => {
+                        setLoaded(true);
+                        setIsLoading(false);
+                      }}
+                      width={currentImage.width}
+                      height={currentImage.height}
+                      className={`m-4 h-auto max-h-[90%] w-auto max-w-[90%] border border-gray-300 ${
+                        isLoading ? "opacity-0" : "opacity-100"
+                      }`}
+                      style={{
+                        objectFit: "contain",
+                        transition: "opacity 0.3s ease-in-out",
+                      }}
+                    />
+                    {!isLoading && (
+                      <div className="relative flex w-full items-center justify-center gap-5">
+                        <p className="mb-3 flex w-full items-center justify-center gap-5 text-wrap break-words bg-white text-center text-xs md:text-sm lg:text-base">
+                          {currentImage.alt}{" "}
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -183,41 +211,6 @@ export default function SharedModal({
                     )}
                   </>
                 )}
-                <div className="absolute right-0 top-0 flex items-center gap-2 p-3 text-white">
-                  <a
-                    href={currentImage.src}
-                    className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
-                    target="_blank"
-                    title="Open fullsize version"
-                    rel="noreferrer"
-                  >
-                    <ArrowTopRightOnSquareIcon className="h-5 w-5" />
-                  </a>
-                  <button
-                    onClick={() =>
-                      downloadPhoto(
-                        currentImage.src,
-                        `${index}.${currentImage.format}`,
-                      )
-                    }
-                    className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
-                    title="Download fullsize version"
-                  >
-                    <ArrowDownTrayIcon className="h-5 w-5" />
-                  </button>
-                </div>
-                <div className="absolute left-0 top-0 flex items-center gap-2 p-3 text-white">
-                  <button
-                    onClick={() => closeModal()}
-                    className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
-                  >
-                    {navigation ? (
-                      <XMarkIcon className="h-5 w-5" />
-                    ) : (
-                      <ArrowUturnLeftIcon className="h-5 w-5" />
-                    )}
-                  </button>
-                </div>
               </div>
             </div>
           )}
