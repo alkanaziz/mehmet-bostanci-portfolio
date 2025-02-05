@@ -117,7 +117,7 @@ export default function SharedModal({
                       <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-gray-900"></div>
                     </div>
                   )}
-                  <div className="relative flex h-auto max-h-[90%] max-w-full flex-col items-center justify-center bg-white">
+                  <div className={`relative flex h-auto max-h-[90%] max-w-full flex-col items-center justify-center bg-white ${isLoading ? "opacity-0" : "opacity-100"}`}>
                     <div className="absolute -right-5 sm:-right-12 -top-12 flex flex-row items-center gap-3 p-3 text-white">
                       <button
                         onClick={() => closeModal()}
