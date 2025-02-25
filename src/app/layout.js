@@ -2,8 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Nav from "@/components/Nav";
-import Sidebar from "@/components/sidebar/Sidebar";
+import Nav from "@/components/navbar/Nav";
 import Breadcrumb from "@/components/Breadcrumb";
 
 const geistSans = localFont({
@@ -21,7 +20,7 @@ export const metadata = {
   title: "Bostanci Art",
   description: "Mehmet Bostanci Art, Malerei & Grafik Design",
   icons: {
-    icon: '/favicon.png',
+    icon: "/favicon.png",
   },
 };
 
@@ -29,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen shadow-xl border-gray-500 max-w-6xl mx-auto flex-col bg-white text-black antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} mx-auto flex min-h-screen max-w-6xl flex-col border-gray-500 bg-white text-black antialiased shadow-xl`}
       >
         <Header />
         <Nav />
