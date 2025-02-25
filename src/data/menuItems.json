@@ -13,21 +13,11 @@
   },
   {
     "title": "Workshop",
-    "link": "/workshop",
-    "subMenu": [
-      { "title": "Aquarell Workshop", "link": "/workshop/aquarell-workshop" },
-      { "title": "Digitale Workshop", "link": "/workshop/digitale-workshop" },
-      { "title": "Gemälde Workshop", "link": "/workshop/gemaelde-workshop" }
-    ]
+    "link": "/workshop"
   },
   {
     "title": "Shop",
-    "link": "/shop",
-    "subMenu": [
-      { "title": "Aquarelle", "link": "/shop/aquarelle" },
-      { "title": "Digitale Werke", "link": "/shop/digitale-werke" },
-      { "title": "Gemälde", "link": "/shop/gemaelde" }
-    ]
+    "link": "/shop"
   },
   { "title": "Aktuelle Ausstellung", "link": "/aktuelle-ausstellung" },
   { "title": "Neues", "link": "/neues" },
