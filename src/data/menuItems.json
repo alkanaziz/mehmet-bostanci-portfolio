@@ -1,0 +1,35 @@
+[
+  { "title": "Home", "link": "/" },
+  { "title": "Über mich", "link": "/ueber-mich" },
+  {
+    "title": "Werke",
+    "link": "/werke",
+    "subMenu": [
+      { "title": "Aquarelle", "link": "/werke/aquarelle" },
+      { "title": "Digitale Werke", "link": "/werke/digitale-werke" },
+      { "title": "Gemälde", "link": "/werke/gemaelde" },
+      { "title": "Logo", "link": "/werke/logo" }
+    ]
+  },
+  {
+    "title": "Workshop",
+    "link": "/workshop",
+    "subMenu": [
+      { "title": "Aquarell Workshop", "link": "/workshop/aquarell-workshop" },
+      { "title": "Digitale Workshop", "link": "/workshop/digitale-workshop" },
+      { "title": "Gemälde Workshop", "link": "/workshop/gemaelde-workshop" }
+    ]
+  },
+  {
+    "title": "Shop",
+    "link": "/shop",
+    "subMenu": [
+      { "title": "Aquarelle", "link": "/shop/aquarelle" },
+      { "title": "Digitale Werke", "link": "/shop/digitale-werke" },
+      { "title": "Gemälde", "link": "/shop/gemaelde" }
+    ]
+  },
+  { "title": "Aktuelle Ausstellung", "link": "/aktuelle-ausstellung" },
+  { "title": "Neues", "link": "/neues" },
+  { "title": "Kontakt", "link": "/kontakt" }
+]
