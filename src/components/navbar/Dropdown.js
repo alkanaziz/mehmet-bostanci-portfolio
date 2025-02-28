@@ -5,8 +5,7 @@ import Link from "next/link";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { usePathname } from "next/navigation";
 
-export default function Dropdown(props) {
-  const { item, closeMenu } = props; // closeMenu is optional
+export default function Dropdown({ item, closeMenu }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const pathname = usePathname();
@@ -24,36 +23,49 @@ export default function Dropdown(props) {
     };
   }, []);
 
-  const toggle = () => {
-    setIsOpen((old) => !old);
+  const toggle = () => setIsOpen((prev) => !prev);
+
+  const handleMouseEnter = () => {
+    if (window.innerWidth >= 1024) setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 1024) setIsOpen(false);
   };
 
   return (
-    <div ref={dropdownRef}>
+    <div
+      ref={dropdownRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="relative"
+    >
       <div
-        className={`flex items-center justify-center gap-1 px-2 py-1 font-bold ${
-          pathname.startsWith(item.link) ? "bg-black text-white" : ""
+        className={`flex cursor-pointer items-center gap-1 px-2 py-2 font-bold transition-colors duration-200 ${
+          pathname.startsWith(item.link)
+            ? "bg-black text-white"
+            : `hover:bg-gray-300 transition-all duration-500 ${isOpen ? "bg-gray-300" : ""}`
         }`}
       >
-        <Link
-          href={item.link}
-          onClick={closeMenu ? closeMenu : undefined}
-          className={`flex-grow ${
-            pathname.startsWith(item.link) ? "font-bold" : "hover:underline"
-          }`}
-        >
+        <Link href={item.link} onClick={closeMenu} className="flex-grow">
           {item.title}
         </Link>
-        <button onClick={toggle} className="flex-shrink-0">
-          {isOpen ? (
-            <IoIosArrowUp className="text-lg" />
-          ) : (
-            <IoIosArrowDown className="text-lg" />
-          )}
-        </button>
+        {item.subMenu && (
+          <button
+            onClick={toggle}
+            aria-label="Toggle submenu"
+            className="flex-shrink-0"
+          >
+            {isOpen ? (
+              <IoIosArrowUp className="text-lg" />
+            ) : (
+              <IoIosArrowDown className="text-lg" />
+            )}
+          </button>
+        )}
       </div>
-      {isOpen && (
-        <ul className="w-full border-l-8 border-gray-300 bg-white p-1 shadow-lg lg:absolute lg:left-0 lg:m-0 lg:min-w-max">
+      {isOpen && item.subMenu && (
+        <ul className="absolute left-0 z-10 w-full min-w-max border border-l-8 border-gray-300 bg-gray-50 shadow-lg">
           {item.subMenu.map((subItem) => (
             <li key={subItem.title}>
               <Link
@@ -62,7 +74,7 @@ export default function Dropdown(props) {
                   toggle();
                   if (closeMenu) closeMenu();
                 }}
-                className={`block px-2 py-2 transition-colors duration-150 hover:bg-gray-100 ${
+                className={`block px-4 py-2 transition-colors duration-200 hover:bg-gray-200 ${
                   pathname === subItem.link ? "bg-gray-100 font-bold" : ""
                 }`}
               >
