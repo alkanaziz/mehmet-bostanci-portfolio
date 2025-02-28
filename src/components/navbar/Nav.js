@@ -20,10 +20,10 @@ const Nav = () => {
             ) : (
               <Link
                 href={item.link}
-                className={`px-2 py-1 font-bold ${
+                className={`px-2 py-3 font-bold ${
                   pathname.split("/")[1] === item.link.split("/")[1]
                     ? "bg-black text-white"
-                    : "hover:underline"
+                    : "hover:bg-gray-300 transition-all duration-500"
                 }`}
               >
                 {item.title}
