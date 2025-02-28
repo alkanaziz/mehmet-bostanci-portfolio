@@ -45,37 +45,45 @@ const Werke = () => {
           <ul>
             <li>
               <Link
-                className="flex items-center gap-1 hover:underline"
+                className="group flex items-center gap-1 hover:underline"
                 href="/werke/aquarelle"
               >
-                <BiRightArrow />
+                <span className="transform transition-transform duration-300 group-hover:translate-x-1">
+                  <BiRightArrow />
+                </span>
                 Aquarelle
               </Link>
             </li>
             <li>
               <Link
-                className="flex items-center gap-1 hover:underline"
+                className="group flex items-center gap-1 hover:underline"
                 href="/werke/digitale-werke"
               >
-                <BiRightArrow />
+                <span className="transform transition-transform duration-300 group-hover:translate-x-1">
+                  <BiRightArrow />
+                </span>
                 Digitale Werke
               </Link>
             </li>
             <li>
               <Link
-                className="flex items-center gap-1 hover:underline"
+                className="group flex items-center gap-1 hover:underline"
                 href="/werke/gemaelde"
               >
-                <BiRightArrow />
+                <span className="transform transition-transform duration-300 group-hover:translate-x-1">
+                  <BiRightArrow />
+                </span>
                 Gemälde
               </Link>
             </li>
             <li>
               <Link
-                className="flex items-center gap-1 hover:underline"
+                className="group flex items-center gap-1 hover:underline"
                 href="/werke/logo"
               >
-                <BiRightArrow />
+                <span className="transform transition-transform duration-300 group-hover:translate-x-1">
+                  <BiRightArrow />
+                </span>
                 Logo
               </Link>
             </li>
