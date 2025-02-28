@@ -3,6 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import menuItems from "../data/menuItems.json";
 
 const Breadcrumb = function () {
   const paths = usePathname();
@@ -10,65 +11,25 @@ const Breadcrumb = function () {
 
   if (pathNames.length === 0) return null;
 
-  const menuItems = [
-    {
-      title: "Home",
-      link: "/",
-    },
-    {
-      title: "Über mich",
-      link: "/ueber-mich",
-    },
-    {
-      title: "Werke",
-      link: "/werke",
-    },
-    {
-      title: "Workshop",
-      link: "/workshop",
-    },
-    {
-      title: "Shop",
-      link: "/shop",
-    },
-    {
-      title: "Aktuelle Ausstellung",
-      link: "/aktuelle-ausstellung",
-    },
-    {
-      title: "Neues",
-      link: "/neues",
-    },
-    {
-      title: "Kontakt",
-      link: "/kontakt",
-    },
-    {
-      title: "Digitale Werke",
-      link: "/werke/digitale-werke",
-    },
-    {
-      title: "Aquarelle",
-      link: "/werke/aquarelle",
-    },
-    {
-      title: "Gemälde",
-      link: "/werke/gemaelde",
-    },
-    {
-      title: "Logo",
-      link: "/werke/logo",
-    },
-    {
-      title: "Impressum",
-      link: "/impressum",
+  const findMenuItem = (link, items) => {
+    for (const item of items) {
+      if (item.link.toLowerCase() === link.toLowerCase()) {
+        return item.title;
+      }
+      if (item.subMenu) {
+        const subItem = findMenuItem(link, item.subMenu);
+        if (subItem) {
+          return subItem;
+        }
+      }
     }
-  ];
+    return null;
+  };
 
   return (
     <nav
       aria-label="breadcrumb"
-      className="flex w-full px-2 items-center justify-center bg-white bg-opacity-80 shadow-sm sm:px-10"
+      className="flex w-full items-center justify-center bg-white bg-opacity-80 px-2 shadow-sm sm:px-10"
     >
       <ul className="flex w-full py-3 sm:py-5">
         <li className="mx-2 font-bold hover:underline">
@@ -81,7 +42,7 @@ const Breadcrumb = function () {
             paths === href
               ? `hover:underline mx-2 font-bold underline`
               : "hover:underline mx-2 font-bold";
-          const itemLink = menuItems.find((item) => item.link.toLowerCase() === href.toLowerCase())?.title;
+          const itemLink = findMenuItem(href, menuItems);
           return (
             <React.Fragment key={href}>
               <li className={itemClasses}>
