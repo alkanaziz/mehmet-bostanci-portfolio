@@ -19,9 +19,6 @@ const geistMono = localFont({
 export const metadata = {
   title: "Bostanci Art",
   description: "Mehmet Bostanci Art, Malerei & Grafik Design",
-  icons: {
-    icon: "/favicon.png",
-  },
 };
 
 export default function RootLayout({ children }) {
