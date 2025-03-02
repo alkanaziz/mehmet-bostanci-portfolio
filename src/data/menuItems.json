@@ -15,11 +15,5 @@
     "title": "Workshop",
     "link": "/workshop"
   },
-  {
-    "title": "Shop",
-    "link": "/shop"
-  },
-  { "title": "Aktuelle Ausstellung", "link": "/aktuelle-ausstellung" },
-  { "title": "Neues", "link": "/neues" },
   { "title": "Kontakt", "link": "/kontakt" }
 ]
