@@ -98,11 +98,11 @@
   "A007-1": {
     "id": 8,
     "public_id": "A007-1",
-    "width": 1206,
-    "height": 1779,
+    "width": 3507,
+    "height": 5173,
     "alt": "Lost Place  / 2023 / 30 x 40 cm",
     "src": "/aquarell/A007-1.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/APv7+tXW0+nq5wDX19dFQUHFwsEAx8HCHQAHn5mZAO3t7p+goNLV0BBeGRqbTV61AAAAAElFTkSuQmCC",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/APz++MrLxdTWzgDc3NxAOTq4tbAAzsnKGwAEmJKOAN7f4I+Qj62yq/yBF7apc/42AAAAAElFTkSuQmCC",
     "topic": "aquarell",
     "prefix": "A007",
     "format": "png"
@@ -114,7 +114,7 @@
     "height": 5173,
     "alt": "Lost Place  / 2023 / 30 x 40 cm",
     "src": "/aquarell/A007-2.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/ANrc2Nvd3Pn6+gCwr69nZWPs7OwApKKjGgADxsHDALvAwI5/iNbV2QuhGLU07qNCAAAAAElFTkSuQmCC",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAP0lEQVR4nAE0AMv/AN7g3f/c3tz//f/9/wCysbD/ZmRk/+zu7f8Ap6Sm/x0ACf/GwML/AL3Cwv+KeYT/0tHV/+CWJMa0Sbb4AAAAAElFTkSuQmCC",
     "topic": "aquarell",
     "prefix": "A007",
     "format": "png"
@@ -126,7 +126,7 @@
     "height": 5173,
     "alt": "Lost Place  / 2023 / 30 x 40 cm",
     "src": "/aquarell/A007-3.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nAEoANf/APb27cfDuPz79gDd2NFfS0X18+8Ay72/JQAA0cPHAOTb24VpcNzW2B5pGZ6wnvscAAAAAElFTkSuQmCC",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAP0lEQVR4nAE0AMv/APPx6f/AvbD/+vn0/wDc1tD/Yk5J//X08P8Ayry9/yYAAP/PwMX/AOLW1/9/Y2n/2NHS/+qKJTzmLPX2AAAAAElFTkSuQmCC",
     "topic": "aquarell",
     "prefix": "A007",
     "format": "png"
@@ -659,44 +659,20 @@
     "prefix": "D016",
     "format": "png"
   },
-  "D017": {
-    "id": 55,
-    "public_id": "D017",
-    "width": 2000,
-    "height": 1652,
-    "alt": "Konzeptdesign",
-    "src": "/digitale-werke/D017.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAADqYAAA6mAGHJxjCAAAAMElEQVR4nGN4+//XhiM77316VDFvNoNdqC8DN8+09fOs8nIZBKX4GXjZJfVVVRzMAYcqDrxnRKCKAAAAAElFTkSuQmCC",
-    "topic": "digitale-werke",
-    "prefix": "D017",
-    "format": "png"
-  },
-  "D018": {
-    "id": 56,
-    "public_id": "D018",
-    "width": 2000,
-    "height": 1366,
-    "alt": "Konzeptdesign",
-    "src": "/digitale-werke/D018.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAHUwAAB1MAHdM3LNAAAAMElEQVR4nGPIaYr7/3vTtwezE0uCGI72hf1/2vb/Zt3BrkAGRXkOFTlWaVk2Bm4GAJ0+EG5j+oAMAAAAAElFTkSuQmCC",
-    "topic": "digitale-werke",
-    "prefix": "D018",
-    "format": "png"
-  },
   "G001": {
-    "id": 57,
+    "id": 55,
     "public_id": "G001",
-    "width": 1000,
-    "height": 1432,
+    "width": 3543,
+    "height": 4500,
     "alt": "Öl auf Leinwand / 70 X 100 cm",
-    "src": "/gemaelde/G001.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/AGFuf6ba95vV9gCtq6/5//+9xskAjXhf9uO+NSgeADMdAGdNCRsAANaSExSuL3htAAAAAElFTkSuQmCC",
+    "src": "/gemaelde/G001.jpg",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMUlEQVR4nGPwT84sXH+rfMsthr6JHW///1+5ax9DRqbLiZONMgriDGKyDKqWzAzcDACPtA/n/QuMYAAAAABJRU5ErkJggg==",
     "topic": "gemaelde",
     "prefix": "G001",
-    "format": "png"
+    "format": "jpg"
   },
   "G002": {
-    "id": 58,
+    "id": 56,
     "public_id": "G002",
     "width": 3348,
     "height": 1753,
@@ -708,7 +684,7 @@
     "format": "jpg"
   },
   "G003": {
-    "id": 59,
+    "id": 57,
     "public_id": "G003",
     "width": 1000,
     "height": 1426,
@@ -720,7 +696,7 @@
     "format": "png"
   },
   "G004": {
-    "id": 60,
+    "id": 58,
     "public_id": "G004",
     "width": 1200,
     "height": 772,
@@ -732,7 +708,7 @@
     "format": "png"
   },
   "G005": {
-    "id": 61,
+    "id": 59,
     "public_id": "G005",
     "width": 3000,
     "height": 4246,
@@ -744,7 +720,7 @@
     "format": "png"
   },
   "G006": {
-    "id": 62,
+    "id": 60,
     "public_id": "G006",
     "width": 1134,
     "height": 836,
@@ -756,7 +732,7 @@
     "format": "png"
   },
   "G007": {
-    "id": 63,
+    "id": 61,
     "public_id": "G007",
     "width": 6000,
     "height": 7963,
@@ -768,7 +744,7 @@
     "format": "png"
   },
   "G008": {
-    "id": 64,
+    "id": 62,
     "public_id": "G008",
     "width": 6000,
     "height": 8103,
@@ -780,7 +756,7 @@
     "format": "jpg"
   },
   "G009": {
-    "id": 65,
+    "id": 63,
     "public_id": "G009",
     "width": 1180,
     "height": 1525,
@@ -792,7 +768,7 @@
     "format": "png"
   },
   "G010": {
-    "id": 66,
+    "id": 64,
     "public_id": "G010",
     "width": 1000,
     "height": 1468,
@@ -804,7 +780,7 @@
     "format": "png"
   },
   "G011": {
-    "id": 67,
+    "id": 65,
     "public_id": "G011",
     "width": 1000,
     "height": 1314,
@@ -816,7 +792,7 @@
     "format": "png"
   },
   "G012": {
-    "id": 68,
+    "id": 66,
     "public_id": "G012",
     "width": 1000,
     "height": 1329,
@@ -828,11 +804,11 @@
     "format": "png"
   },
   "G013": {
-    "id": 69,
+    "id": 67,
     "public_id": "G013",
     "width": 1000,
     "height": 843,
-    "alt": "Acryl auf Papier / 60 x 50 cm",
+    "alt": "Acryl auf Leinwand / 60 x 50 cm",
     "src": "/gemaelde/G013.png",
     "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAABcSAAAXEgFnn9JSAAAAMElEQVR4nGO4+Pv//f//Z+7sKW2KY8jNj6goCMyLtWlqTWAQYBQ3UlFP8rFRFOEGAJGBD4YjondLAAAAAElFTkSuQmCC",
     "topic": "gemaelde",
@@ -840,19 +816,55 @@
     "format": "png"
   },
   "G014": {
-    "id": 70,
+    "id": 68,
     "public_id": "G014",
-    "width": 3290,
-    "height": 2722,
-    "alt": "Acryl auf Papier / 60 x 50 cm",
+    "width": 4724,
+    "height": 4199,
+    "alt": "Acryl auf Leinwand / 100 x 90 cm",
     "src": "/gemaelde/G014.jpg",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AOHt+Pf//9/u897n3gCytpvU06zY3ci+waUAQjAARjIANiIAIAMAJDUVe/J89mUAAAAASUVORK5CYII=",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/AHmAQsnRoJWig05XSACkqm2rrn/Aw6NzdFgAWmlLNT0t2NrU/f37AAAOABAcBhceBTY5LoKcFVRyWiLuAAAAAElFTkSuQmCC",
     "topic": "gemaelde",
     "prefix": "G014",
     "format": "jpg"
   },
-  "L001": {
+  "G015": {
+    "id": 69,
+    "public_id": "G015",
+    "width": 4134,
+    "height": 3228,
+    "alt": "Acryl auf Leinwand / 100 x 80 cm",
+    "src": "/gemaelde/G015.jpg",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMklEQVR4nAEnANj/APb//+Pw9NDi5sfMxwClqp7Z29LNzsejqqUAARESFyAeEBcUAAMBDqcULaMG9hkAAAAASUVORK5CYII=",
+    "topic": "gemaelde",
+    "prefix": "G015",
+    "format": "jpg"
+  },
+  "G016": {
+    "id": 70,
+    "public_id": "G016",
+    "width": 4724,
+    "height": 3281,
+    "alt": "Acryl auf Leinwand / 100 x 80 cm",
+    "src": "/gemaelde/G016.jpg",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMklEQVR4nAEnANj/AM7YuNrpzD1KLwAHBQD8/e2go45SWFEqMDQA4N7XprakKTcrJiskfCkRhcX1iqwAAAAASUVORK5CYII=",
+    "topic": "gemaelde",
+    "prefix": "G016",
+    "format": "jpg"
+  },
+  "G017": {
     "id": 71,
+    "public_id": "G017",
+    "width": 3290,
+    "height": 2722,
+    "alt": "Acryl auf Leinwand / 60 x 50 cm",
+    "src": "/gemaelde/G017.jpg",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AOHt+Pf//9/u897n3gCytpvU06zY3ci+waUAQjAARjIANiIAIAMAJDUVe/J89mUAAAAASUVORK5CYII=",
+    "topic": "gemaelde",
+    "prefix": "G017",
+    "format": "jpg"
+  },
+  "L001": {
+    "id": 72,
     "public_id": "L001",
     "width": 2426,
     "height": 965,
@@ -864,7 +876,7 @@
     "format": "png"
   },
   "L002": {
-    "id": 72,
+    "id": 73,
     "public_id": "L002",
     "width": 2426,
     "height": 965,
@@ -876,7 +888,7 @@
     "format": "png"
   },
   "L003": {
-    "id": 73,
+    "id": 74,
     "public_id": "L003",
     "width": 2426,
     "height": 965,
@@ -888,7 +900,7 @@
     "format": "png"
   },
   "L004": {
-    "id": 74,
+    "id": 75,
     "public_id": "L004",
     "width": 2426,
     "height": 965,
@@ -900,7 +912,7 @@
     "format": "png"
   },
   "L005": {
-    "id": 75,
+    "id": 76,
     "public_id": "L005",
     "width": 2426,
     "height": 965,
@@ -912,7 +924,7 @@
     "format": "png"
   },
   "L006": {
-    "id": 76,
+    "id": 77,
     "public_id": "L006",
     "width": 2426,
     "height": 965,
@@ -924,7 +936,7 @@
     "format": "png"
   },
   "L007": {
-    "id": 77,
+    "id": 78,
     "public_id": "L007",
     "width": 2426,
     "height": 965,
@@ -936,7 +948,7 @@
     "format": "png"
   },
   "L008": {
-    "id": 78,
+    "id": 79,
     "public_id": "L008",
     "width": 2426,
     "height": 965,
@@ -948,7 +960,7 @@
     "format": "png"
   },
   "L009": {
-    "id": 79,
+    "id": 80,
     "public_id": "L009",
     "width": 2426,
     "height": 965,
@@ -960,7 +972,7 @@
     "format": "png"
   },
   "L010": {
-    "id": 80,
+    "id": 81,
     "public_id": "L010",
     "width": 2426,
     "height": 965,
@@ -972,7 +984,7 @@
     "format": "png"
   },
   "L011": {
-    "id": 81,
+    "id": 82,
     "public_id": "L011",
     "width": 2426,
     "height": 965,
@@ -984,7 +996,7 @@
     "format": "png"
   },
   "L012": {
-    "id": 82,
+    "id": 83,
     "public_id": "L012",
     "width": 2426,
     "height": 965,
@@ -996,7 +1008,7 @@
     "format": "png"
   },
   "W001": {
-    "id": 83,
+    "id": 84,
     "public_id": "W001",
     "width": 1500,
     "height": 1941,
@@ -1008,7 +1020,7 @@
     "format": "png"
   },
   "W002": {
-    "id": 84,
+    "id": 85,
     "public_id": "W002",
     "width": 1039,
     "height": 1548,
@@ -1020,7 +1032,7 @@
     "format": "png"
   },
   "W003": {
-    "id": 85,
+    "id": 86,
     "public_id": "W003",
     "width": 1000,
     "height": 1333,
@@ -1032,7 +1044,7 @@
     "format": "png"
   },
   "W004": {
-    "id": 86,
+    "id": 87,
     "public_id": "W004",
     "width": 1500,
     "height": 2000,
@@ -1044,7 +1056,7 @@
     "format": "png"
   },
   "W005": {
-    "id": 87,
+    "id": 88,
     "public_id": "W005",
     "width": 1000,
     "height": 1333,
@@ -1056,7 +1068,7 @@
     "format": "png"
   },
   "W006": {
-    "id": 88,
+    "id": 89,
     "public_id": "W006",
     "width": 1000,
     "height": 1778,
@@ -1068,7 +1080,7 @@
     "format": "png"
   },
   "W007": {
-    "id": 89,
+    "id": 90,
     "public_id": "W007",
     "width": 1500,
     "height": 1125,
