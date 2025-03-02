@@ -12,7 +12,7 @@ export default function ImgContainer({ photo }) {
       className="w-[250px] justify-self-end"
       style={{ gridRow: `span ${photoSpans}` }}
     >
-      <div className="overflow-hidden group">
+      <div className="relative overflow-hidden">
         <Image
           src={photo.src}
           alt={photo.alt}
@@ -21,8 +21,13 @@ export default function ImgContainer({ photo }) {
           placeholder="blur"
           blurDataURL={photo.blurDataUrl}
           sizes="250px"
-          className="group-hover:opacity-75 border border-gray-300"
+          className="border border-gray-300"
         />
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 opacity-0 transition-opacity duration-300 hover:bg-opacity-20 hover:opacity-100">
+          <span className="rounded-full bg-black bg-opacity-50 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
+            Vergrößern
+          </span>
+        </div>
       </div>
     </div>
   );
