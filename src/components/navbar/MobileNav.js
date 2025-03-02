@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import ToggleButton from "./ToggleButton";
 import Dropdown from "./Dropdown";
+import Image from "next/image";
 
 const MobileNav = ({ menuItems, pathname }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,7 +32,16 @@ const MobileNav = ({ menuItems, pathname }) => {
 
   return (
     <div className="w-full lg:hidden" ref={wrapperRef}>
-      <div className="relative z-50 flex w-full justify-end">
+      <div className="relative z-50 flex w-full items-center justify-between">
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={50}
+            height={50}
+            className="mx-4 sm:mx-0"
+          />
+        </Link>
         <ToggleButton setOpen={setIsMobileMenuOpen} open={isMobileMenuOpen} />
       </div>
 
