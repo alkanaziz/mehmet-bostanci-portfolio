@@ -11,9 +11,9 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-40 flex w-full items-center justify-end bg-white bg-opacity-80 shadow-xl sm:px-10">
+    <nav className="sticky top-0 z-40 flex w-full items-center justify-end bg-white bg-opacity-80 shadow-xl">
       <MobileNav menuItems={menuItems} pathname={pathname} />
-      <ul className="hidden w-full items-center justify-between text-[1.2em] lg:flex">
+      <ul className="hidden w-full items-center justify-between px-10 text-[1.2em] lg:flex">
         <Link href="/">
           <Image
             src="/logo.png"

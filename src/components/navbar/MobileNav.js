@@ -32,14 +32,13 @@ const MobileNav = ({ menuItems, pathname }) => {
 
   return (
     <div className="w-full lg:hidden" ref={wrapperRef}>
-      <div className="relative z-50 flex w-full items-center justify-between">
+      <div className="relative z-50 px-4 md:px-10 flex w-full items-center justify-between">
         <Link href="/">
           <Image
             src="/logo.png"
             alt="Logo"
             width={50}
             height={50}
-            className="mx-4 sm:mx-0"
           />
         </Link>
         <ToggleButton setOpen={setIsMobileMenuOpen} open={isMobileMenuOpen} />
