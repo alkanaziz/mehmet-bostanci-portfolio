@@ -17,7 +17,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="m-auto flex w-3/5 flex-col gap-5">
+      <div className="m-auto flex w-full flex-col justify-start px-4 sm:px-10 lg:px-12 gap-5">
         <div className="font-extrabold">
           <Link href="/impressum">Impressum</Link>
         </div>
@@ -39,25 +39,25 @@ const Footer = () => {
             <Link
               href="https://www.instagram.com/aquarelllkunst/"
               target="_blank"
-              className="flex items-center gap-2 hover:underline"
+              className="group flex max-w-max items-center gap-2 hover:underline"
             >
-              <FaInstagram className="text-xl" />
+              <FaInstagram className="transform text-xl transition-transform duration-300 group-hover:translate-x-1" />
               @aqueralllkunst
             </Link>
             <Link
               href="https://www.instagram.com/grafikermehmet/"
               target="_blank"
-              className="flex items-center gap-2 hover:underline"
+              className="group flex max-w-max items-center gap-2 hover:underline"
             >
-              <FaInstagram className="text-xl" />
+              <FaInstagram className="transform text-xl transition-transform duration-300 group-hover:translate-x-1" />
               @grafikermehmet
             </Link>
             <Link
               href="https://www.instagram.com/ebrulikunst/"
               target="_blank"
-              className="flex items-center gap-2 hover:underline"
+              className="group flex max-w-max items-center gap-2 hover:underline"
             >
-              <FaInstagram className="text-xl" />
+              <FaInstagram className="transform text-xl transition-transform duration-300 group-hover:translate-x-1" />
               @ebrulikunst
             </Link>
           </div>
