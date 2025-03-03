@@ -3,6 +3,29 @@ import Link from "next/link";
 import { BiRightArrow } from "react-icons/bi";
 import publicImageMeta from "@/data/publicImageMeta";
 
+export const metadata = {
+  title: 'Werke - Mehmet Bostanci Art',
+  description: 'Entdecken Sie die Kunstwerke von Mehmet Bostancı - Aquarelle, Digitale Werke, Gemälde und Logo-Designs.',
+  openGraph: {
+    title: 'Werke - Mehmet Bostanci Art',
+    description: 'Entdecken Sie die Kunstwerke von Mehmet Bostancı - Aquarelle, digitale Werke, Gemälde und Logo-Designs.',
+    images: [
+      {
+        url: publicImageMeta.home_img.src,
+        width: publicImageMeta.home_img.width,
+        height: publicImageMeta.home_img.height,
+        alt: 'Bostanci Art Werke',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Werke - Mehmet Bostanci Art',
+    description: 'Entdecken Sie die Kunstwerke von Mehmet Bostancı - Aquarelle, Digitale Werke, Gemälde und Logo-Designs.',
+    images: [publicImageMeta.home_img.src],
+  },
+};
+
 const Werke = () => {
   return (
     <div className="flex w-full flex-col items-center gap-10">
