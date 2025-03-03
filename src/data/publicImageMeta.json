@@ -1,0 +1,68 @@
+{
+  "banner": {
+    "id": 0,
+    "public_id": "banner",
+    "width": 1100,
+    "height": 940,
+    "alt": "banner",
+    "src": "/banner.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGN48f79tBnTQ8PCldXVGC5dv7t49rQQf29uQSGGiCC/zIRoN1trZVlpAF00Dqnj1EOPAAAAAElFTkSuQmCC",
+    "prefix": "bann",
+    "format": "png"
+  },
+  "home_img": {
+    "id": 1,
+    "public_id": "home_img",
+    "width": 1500,
+    "height": 2024,
+    "alt": "home_img",
+    "src": "/home_img.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/AJydlP9/f3j/+vr5/wCAgH7/EAUG/6Sdn/8ATE1M/w4HCv+Yk5T/AHBycv8iJSf/qq2v//n+HCnU4HsYAAAAAElFTkSuQmCC",
+    "prefix": "home",
+    "format": "png"
+  },
+  "logo": {
+    "id": 2,
+    "public_id": "logo",
+    "width": 534,
+    "height": 534,
+    "alt": "logo",
+    "src": "/logo.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAABcRAAAXEQHKJvM/AAAAM0lEQVR4nDXLqwlAIQAAwJtBxA+PN4LVYrJb3H8ZMVgPDiICPmRYaJjYFzoqxoOChP+2A1TZAqWagBy4AAAAAElFTkSuQmCC",
+    "prefix": "logo",
+    "format": "png"
+  },
+  "logo_footer": {
+    "id": 3,
+    "public_id": "logo_footer",
+    "width": 5927,
+    "height": 994,
+    "alt": "logo_footer",
+    "src": "/logo_footer.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAIAAAB2XpiaAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAFUlEQVR4nGP4/v17SkoKNzf3gwcPAC8pBtP9QLArAAAAAElFTkSuQmCC",
+    "prefix": "logo",
+    "format": "png"
+  },
+  "logo_header": {
+    "id": 4,
+    "public_id": "logo_header",
+    "width": 2535,
+    "height": 730,
+    "alt": "logo_header",
+    "src": "/logo_header.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAGUlEQVR4nGPo0As2SGY1s/w/e49eT12dKAAxcwYySaDdpAAAAABJRU5ErkJggg==",
+    "prefix": "logo",
+    "format": "png"
+  },
+  "ueber-mich": {
+    "id": 5,
+    "public_id": "ueber-mich",
+    "width": 1605,
+    "height": 2139,
+    "alt": "ueber-mich",
+    "src": "/ueber-mich.jpg",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/ANbWy9na0t3e2ACtn5Xu2tP//vcAlHx0+MS1xcrQABMQFjQtMQAEFSD6FjhuTH4QAAAAAElFTkSuQmCC",
+    "prefix": "uebe",
+    "format": "jpg"
+  }
+}
