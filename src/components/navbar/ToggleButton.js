@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 const ToggleButton = ({ setOpen, open }) => {
   return (
     <button
-      className="z-20 flex size-12 items-center justify-center rounded-full text-black hover:scale-110 active:scale-95"
+      className="z-20 flex size-7 items-center justify-center rounded-full text-black hover:scale-110 active:scale-95"
       onClick={() => setOpen((prev) => !prev)}
     >
       <svg
-        className="flex h-8 w-8 items-center justify-center p-1"
+        className="flex size-7 items-center justify-center"
         fill="none"
         stroke="currentColor"
         viewBox="0 -1 22 22"

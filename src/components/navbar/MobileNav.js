@@ -46,7 +46,7 @@ const MobileNav = ({ menuItems, pathname }) => {
 
       {isMobileMenuOpen && (
         <div className="z-50 bg-white">
-          <ul className="flex w-full flex-col px-4">
+          <ul className="flex w-full flex-col px-4 md:px-10">
             {menuItems.map((item) => (
               <li key={item.title} className="w-full">
                 {item.subMenu ? (
