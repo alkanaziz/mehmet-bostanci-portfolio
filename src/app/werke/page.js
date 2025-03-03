@@ -1,13 +1,7 @@
-import addBlurredDataUrl from "@/lib/getBase64";
 import Image from "next/image";
 import Link from "next/link";
 import { BiRightArrow } from "react-icons/bi";
-
-const photo = {
-  src: "/home_img.png",
-};
-
-const photoWithBlur = await addBlurredDataUrl(photo, process.cwd() + "/public");
+import publicImageMeta from "@/data/publicImageMeta";
 
 const Werke = () => {
   return (
@@ -15,12 +9,12 @@ const Werke = () => {
       <div className="w-full overflow-hidden">
         <Image
           className="w-full object-cover object-top"
-          src="/home_img.png"
-          alt="Bostanci Art"
-          width={1500}
-          height={2024}
+          src={publicImageMeta.home_img.src}
+          alt="Bostanci Art Werke Page Image"
+          width={publicImageMeta.home_img.width}
+          height={publicImageMeta.home_img.height}
           placeholder="blur"
-          blurDataURL={photoWithBlur.blurredDataUrl}
+          blurDataURL={publicImageMeta.home_img.blurDataUrl}
         />
       </div>
 

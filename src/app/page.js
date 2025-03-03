@@ -1,23 +1,17 @@
 import Image from "next/image";
-import addBlurredDataUrl from "@/lib/getBase64";
+import publicImageMeta from "@/data/publicImageMeta";
 
 export default async function Home() {
-  const photo = {
-    src: "/banner.png"
-  };
-
-  const photoWithBlur = await addBlurredDataUrl(photo, process.cwd() + "/public");
-
   return (
     <div className="w-full">
       <Image
         className="w-full"
-        src="/banner.png"
-        alt="Bostanci Art"
-        width={1500}
-        height={2024}
+        src={publicImageMeta.banner.src}
+        alt="Bostanci Art Home Page Image"
+        width={publicImageMeta.banner.width}
+        height={publicImageMeta.banner.height}
         placeholder="blur"
-        blurDataURL={photoWithBlur.blurredDataUrl}
+        blurDataURL={publicImageMeta.banner.blurDataUrl}
       />
     </div>
   );

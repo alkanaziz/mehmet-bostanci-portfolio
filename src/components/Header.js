@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import publicImageMeta from "@/data/publicImageMeta";
+
 const Header = () => {
   return (
     <header className="flex w-full flex-col items-center justify-center">
@@ -7,8 +9,8 @@ const Header = () => {
         <Link href="/">
           <Image
             className="absolute bottom-0 w-56 md:w-[500px] lg:left-[12px]"
-            src="/logo_header.png"
-            alt="Bostanci Art"
+            src={publicImageMeta.logo_header.src}
+            alt="Bostanci Art Header Logo"
             width={500}
             height={200}
           />
