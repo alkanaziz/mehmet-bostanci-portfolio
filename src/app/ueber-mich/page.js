@@ -60,7 +60,7 @@ const UeberMich = () => {
               Mehmet Bostanci
             </h1>
             <p className="text-sm font-medium uppercase tracking-wider opacity-90">
-              Malerei & Kunstlehrerin
+              Malerei & Kunstlehrer
             </p>
           </div>
         </div>
