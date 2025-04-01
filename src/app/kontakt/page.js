@@ -37,7 +37,7 @@ const Kontakt = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8">
         {/* Contact Information */}
         <div className="space-y-8 rounded-lg bg-gray-50">
           <div className="m-4 space-y-6">
@@ -62,7 +62,7 @@ const Kontakt = () => {
               <MdLocationOn className="mt-1 size-6 text-gray-600" />
               <div>
                 <p className="font-medium">Adresse</p>
-                <p>Erfurt, Deutschland</p>
+                <p>Nürnberg, Deutschland</p>
               </div>
             </div>
 
@@ -102,7 +102,7 @@ const Kontakt = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="rounded-lg bg-white p-4 shadow-lg">
+        {/* <div className="rounded-lg bg-white p-4 shadow-lg">
           <form onSubmit={handleSubmit} className="space-y-6">
             <h2 className="text-center font-serif text-xl font-semibold">
               Kontaktformular
@@ -186,7 +186,7 @@ const Kontakt = () => {
               Nachricht senden
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
     </div>
   );
