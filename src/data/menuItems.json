@@ -15,5 +15,6 @@
     "title": "Workshop",
     "link": "/workshop"
   },
-  { "title": "Kontakt", "link": "/kontakt" }
+  { "title": "Kontakt", "link": "/kontakt" },
+  { "title": "Impressum", "link": "/impressum" }
 ]
