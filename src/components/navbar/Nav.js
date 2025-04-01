@@ -9,10 +9,13 @@ import Image from "next/image";
 
 const Nav = () => {
   const pathname = usePathname();
+  const filteredMenuItems = menuItems.filter(
+    (item) => item.title !== "Impressum",
+  );
 
   return (
     <nav className="sticky top-0 z-40 flex w-full items-center justify-end bg-white bg-opacity-80 shadow-xl">
-      <MobileNav menuItems={menuItems} pathname={pathname} />
+      <MobileNav menuItems={filteredMenuItems} pathname={pathname} />
       <ul className="hidden w-full items-center justify-between px-10 text-[1.2em] lg:flex">
         <Link href="/">
           <Image
@@ -24,7 +27,7 @@ const Nav = () => {
           />
         </Link>
         <div className="flex items-center justify-between gap-16">
-          {menuItems.map((item) => (
+          {filteredMenuItems.map((item) => (
             <li key={item.title} className="relative">
               {item.subMenu ? (
                 <Dropdown item={item} />

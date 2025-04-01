@@ -9,6 +9,9 @@ import Image from "next/image";
 const MobileNav = ({ menuItems, pathname }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const wrapperRef = useRef(null);
+  const filteredMenuItems = menuItems.filter(
+    (item) => item.title !== "Impressum",
+  );
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -32,14 +35,9 @@ const MobileNav = ({ menuItems, pathname }) => {
 
   return (
     <div className="w-full lg:hidden" ref={wrapperRef}>
-      <div className="relative z-50 px-4 md:px-10 flex w-full items-center justify-between">
+      <div className="relative z-50 flex w-full items-center justify-between px-4 md:px-10">
         <Link href="/">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={50}
-            height={50}
-          />
+          <Image src="/logo.png" alt="Logo" width={50} height={50} />
         </Link>
         <ToggleButton setOpen={setIsMobileMenuOpen} open={isMobileMenuOpen} />
       </div>
@@ -47,7 +45,7 @@ const MobileNav = ({ menuItems, pathname }) => {
       {isMobileMenuOpen && (
         <div className="z-50 bg-white">
           <ul className="flex w-full flex-col px-4 md:px-10">
-            {menuItems.map((item) => (
+            {filteredMenuItems.map((item) => (
               <li key={item.title} className="w-full">
                 {item.subMenu ? (
                   <Dropdown item={item} closeMenu={closeMenu} />
