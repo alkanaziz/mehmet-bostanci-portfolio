@@ -23,11 +23,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="font-extrabold">Address:</p>{" "}
-          <span>Erfurt, Deutschland</span>
-        </div>
-        <div>
-          <p className="font-extrabold">Telefon:</p>{" "}
-          <span>WhatsApp: 0176 741 759 50</span>
+          <span>Nürnberg, Deutschland</span>
         </div>
         <div>
           <p className="font-extrabold">Email:</p>{" "}
