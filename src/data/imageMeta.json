@@ -467,8 +467,116 @@
     "prefix": "A028",
     "format": "png"
   },
-  "D001": {
+  "A029": {
     "id": 39,
+    "public_id": "A029",
+    "width": 3500,
+    "height": 2562,
+    "alt": "Heilg-Geist-Spital / NÜRNBERG / 50 x 65 cm",
+    "src": "/aquarell/A029.jpg",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AL++v46JgX19cKWuqgBxY1oWAAAaFgBgbmAAoqGbbWtg2uLb8Pr6US4SbxeV9ccAAAAASUVORK5CYII=",
+    "topic": "aquarell",
+    "prefix": "A029",
+    "format": "jpg"
+  },
+  "A030": {
+    "id": 40,
+    "public_id": "A030",
+    "width": 1772,
+    "height": 2389,
+    "alt": "Der Schuldturm / NÜRNBERG / 2025 / 30 x 40 cm",
+    "src": "/aquarell/A030.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/ANze3LS2trm6uQD5+/xmX1+qqqoAXV9XIRUNnJiSADw8Ow8IAmlpYsI2EhFBxI3hAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A030",
+    "format": "png"
+  },
+  "A031": {
+    "id": 41,
+    "public_id": "A031",
+    "width": 1417,
+    "height": 1943,
+    "alt": "Der Burg - NÜRNBERG / 2025 / 30 x 40 cm",
+    "src": "/aquarell/A031.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/APj58tLb3Nrj3QDDqpNYQS2Sg3gAl4RjHQAAvq+iAJOOhzcvJLS1rdG6FExOPtXRAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A031",
+    "format": "png"
+  },
+  "A032": {
+    "id": 42,
+    "public_id": "A032",
+    "width": 1000,
+    "height": 1370,
+    "alt": "Der Burg - NÜRNBERG / 2025 / 30 x 40 cm",
+    "src": "/aquarell/A032.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/ANvk5rfAwvH69wC0tLJYTUDg4tcANy0kGwIAZVxOAHNwakhFPm9xacJoEm4m8DRSAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A032",
+    "format": "png"
+  },
+  "A033": {
+    "id": 43,
+    "public_id": "A033",
+    "width": 1417,
+    "height": 1932,
+    "alt": "Der Burg - NÜRNBERG / 2025 / 30 x 40 cm",
+    "src": "/aquarell/A033.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMUlEQVR4nGO4cfvR8VMXvn77wmBioGtvafX58zcGN0dTFR6GmGAvhnmzOkWYGCyNZQCdXBA5ImQypAAAAABJRU5ErkJggg==",
+    "topic": "aquarell",
+    "prefix": "A033",
+    "format": "png"
+  },
+  "A034": {
+    "id": 44,
+    "public_id": "A034",
+    "width": 1417,
+    "height": 1933,
+    "alt": "Der Burg - NÜRNBERG / 2025 / 30 x 40 cm",
+    "src": "/aquarell/A034.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/ANfg3f+Jj4z/tLev/gDz/P//YFZT/6SjnP4Asaup/2BKPP+fiXj+AHx1bf4eAAD+t6WX/YGOIBQysptvAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A034",
+    "format": "png"
+  },
+  "A035": {
+    "id": 45,
+    "public_id": "A035",
+    "width": 1535,
+    "height": 2079,
+    "alt": "Der Burg - NÜRNBERG / 2025 / 30 x 40 cm",
+    "src": "/aquarell/A035.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/AO/99qitrb3IyADp9fJ0Z1+fsLAAtLOoLxwIaWNbAGdaTRoAAFVJOtnSEsTjmMrPAAAAAElFTkSuQmCC",
+    "topic": "aquarell",
+    "prefix": "A035",
+    "format": "png"
+  },
+  "A036": {
+    "id": 46,
+    "public_id": "A036",
+    "width": 2126,
+    "height": 1587,
+    "alt": "St. Elisabeth Kilisesi - NÜRNBERG 2025 / 65 x 50 cm",
+    "src": "/aquarell/A036.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMklEQVR4nAEnANj/AImIj4KEjo+Wo7m9wABsZWIWAAA4KCDEwrsAybutnYl5rpuF/fXpZOMTtgmsGFAAAAAASUVORK5CYII=",
+    "topic": "aquarell",
+    "prefix": "A036",
+    "format": "png"
+  },
+  "A037": {
+    "id": 47,
+    "public_id": "A037",
+    "width": 3595,
+    "height": 2756,
+    "alt": "Die Kettenbrücke - NÜRNBERG 2025 / 65 x 50 cm",
+    "src": "/aquarell/A037.jpg",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVR4nAEnANj/AMjKzd3e5PP6/9Ld5AB2bWEWAAAZIwBWYlYAxMS/kZKISE8+cnhytWcTRSwhgcYAAAAASUVORK5CYII=",
+    "topic": "aquarell",
+    "prefix": "A037",
+    "format": "jpg"
+  },
+  "D001": {
+    "id": 48,
     "public_id": "D001",
     "width": 2500,
     "height": 3536,
@@ -480,7 +588,7 @@
     "format": "png"
   },
   "D002": {
-    "id": 40,
+    "id": 49,
     "public_id": "D002",
     "width": 2123,
     "height": 3000,
@@ -492,7 +600,7 @@
     "format": "png"
   },
   "D003": {
-    "id": 41,
+    "id": 50,
     "public_id": "D003",
     "width": 3000,
     "height": 4243,
@@ -504,7 +612,7 @@
     "format": "png"
   },
   "D004": {
-    "id": 42,
+    "id": 51,
     "public_id": "D004",
     "width": 2121,
     "height": 3000,
@@ -516,7 +624,7 @@
     "format": "png"
   },
   "D005": {
-    "id": 43,
+    "id": 52,
     "public_id": "D005",
     "width": 3000,
     "height": 4242,
@@ -528,7 +636,7 @@
     "format": "png"
   },
   "D006": {
-    "id": 44,
+    "id": 53,
     "public_id": "D006",
     "width": 2500,
     "height": 3888,
@@ -540,7 +648,7 @@
     "format": "png"
   },
   "D007": {
-    "id": 45,
+    "id": 54,
     "public_id": "D007",
     "width": 2250,
     "height": 1629,
@@ -552,7 +660,7 @@
     "format": "png"
   },
   "D008": {
-    "id": 46,
+    "id": 55,
     "public_id": "D008",
     "width": 2000,
     "height": 1400,
@@ -564,7 +672,7 @@
     "format": "png"
   },
   "D009": {
-    "id": 47,
+    "id": 56,
     "public_id": "D009",
     "width": 2000,
     "height": 1500,
@@ -576,7 +684,7 @@
     "format": "png"
   },
   "D010": {
-    "id": 48,
+    "id": 57,
     "public_id": "D010",
     "width": 1500,
     "height": 1050,
@@ -588,7 +696,7 @@
     "format": "png"
   },
   "D011": {
-    "id": 49,
+    "id": 58,
     "public_id": "D011",
     "width": 1500,
     "height": 1125,
@@ -600,7 +708,7 @@
     "format": "png"
   },
   "D012": {
-    "id": 50,
+    "id": 59,
     "public_id": "D012",
     "width": 2000,
     "height": 1344,
@@ -612,7 +720,7 @@
     "format": "png"
   },
   "D013": {
-    "id": 51,
+    "id": 60,
     "public_id": "D013",
     "width": 2000,
     "height": 2665,
@@ -624,7 +732,7 @@
     "format": "png"
   },
   "D014": {
-    "id": 52,
+    "id": 61,
     "public_id": "D014",
     "width": 1500,
     "height": 3154,
@@ -636,7 +744,7 @@
     "format": "png"
   },
   "D015": {
-    "id": 53,
+    "id": 62,
     "public_id": "D015",
     "width": 1000,
     "height": 1389,
@@ -648,7 +756,7 @@
     "format": "png"
   },
   "D016": {
-    "id": 54,
+    "id": 63,
     "public_id": "D016",
     "width": 900,
     "height": 2449,
@@ -660,7 +768,7 @@
     "format": "png"
   },
   "G001": {
-    "id": 55,
+    "id": 64,
     "public_id": "G001",
     "width": 3543,
     "height": 4500,
@@ -672,7 +780,7 @@
     "format": "jpg"
   },
   "G002": {
-    "id": 56,
+    "id": 65,
     "public_id": "G002",
     "width": 3348,
     "height": 1753,
@@ -684,7 +792,7 @@
     "format": "jpg"
   },
   "G003": {
-    "id": 57,
+    "id": 66,
     "public_id": "G003",
     "width": 1000,
     "height": 1426,
@@ -696,7 +804,7 @@
     "format": "png"
   },
   "G004": {
-    "id": 58,
+    "id": 67,
     "public_id": "G004",
     "width": 1200,
     "height": 772,
@@ -708,7 +816,7 @@
     "format": "png"
   },
   "G005": {
-    "id": 59,
+    "id": 68,
     "public_id": "G005",
     "width": 3000,
     "height": 4246,
@@ -720,7 +828,7 @@
     "format": "png"
   },
   "G006": {
-    "id": 60,
+    "id": 69,
     "public_id": "G006",
     "width": 1134,
     "height": 836,
@@ -732,7 +840,7 @@
     "format": "png"
   },
   "G007": {
-    "id": 61,
+    "id": 70,
     "public_id": "G007",
     "width": 6000,
     "height": 7963,
@@ -744,7 +852,7 @@
     "format": "png"
   },
   "G008": {
-    "id": 62,
+    "id": 71,
     "public_id": "G008",
     "width": 6000,
     "height": 8103,
@@ -756,7 +864,7 @@
     "format": "jpg"
   },
   "G009": {
-    "id": 63,
+    "id": 72,
     "public_id": "G009",
     "width": 1180,
     "height": 1525,
@@ -768,7 +876,7 @@
     "format": "png"
   },
   "G010": {
-    "id": 64,
+    "id": 73,
     "public_id": "G010",
     "width": 1000,
     "height": 1468,
@@ -780,7 +888,7 @@
     "format": "png"
   },
   "G011": {
-    "id": 65,
+    "id": 74,
     "public_id": "G011",
     "width": 1000,
     "height": 1314,
@@ -792,7 +900,7 @@
     "format": "png"
   },
   "G012": {
-    "id": 66,
+    "id": 75,
     "public_id": "G012",
     "width": 1000,
     "height": 1329,
@@ -804,7 +912,7 @@
     "format": "png"
   },
   "G013": {
-    "id": 67,
+    "id": 76,
     "public_id": "G013",
     "width": 1000,
     "height": 843,
@@ -816,7 +924,7 @@
     "format": "png"
   },
   "G014": {
-    "id": 68,
+    "id": 77,
     "public_id": "G014",
     "width": 4724,
     "height": 4199,
@@ -828,7 +936,7 @@
     "format": "jpg"
   },
   "G015": {
-    "id": 69,
+    "id": 78,
     "public_id": "G015",
     "width": 4134,
     "height": 3228,
@@ -840,7 +948,7 @@
     "format": "jpg"
   },
   "G016": {
-    "id": 70,
+    "id": 79,
     "public_id": "G016",
     "width": 4724,
     "height": 3281,
@@ -852,7 +960,7 @@
     "format": "jpg"
   },
   "G017": {
-    "id": 71,
+    "id": 80,
     "public_id": "G017",
     "width": 3290,
     "height": 2722,
@@ -864,7 +972,7 @@
     "format": "jpg"
   },
   "L001": {
-    "id": 72,
+    "id": 81,
     "public_id": "L001",
     "width": 2426,
     "height": 965,
@@ -876,7 +984,7 @@
     "format": "png"
   },
   "L002": {
-    "id": 73,
+    "id": 82,
     "public_id": "L002",
     "width": 2426,
     "height": 965,
@@ -888,7 +996,7 @@
     "format": "png"
   },
   "L003": {
-    "id": 74,
+    "id": 83,
     "public_id": "L003",
     "width": 2426,
     "height": 965,
@@ -900,7 +1008,7 @@
     "format": "png"
   },
   "L004": {
-    "id": 75,
+    "id": 84,
     "public_id": "L004",
     "width": 2426,
     "height": 965,
@@ -912,7 +1020,7 @@
     "format": "png"
   },
   "L005": {
-    "id": 76,
+    "id": 85,
     "public_id": "L005",
     "width": 2426,
     "height": 965,
@@ -924,7 +1032,7 @@
     "format": "png"
   },
   "L006": {
-    "id": 77,
+    "id": 86,
     "public_id": "L006",
     "width": 2426,
     "height": 965,
@@ -936,7 +1044,7 @@
     "format": "png"
   },
   "L007": {
-    "id": 78,
+    "id": 87,
     "public_id": "L007",
     "width": 2426,
     "height": 965,
@@ -948,7 +1056,7 @@
     "format": "png"
   },
   "L008": {
-    "id": 79,
+    "id": 88,
     "public_id": "L008",
     "width": 2426,
     "height": 965,
@@ -960,7 +1068,7 @@
     "format": "png"
   },
   "L009": {
-    "id": 80,
+    "id": 89,
     "public_id": "L009",
     "width": 2426,
     "height": 965,
@@ -972,7 +1080,7 @@
     "format": "png"
   },
   "L010": {
-    "id": 81,
+    "id": 90,
     "public_id": "L010",
     "width": 2426,
     "height": 965,
@@ -984,7 +1092,7 @@
     "format": "png"
   },
   "L011": {
-    "id": 82,
+    "id": 91,
     "public_id": "L011",
     "width": 2426,
     "height": 965,
@@ -996,7 +1104,7 @@
     "format": "png"
   },
   "L012": {
-    "id": 83,
+    "id": 92,
     "public_id": "L012",
     "width": 2426,
     "height": 965,
@@ -1008,7 +1116,7 @@
     "format": "png"
   },
   "W001": {
-    "id": 84,
+    "id": 93,
     "public_id": "W001",
     "width": 1500,
     "height": 1941,
@@ -1020,7 +1128,7 @@
     "format": "png"
   },
   "W002": {
-    "id": 85,
+    "id": 94,
     "public_id": "W002",
     "width": 1039,
     "height": 1548,
@@ -1032,7 +1140,7 @@
     "format": "png"
   },
   "W003": {
-    "id": 86,
+    "id": 95,
     "public_id": "W003",
     "width": 1000,
     "height": 1333,
@@ -1044,7 +1152,7 @@
     "format": "png"
   },
   "W004": {
-    "id": 87,
+    "id": 96,
     "public_id": "W004",
     "width": 1500,
     "height": 2000,
@@ -1056,7 +1164,7 @@
     "format": "png"
   },
   "W005": {
-    "id": 88,
+    "id": 97,
     "public_id": "W005",
     "width": 1000,
     "height": 1333,
@@ -1068,7 +1176,7 @@
     "format": "png"
   },
   "W006": {
-    "id": 89,
+    "id": 98,
     "public_id": "W006",
     "width": 1000,
     "height": 1778,
@@ -1080,7 +1188,7 @@
     "format": "png"
   },
   "W007": {
-    "id": 90,
+    "id": 99,
     "public_id": "W007",
     "width": 1500,
     "height": 1125,

@@ -57,11 +57,11 @@
   "ueber-mich": {
     "id": 5,
     "public_id": "ueber-mich",
-    "width": 1605,
-    "height": 2139,
+    "width": 3452,
+    "height": 4602,
     "alt": "ueber-mich",
     "src": "/ueber-mich.jpg",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAM0lEQVR4nAEoANf/ANbWy9na0t3e2ACtn5Xu2tP//vcAlHx0+MS1xcrQABMQFjQtMQAEFSD6FjhuTH4QAAAAAElFTkSuQmCC",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMUlEQVR4nGOQYmXO9XGUZmBgsNRUmRznXx7ux5Ds7fb/+9snN84zKPIKbu5tm9TUAADbfA4VLotvbAAAAABJRU5ErkJggg==",
     "prefix": "uebe",
     "format": "jpg"
   }
