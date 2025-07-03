@@ -35,7 +35,7 @@ const UeberMich = () => {
 
       <div className="prose prose-lg prose-slate lg:prose-xl">
         {/* Enhanced image container */}
-        <div className="group relative flex justify-center items-center float-left mb-6 mr-8 w-full md:w-[400px]">
+        <div className="group relative float-left mb-6 mr-8 flex w-full items-center justify-center md:w-[400px]">
           <div
             className="relative transform cursor-pointer overflow-hidden rounded-t-lg shadow-lg transition-all duration-300 hover:shadow-2xl md:rounded-none md:rounded-tl-lg"
             onClick={() => setIsImageModalOpen(true)}
@@ -60,7 +60,7 @@ const UeberMich = () => {
               Mehmet Bostanci
             </h1>
             <p className="text-sm font-medium uppercase tracking-wider opacity-90">
-              Malerei & Kunstlehrer
+              Künstler & Grafikdesigner
             </p>
           </div>
         </div>
