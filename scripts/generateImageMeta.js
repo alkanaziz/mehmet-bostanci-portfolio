@@ -24,26 +24,40 @@ async function generateImageMeta() {
 
       for (const file of imageFiles) {
         const imagePath = path.join(topicDir, file);
-        const dimensions = sizeOf(imagePath);
         const fileName = file.replace(/\.[^/.]+$/, "");
-        const altText = imageAlts[fileName] || fileName;
-        const blurredDataUrl = await addBlurredDataUrl(
-          { src: `/${topic}/${file}` },
-          photosDir,
-        );
-        imageMeta[fileName] = {
-          id: i,
-          public_id: fileName,
-          width: dimensions.width,
-          height: dimensions.height,
-          alt: altText,
-          src: `/${topic}/${file}`,
-          blurDataUrl: blurredDataUrl.blurredDataUrl,
-          topic,
-          prefix: fileName.substring(0, 4),
-          format: file.split(".").pop(),
-        };
-        i++;
+
+        try {
+          const dimensions = sizeOf(imagePath);
+
+          // Eğer dimensions geçerli değilse atla
+          if (!dimensions || !dimensions.width || !dimensions.height) {
+            console.warn(`Skipping ${file}: Invalid dimensions`);
+            continue;
+          }
+
+          const altText = imageAlts[fileName] || fileName;
+          const blurredDataUrl = await addBlurredDataUrl(
+            { src: `/${topic}/${file}` },
+            photosDir,
+          );
+
+          imageMeta[fileName] = {
+            id: i,
+            public_id: fileName,
+            width: dimensions.width,
+            height: dimensions.height,
+            alt: altText,
+            src: `/${topic}/${file}`,
+            blurDataUrl: blurredDataUrl.blurredDataUrl,
+            topic,
+            prefix: fileName.substring(0, 4),
+            format: file.split(".").pop(),
+          };
+          i++;
+        } catch (error) {
+          console.warn(`Skipping ${file}: ${error.message}`);
+          continue;
+        }
       }
     }
 
