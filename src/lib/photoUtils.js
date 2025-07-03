@@ -14,5 +14,9 @@ export async function getProcessedPhotos(topic) {
   const photos = Object.keys(imageMeta)
     .filter((fileName) => imageMeta[fileName].topic === topic)
     .map((fileName) => imageMeta[fileName]);
+
+  if (topic === "aquarell") {
+    photos.sort((a, b) => b.id - a.id);
+  }
   return groupPhotosByPrefix(photos);
 }
