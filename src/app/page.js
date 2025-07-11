@@ -6,12 +6,12 @@ export default async function Home() {
     <div className="w-full">
       <Image
         className="w-full"
-        src={publicImageMeta.banner.src}
+        src={publicImageMeta.hero_img.src}
         alt="Bostanci Art Home Page Image"
-        width={publicImageMeta.banner.width}
-        height={publicImageMeta.banner.height}
+        width={publicImageMeta.hero_img.width}
+        height={publicImageMeta.hero_img.height}
         placeholder="blur"
-        blurDataURL={publicImageMeta.banner.blurDataUrl}
+        blurDataURL={publicImageMeta.hero_img.blurDataUrl}
       />
     </div>
   );
