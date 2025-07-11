@@ -2,16 +2,27 @@
   "banner": {
     "id": 0,
     "public_id": "banner",
-    "width": 1100,
-    "height": 940,
+    "width": 1924,
+    "height": 266,
     "alt": "banner",
     "src": "/banner.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAIAAAA7ljmRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMElEQVR4nGN48f79tBnTQ8PCldXVGC5dv7t49rQQf29uQSGGiCC/zIRoN1trZVlpAF00Dqnj1EOPAAAAAElFTkSuQmCC",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAACXBIWXMAAAsSAAALEgHS3X78AAAAGklEQVR4nGO4dGTv/+fXzvz7dvn4f0l+we8AbaYLmUOKFaQAAAAASUVORK5CYII=",
     "prefix": "bann",
     "format": "png"
   },
-  "home_img": {
+  "hero_img": {
     "id": 1,
+    "public_id": "hero_img",
+    "width": 1923,
+    "height": 1433,
+    "alt": "hero_img",
+    "src": "/hero_img.png",
+    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAACXBIWXMAAAsSAAALEgHS3X78AAAAPklEQVR4nAEzAMz/APX7///Lz+D/vKqn/+bd2fcAfXdv/xYGAP8eAAD/g4KD9wCxuLD/SUlF/1pYXP/R0dH3WfkfhfzUAwwAAAAASUVORK5CYII=",
+    "prefix": "hero",
+    "format": "png"
+  },
+  "home_img": {
+    "id": 2,
     "public_id": "home_img",
     "width": 1500,
     "height": 2024,
@@ -22,7 +33,7 @@
     "format": "png"
   },
   "logo": {
-    "id": 2,
+    "id": 3,
     "public_id": "logo",
     "width": 534,
     "height": 534,
@@ -33,7 +44,7 @@
     "format": "png"
   },
   "logo_footer": {
-    "id": 3,
+    "id": 4,
     "public_id": "logo_footer",
     "width": 5927,
     "height": 994,
@@ -44,7 +55,7 @@
     "format": "png"
   },
   "logo_header": {
-    "id": 4,
+    "id": 5,
     "public_id": "logo_header",
     "width": 2535,
     "height": 730,
@@ -55,7 +66,7 @@
     "format": "png"
   },
   "ueber-mich": {
-    "id": 5,
+    "id": 6,
     "public_id": "ueber-mich",
     "width": 3452,
     "height": 4602,
