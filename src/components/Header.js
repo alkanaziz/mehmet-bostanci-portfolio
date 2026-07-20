@@ -28,11 +28,11 @@ const Header = () => {
         <div className="absolute inset-0 flex items-end justify-start">
           <Link
             href="/"
-            className="group relative rounded-sm transition-transform duration-300"
+            className="group relative rounded-xs transition-transform duration-300"
             aria-label="Go to homepage"
           >
             <div className="relative mb-1 ml-2 sm:mb-2 sm:ml-3 md:mb-3 md:ml-4 lg:mb-4 lg:ml-6">
-              <div className="relative rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent from-10% via-white/60 via-20% to-transparent">
+              <div className="relative rounded-full bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-transparent from-10% via-white/60 via-20% to-transparent">
                 <Image
                   src={logo_header.src}
                   alt="Bostanci Art Header Logo"

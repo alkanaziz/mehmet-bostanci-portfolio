@@ -124,7 +124,7 @@ export default function SharedModal({
                         className="z-50 rounded-full p-2 font-extrabold text-white/75 transition hover:text-white"
                       >
                         {navigation ? (
-                          <XMarkIcon className="h-7 w-7 stroke-[4]" />
+                          <XMarkIcon className="h-7 w-7 stroke-4" />
                         ) : (
                           <ArrowUturnLeftIcon className="h-5 w-5" />
                         )}
@@ -140,7 +140,7 @@ export default function SharedModal({
                         title="Open fullsize version"
                         rel="noreferrer"
                       >
-                        <ArrowTopRightOnSquareIcon className="h-6 w-6 stroke-[2]" />
+                        <ArrowTopRightOnSquareIcon className="h-6 w-6 stroke-2" />
                       </a>
                     </div>
                     <Image
@@ -163,7 +163,7 @@ export default function SharedModal({
                     />
                     {!isLoading && (
                       <div className="relative flex w-full items-center justify-center gap-5">
-                        <p className="mb-3 flex w-full items-center justify-center gap-5 text-wrap break-words bg-white text-center text-xs md:text-sm lg:text-base">
+                        <p className="mb-3 flex w-full items-center justify-center gap-5 text-wrap wrap-break-word bg-white text-center text-xs md:text-sm lg:text-base">
                           {currentImage.alt}{" "}
                         </p>
                       </div>
@@ -187,7 +187,7 @@ export default function SharedModal({
                   <>
                     {arrayIndex > 0 && (
                       <button
-                        className="absolute left-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
+                        className="absolute left-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-hidden"
                         style={{ transform: "translate3d(0, 0, 0)" }}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -199,7 +199,7 @@ export default function SharedModal({
                     )}
                     {arrayIndex + 1 < images.length && (
                       <button
-                        className="absolute right-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-none"
+                        className="absolute right-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-hidden"
                         style={{ transform: "translate3d(0, 0, 0)" }}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -217,11 +217,11 @@ export default function SharedModal({
           {/* Bottom Nav bar */}
           {navigation && (
             <div
-              className={`fixed inset-x-0 bottom-0 z-40 overflow-hidden bg-gradient-to-b from-black/0 to-black/60 transition-opacity duration-300 ${controlsVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+              className={`fixed inset-x-0 bottom-0 z-40 overflow-hidden bg-linear-to-b from-black/0 to-black/60 transition-opacity duration-300 ${controlsVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
             >
               <motion.div
                 initial={false}
-                className="mx-auto mb-6 mt-6 flex aspect-[3/2] h-14"
+                className="mx-auto mb-6 mt-6 flex aspect-3/2 h-14"
               >
                 <AnimatePresence initial={false}>
                   {filteredImages.map(({ id, src }) => (
@@ -240,11 +240,11 @@ export default function SharedModal({
                       key={id}
                       className={`${
                         id === index
-                          ? "z-20 rounded-md shadow shadow-black/50"
+                          ? "z-20 rounded-md shadow-sm shadow-black/50"
                           : "z-10"
                       } ${id === 0 ? "rounded-l-md" : ""} ${
                         id === images.length - 1 ? "rounded-r-md" : ""
-                      } relative inline-block w-full shrink-0 transform-gpu overflow-hidden focus:outline-none`}
+                      } relative inline-block w-full shrink-0 transform-gpu overflow-hidden focus:outline-hidden`}
                     >
                       <Image
                         alt="small photos on the bottom"

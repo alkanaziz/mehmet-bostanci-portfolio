@@ -45,7 +45,7 @@ const Werke = () => {
         />
       </div>
 
-      <div className="flex w-full max-w-screen-lg flex-col items-center gap-5 sm:flex-row sm:items-start sm:justify-between sm:px-10">
+      <div className="flex w-full max-w-(--breakpoint-lg) flex-col items-center gap-5 sm:flex-row sm:items-start sm:justify-between sm:px-10">
         <h2 className="text-2xl font-bold">Werke</h2>
         <div className="text flex w-3/5 flex-col gap-5">
           <h3 className="text-xl text-gray-500">

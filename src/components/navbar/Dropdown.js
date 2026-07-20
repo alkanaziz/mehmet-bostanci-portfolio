@@ -47,14 +47,14 @@ export default function Dropdown({ item, closeMenu }) {
             : `hover:bg-gray-300 transition-all duration-500 ${isOpen ? "bg-gray-300" : ""}`
         }`}
       >
-        <Link href={item.link} onClick={closeMenu} className="flex-grow">
+        <Link href={item.link} onClick={closeMenu} className="grow">
           {item.title}
         </Link>
         {item.subMenu && (
           <button
             onClick={toggle}
             aria-label="Toggle submenu"
-            className="flex-shrink-0"
+            className="shrink-0"
           >
             {isOpen ? (
               <IoIosArrowUp className="text-lg" />

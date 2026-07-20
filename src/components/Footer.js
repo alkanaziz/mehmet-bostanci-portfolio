@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="flex w-full flex-col">
       <div className="inline-flex w-full items-center justify-center">
-        <hr className="my-8 h-[1px] w-full rounded border-0 bg-gray-300" />
+        <hr className="my-8 h-px w-full rounded-sm border-0 bg-gray-300" />
         <div className="absolute left-1/2 -translate-x-1/2 bg-white px-1">
           <Image
             className="w-48"

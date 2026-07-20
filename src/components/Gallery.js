@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import Modal from "@/components/carousel/Modal";
-import { useLastViewedPhoto } from "@/lib/useLastViewedPhoto";
 import imageMeta from "@/data/imageMeta";
 import ImgContainer from "./ImgContainer";
 
@@ -29,7 +28,7 @@ const GalleryContent = ({ topic }) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const photoId = searchParams.get("photoId");
-  const [lastViewedPhoto, setLastViewedPhoto] = useLastViewedPhoto();
+  const [lastViewedPhoto, setLastViewedPhoto] = useState(null);
   const lastViewedPhotoRef = useRef(null);
   const [images, setImages] = useState(null);
   const [error, setError] = useState(null);
@@ -123,7 +122,7 @@ const GalleryContent = ({ topic }) => {
                   img.id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null
                 }
                 shallow
-                className="flex-shrink-0"
+                className="shrink-0"
               >
                 <ImgContainer key={img.id} photo={img} />
               </Link>
@@ -136,7 +135,7 @@ const GalleryContent = ({ topic }) => {
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
-          className="rounded enabled:hover:scale-110 disabled:cursor-not-allowed disabled:opacity-30"
+          className="rounded-sm enabled:hover:scale-110 disabled:cursor-not-allowed disabled:opacity-30"
         >
           <BiSolidLeftArrow />
         </button>
@@ -144,7 +143,7 @@ const GalleryContent = ({ topic }) => {
           {Array.from({ length: totalPages }).map((_, i) => (
             <button
               key={i + 1}
-              className={`rounded-sm px-2 text-xl font-extrabold text-white ${
+              className={`rounded-xs px-2 text-xl font-extrabold text-white ${
                 currentPage === i + 1
                   ? "bg-gray-900"
                   : "bg-gray-400 hover:scale-90"
@@ -158,7 +157,7 @@ const GalleryContent = ({ topic }) => {
         <button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
-          className="rounded enabled:hover:scale-110 disabled:cursor-not-allowed disabled:opacity-30"
+          className="rounded-sm enabled:hover:scale-110 disabled:cursor-not-allowed disabled:opacity-30"
         >
           <BiSolidRightArrow />
         </button>

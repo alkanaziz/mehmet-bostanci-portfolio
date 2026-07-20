@@ -121,7 +121,7 @@ const Kontakt = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 p-2 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
+                className="w-full rounded-md border border-gray-300 p-2 focus:border-black focus:outline-hidden focus:ring-1 focus:ring-black"
               />
             </div>
 
@@ -139,7 +139,7 @@ const Kontakt = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 p-2 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
+                className="w-full rounded-md border border-gray-300 p-2 focus:border-black focus:outline-hidden focus:ring-1 focus:ring-black"
               />
             </div>
 
@@ -157,7 +157,7 @@ const Kontakt = () => {
                 required
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 p-2 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
+                className="w-full rounded-md border border-gray-300 p-2 focus:border-black focus:outline-hidden focus:ring-1 focus:ring-black"
               />
             </div>
 
@@ -175,13 +175,13 @@ const Kontakt = () => {
                 required
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full rounded-md border border-gray-300 p-2 focus:border-black focus:outline-none focus:ring-1 focus:ring-black"
+                className="w-full rounded-md border border-gray-300 p-2 focus:border-black focus:outline-hidden focus:ring-1 focus:ring-black"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="hover:bg-black-700 w-full rounded-md bg-black px-4 py-2 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+              className="hover:bg-black-700 w-full rounded-md bg-black px-4 py-2 text-white transition-colors focus:outline-hidden focus:ring-2 focus:ring-black focus:ring-offset-2"
             >
               Nachricht senden
             </button>
