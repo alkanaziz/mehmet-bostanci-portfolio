@@ -3,15 +3,15 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import useKeypress from "@/lib/useKeypress";
-import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
 import SharedModal from "./SharedModal";
 
-export default function Carousel({ index, currentPhoto }) {
+export default function Carousel({ index, currentPhoto, onClose }) {
   const router = useRouter();
-  const [, setLastViewedPhoto] = useLastViewedPhoto();
 
   function closeModal() {
-    setLastViewedPhoto(currentPhoto.id);
+    if (typeof onClose === "function") {
+      onClose();
+    }
     router.push("/", undefined, { shallow: true });
   }
 
