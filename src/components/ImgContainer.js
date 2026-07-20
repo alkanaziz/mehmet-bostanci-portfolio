@@ -9,7 +9,7 @@ export default function ImgContainer({ photo }) {
 
   return (
     <div
-      className="w-[250px] justify-self-end"
+      className="w-62.5 justify-self-end"
       style={{ gridRow: `span ${photoSpans}` }}
     >
       <div className="relative overflow-hidden">
