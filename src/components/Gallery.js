@@ -9,12 +9,22 @@ import Modal from "@/components/carousel/Modal";
 import imageMeta from "@/data/imageMeta";
 import ImgContainer from "./ImgContainer";
 
-async function fetchImages(topic) {
-  const response = await fetch(`/api/photos?topic=${topic}`);
-  if (!response.ok) {
-    throw new Error("Failed to fetch images");
+function getProcessedPhotos(topic) {
+  const photos = Object.keys(imageMeta)
+    .filter((fileName) => imageMeta[fileName].topic === topic)
+    .map((fileName) => imageMeta[fileName]);
+
+  if (topic === "aquarell") {
+    photos.sort((a, b) => b.id - a.id);
   }
-  return await response.json();
+
+  return photos.reduce((acc, photo) => {
+    if (!acc[photo.prefix]) {
+      acc[photo.prefix] = [];
+    }
+    acc[photo.prefix].push(photo);
+    return acc;
+  }, {});
 }
 
 const LoadingState = () => (
@@ -34,16 +44,12 @@ const GalleryContent = ({ topic }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const loadImages = async () => {
-      try {
-        const data = await fetchImages(topic);
-        setImages(data);
-      } catch (err) {
-        setError(err);
-      }
-    };
-
-    loadImages();
+    try {
+      const data = getProcessedPhotos(topic);
+      setImages(data);
+    } catch (err) {
+      setError(err);
+    }
   }, [topic]);
 
   // Pagination state
