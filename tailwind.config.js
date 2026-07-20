@@ -15,9 +15,9 @@ module.exports = {
         gallery: "repeat(auto-fit, minmax(250px, 1fr))",
       },
       screens: {
-        narrow: { raw: "(max-aspect-ratio: 3 / 2)" },
-        wide: { raw: "(min-aspect-ratio: 3 / 2)" },
-        "taller-than-854": { raw: "(min-height: 854px)" },
+        narrow: "(max-aspect-ratio: 3 / 2)",
+        wide: "(min-aspect-ratio: 3 / 2)",
+        "taller-than-854": "(min-height: 854px)",
       },
     },
   },
