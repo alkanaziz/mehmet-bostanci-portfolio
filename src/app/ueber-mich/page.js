@@ -35,7 +35,7 @@ const UeberMich = () => {
 
       <div className="prose prose-lg prose-slate lg:prose-xl">
         {/* Enhanced image container */}
-        <div className="group relative float-left mr-8 mb-6 flex w-full items-center justify-center md:w-[400px]">
+        <div className="group relative float-left mr-8 mb-6 flex w-full items-center justify-center md:w-100">
           <div
             className="relative transform cursor-pointer overflow-hidden rounded-t-lg shadow-lg transition-all duration-300 hover:shadow-2xl md:rounded-none md:rounded-tl-lg"
             onClick={() => setIsImageModalOpen(true)}
