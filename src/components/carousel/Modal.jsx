@@ -1,7 +1,9 @@
+"use client";
+
 import { Dialog } from "@headlessui/react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useRef, useState } from "react";
-import useKeypress from "react-use-keypress";
+import useKeypress from "@/lib/useKeypress";
 import SharedModal from "./SharedModal";
 
 export default function Modal({ images, onClose, topic }) {
