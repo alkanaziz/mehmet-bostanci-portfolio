@@ -16,7 +16,7 @@ const Logo = () => {
 
           {/* Main text content */}
           <div className="space-y-4 text-justify leading-relaxed sm:space-y-6">
-            <p className="text-gray-800 first-letter:float-left first-letter:mr-3 first-letter:mt-0 first-letter:pt-0 first-letter:font-serif first-letter:text-6xl first-letter:leading-[0.8] sm:first-letter:text-8xl">
+            <p className="text-gray-800 first-letter:float-left first-letter:mt-0 first-letter:mr-3 first-letter:pt-0 first-letter:font-serif first-letter:text-6xl first-letter:leading-[0.8] sm:first-letter:text-8xl">
               Das Logo ist das Gesicht einer Marke und prägt den ersten
               Eindruck. Ein erfolgreiches Logo zeichnet sich durch Einfachheit,
               Einzigartigkeit und zeitloses Design aus, wodurch sich eine Marke

@@ -1,9 +1,9 @@
 const Neues = () => {
   return (
-    <div className="h-[calc(100vh-320px)] mx-auto flex justify-center items-center">
+    <div className="mx-auto flex h-[calc(100vh-320px)] items-center justify-center">
       In Bearbeitung...
     </div>
-  )
-}
+  );
+};
 
-export default Neues
+export default Neues;

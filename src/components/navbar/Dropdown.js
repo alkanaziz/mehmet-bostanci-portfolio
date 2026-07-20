@@ -44,7 +44,7 @@ export default function Dropdown({ item, closeMenu }) {
         className={`flex cursor-pointer items-center gap-1 px-2 py-2 font-bold transition-colors duration-200 ${
           pathname.startsWith(item.link)
             ? "bg-black text-white"
-            : `hover:bg-gray-300 transition-all duration-500 ${isOpen ? "bg-gray-300" : ""}`
+            : `transition-all duration-500 hover:bg-gray-300 ${isOpen ? "bg-gray-300" : ""}`
         }`}
       >
         <Link href={item.link} onClick={closeMenu} className="grow">

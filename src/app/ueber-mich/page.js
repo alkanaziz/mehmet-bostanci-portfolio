@@ -11,7 +11,7 @@ const UeberMich = () => {
       {/* Modal for enlarged image */}
       {isImageModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4"
+          className="bg-opacity-80 fixed inset-0 z-50 flex items-center justify-center bg-black p-4"
           onClick={() => setIsImageModalOpen(false)}
         >
           <div className="relative max-h-[90vh] max-w-6xl">
@@ -35,7 +35,7 @@ const UeberMich = () => {
 
       <div className="prose prose-lg prose-slate lg:prose-xl">
         {/* Enhanced image container */}
-        <div className="group relative float-left mb-6 mr-8 flex w-full items-center justify-center md:w-[400px]">
+        <div className="group relative float-left mr-8 mb-6 flex w-full items-center justify-center md:w-[400px]">
           <div
             className="relative transform cursor-pointer overflow-hidden rounded-t-lg shadow-lg transition-all duration-300 hover:shadow-2xl md:rounded-none md:rounded-tl-lg"
             onClick={() => setIsImageModalOpen(true)}
@@ -48,18 +48,18 @@ const UeberMich = () => {
               className="object-cover transition-transform duration-500 hover:scale-105"
               priority
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 opacity-0 transition-opacity duration-300 hover:bg-opacity-20 hover:opacity-100">
-              <span className="rounded-full bg-black bg-opacity-50 px-4 py-2 text-sm font-medium text-white backdrop-blur-xs">
+            <div className="bg-opacity-0 hover:bg-opacity-20 absolute inset-0 flex items-center justify-center bg-black opacity-0 transition-opacity duration-300 hover:opacity-100">
+              <span className="bg-opacity-50 rounded-full bg-black px-4 py-2 text-sm font-medium text-white backdrop-blur-xs">
                 Vergrößern
               </span>
             </div>
           </div>
           {/* Artist Name Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 via-black/50 to-transparent p-3 text-white">
+          <div className="absolute right-0 bottom-0 left-0 bg-linear-to-t from-black/80 via-black/50 to-transparent p-3 text-white">
             <h1 className="mb-1 font-serif text-3xl font-bold tracking-wide">
               Mehmet Bostanci
             </h1>
-            <p className="text-sm font-medium uppercase tracking-wider opacity-90">
+            <p className="text-sm font-medium tracking-wider uppercase opacity-90">
               Künstler & Grafikdesigner
             </p>
           </div>
@@ -67,7 +67,7 @@ const UeberMich = () => {
 
         {/* Text content with improved readability */}
         <div className="space-y-6 text-justify leading-relaxed">
-          <p className="text-gray-800 first-letter:float-left first-letter:mr-3 first-letter:mt-0 first-letter:pt-0 first-letter:font-serif first-letter:text-9xl first-letter:leading-[0.8]">
+          <p className="text-gray-800 first-letter:float-left first-letter:mt-0 first-letter:mr-3 first-letter:pt-0 first-letter:font-serif first-letter:text-9xl first-letter:leading-[0.8]">
             Seit meiner Geburt 1969 in der Türkei habe ich zwei große
             Leidenschaften: Malen und Unterrichten. Nach meinem Studium der
             Malerei an der Fakultät für Angewandte Kunst der Gazi-Universität in

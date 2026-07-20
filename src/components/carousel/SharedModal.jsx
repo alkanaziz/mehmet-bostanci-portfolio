@@ -117,8 +117,10 @@ export default function SharedModal({
                       <div className="h-12 w-12 animate-spin rounded-full border-b-2 border-gray-900"></div>
                     </div>
                   )}
-                  <div className={`relative flex h-auto max-h-[90%] max-w-full flex-col items-center justify-center bg-white ${isLoading ? "opacity-0" : "opacity-100"}`}>
-                    <div className="absolute -right-5 sm:-right-12 -top-12 flex flex-row items-center gap-3 p-3 text-white">
+                  <div
+                    className={`relative flex h-auto max-h-[90%] max-w-full flex-col items-center justify-center bg-white ${isLoading ? "opacity-0" : "opacity-100"}`}
+                  >
+                    <div className="absolute -top-12 -right-5 flex flex-row items-center gap-3 p-3 text-white sm:-right-12">
                       <button
                         onClick={() => closeModal()}
                         className="z-50 rounded-full p-2 font-extrabold text-white/75 transition hover:text-white"
@@ -131,7 +133,7 @@ export default function SharedModal({
                       </button>
                     </div>
                     <div
-                      className={`absolute -left-5 -top-12 flex flex-row items-center gap-3 p-3 text-white ${controlsVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+                      className={`absolute -top-12 -left-5 flex flex-row items-center gap-3 p-3 text-white ${controlsVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
                     >
                       <a
                         href={currentImage.src}
@@ -163,7 +165,7 @@ export default function SharedModal({
                     />
                     {!isLoading && (
                       <div className="relative flex w-full items-center justify-center gap-5">
-                        <p className="mb-3 flex w-full items-center justify-center gap-5 text-wrap wrap-break-word bg-white text-center text-xs md:text-sm lg:text-base">
+                        <p className="mb-3 flex w-full items-center justify-center gap-5 bg-white text-center text-xs text-wrap wrap-break-word md:text-sm lg:text-base">
                           {currentImage.alt}{" "}
                         </p>
                       </div>
@@ -187,7 +189,7 @@ export default function SharedModal({
                   <>
                     {arrayIndex > 0 && (
                       <button
-                        className="absolute left-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-hidden"
+                        className="absolute top-[calc(50%-16px)] left-3 rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-hidden"
                         style={{ transform: "translate3d(0, 0, 0)" }}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -199,7 +201,7 @@ export default function SharedModal({
                     )}
                     {arrayIndex + 1 < images.length && (
                       <button
-                        className="absolute right-3 top-[calc(50%-16px)] rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-hidden"
+                        className="absolute top-[calc(50%-16px)] right-3 rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-hidden"
                         style={{ transform: "translate3d(0, 0, 0)" }}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -221,7 +223,7 @@ export default function SharedModal({
             >
               <motion.div
                 initial={false}
-                className="mx-auto mb-6 mt-6 flex aspect-3/2 h-14"
+                className="mx-auto mt-6 mb-6 flex aspect-3/2 h-14"
               >
                 <AnimatePresence initial={false}>
                   {filteredImages.map(({ id, src }) => (

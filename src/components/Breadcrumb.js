@@ -29,7 +29,7 @@ const Breadcrumb = function () {
   return (
     <nav
       aria-label="breadcrumb"
-      className="flex w-full items-center justify-center bg-white bg-opacity-80 px-2 shadow-xs md:px-8 lg:px-10"
+      className="bg-opacity-80 flex w-full items-center justify-center bg-white px-2 shadow-xs md:px-8 lg:px-10"
     >
       <ul className="flex w-full py-3 sm:py-5">
         <li className="mx-2 font-bold hover:underline">

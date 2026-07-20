@@ -17,7 +17,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="m-auto flex w-full flex-col justify-start px-4 sm:px-10 lg:px-12 gap-5">
+      <div className="m-auto flex w-full flex-col justify-start gap-5 px-4 sm:px-10 lg:px-12">
         <div className="font-extrabold">
           <Link href="/impressum">Impressum</Link>
         </div>

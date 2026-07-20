@@ -1,11 +1,11 @@
-import Gallery from "@/components/Gallery"
+import Gallery from "@/components/Gallery";
 
 const DigitaleWerke = () => {
   return (
     <>
       <Gallery topic="digitale-werke" />
     </>
-  )
-}
+  );
+};
 
-export default DigitaleWerke
+export default DigitaleWerke;

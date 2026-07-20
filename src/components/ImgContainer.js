@@ -23,8 +23,8 @@ export default function ImgContainer({ photo }) {
           sizes="250px"
           className="border border-gray-300"
         />
-        <div className="absolute inset-0 hidden items-center justify-center bg-black bg-opacity-0 opacity-0 transition-opacity duration-300 hover:bg-opacity-20 hover:opacity-100 md:flex">
-          <span className="rounded-full bg-black bg-opacity-50 px-4 py-2 text-sm font-medium text-white backdrop-blur-xs">
+        <div className="bg-opacity-0 hover:bg-opacity-20 absolute inset-0 hidden items-center justify-center bg-black opacity-0 transition-opacity duration-300 hover:opacity-100 md:flex">
+          <span className="bg-opacity-50 rounded-full bg-black px-4 py-2 text-sm font-medium text-white backdrop-blur-xs">
             Vergrößern
           </span>
         </div>
