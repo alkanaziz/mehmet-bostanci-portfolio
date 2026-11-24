@@ -9,6 +9,11 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # --- www -> bare domain ---------------------------------------------------
+  # One canonical address for search engines. Runs first to avoid a double redirect.
+  RewriteCond %{HTTP_HOST} ^www\.bostanci-art\.de$ [NC]
+  RewriteRule ^ https://bostanci-art.de%{REQUEST_URI} [R=301,L]
+
   # --- HTTPS redirect -------------------------------------------------------
   # Requires a valid SSL certificate for bostanci-art.alkanaziz.com (konsoleH).
   RewriteCond %{HTTPS} !=on
@@ -25,6 +30,13 @@ ErrorDocument 404 /404.html
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  # The mirror on alkanaziz.com must never appear in search engines.
+  # Only bostanci-art.de is indexed. Do NOT block it in robots.txt instead:
+  # crawlers would then never see this header.
+  <If "%{HTTP_HOST} =~ /(^|\.)alkanaziz\.com$/i">
+    Header always set X-Robots-Tag "noindex, nofollow"
+  </If>
 
   # Browsers remember this for one year: keep the SSL certificate auto-renewing.
   Header always set Strict-Transport-Security "max-age=31536000"
