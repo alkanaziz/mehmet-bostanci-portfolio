@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Bostanci CMS
  * Description:       Headless CMS for bostanci-art.de: artworks (Eserler), site settings, menu, automatic site rebuild via GitHub Actions.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * License:           GPL-2.0-or-later
@@ -360,9 +360,13 @@ function bostanci_get_settings() {
 }
 
 function bostanci_sanitize_settings( $input ) {
-	$input  = is_array( $input ) ? $input : array();
+	$input = is_array( $input ) ? $input : array();
+	// WordPress runs this twice when the option is saved for the first time
+	// (update_option -> add_option), so "social" may already be a list.
+	$raw    = $input['social'] ?? '';
+	$lines  = is_array( $raw ) ? $raw : preg_split( '/\R/', (string) $raw );
 	$social = array();
-	foreach ( preg_split( '/\R/', (string) ( $input['social'] ?? '' ) ) as $line ) {
+	foreach ( $lines as $line ) {
 		$url = esc_url_raw( trim( $line ), array( 'https', 'http' ) );
 		if ( $url ) {
 			$social[] = $url;
