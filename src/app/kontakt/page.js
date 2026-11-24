@@ -51,7 +51,7 @@ const Kontakt = () => {
                 <p className="font-medium">Email</p>
                 <a
                   href="mailto:info@bostanci-art.de"
-                  className="text-black-600 hover:underline"
+                  className="hover:underline"
                 >
                   info@bostanci-art.de
                 </a>
