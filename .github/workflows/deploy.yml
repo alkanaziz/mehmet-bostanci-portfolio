@@ -1,0 +1,122 @@
+# Builds the static site (content from the WordPress CMS) and uploads it via SFTP
+# to both Hetzner webhosting packages.
+#
+# Runs on:
+#   - push to main                     -> build + deploy
+#   - WordPress content change         -> build + deploy (repository_dispatch "cms-update",
+#                                         sent by the bostanci-cms plugin)
+#   - "Run workflow" button            -> build + deploy
+#   - pull request                     -> build only (check)
+#
+# Each target is a GitHub environment with its own secrets:
+#   SFTP_HOST, SFTP_USER, SFTP_PASSWORD, SFTP_PATH (folder the site is served from)
+
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  repository_dispatch:
+    types: [cms-update]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Content changes can arrive in quick succession (e.g. sorting artworks): a newer
+# run replaces a waiting or running one, so the last change always wins.
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('check-{0}', github.event.number) || 'deploy' }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Remove macOS metadata files
+        run: find out -name .DS_Store -delete
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name != 'pull_request'
+        with:
+          name: site
+          path: out/
+          include-hidden-files: true # .htaccess
+          retention-days: 7
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false # one target failing must not stop the other
+      matrix:
+        include:
+          - target: bostanci-art.de
+            url: https://bostanci-art.de/
+          - target: bostanci-art.alkanaziz.com
+            url: https://bostanci-art.alkanaziz.com/
+    environment:
+      name: ${{ matrix.target }}
+      url: ${{ matrix.url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: out
+
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      # Uploads new and changed files. Nothing outside _next/ is ever deleted on the
+      # server, so other content there (the WordPress folder "cms", Let's Encrypt
+      # files, logs) is safe. Only _next/ (hashed build files) is mirrored with
+      # --delete so old builds do not pile up.
+      - name: Upload via SFTP
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          LFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_PATH: ${{ secrets.SFTP_PATH }}
+        run: |
+          for name in SFTP_HOST SFTP_USER LFTP_PASSWORD SFTP_PATH; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Secret for $name is missing in environment '${{ matrix.target }}'"
+              exit 1
+            fi
+          done
+          lftp -c "
+            set cmd:fail-exit yes
+            set net:max-retries 3
+            set net:timeout 30
+            set sftp:auto-confirm yes
+            open --env-password -u '$SFTP_USER' 'sftp://$SFTP_HOST'
+            cd '$SFTP_PATH'
+            mirror --reverse --parallel=4 --no-perms --exclude-glob .DS_Store --exclude '^cms/' out/ ./
+            mirror --reverse --delete --parallel=4 --no-perms out/_next/ ./_next/
+          "
+
+      - name: Check the live site serves this build
+        run: |
+          sleep 5
+          curl -fsS --retry 3 --retry-delay 5 "${{ matrix.url }}" -o live.html
+          if cmp -s out/index.html live.html; then
+            echo "Live site matches this build."
+          else
+            echo "::error::${{ matrix.url }} does not serve the uploaded index.html (wrong SFTP_PATH?)"
+            exit 1
+          fi
