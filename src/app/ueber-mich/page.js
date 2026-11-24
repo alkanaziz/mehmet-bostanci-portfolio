@@ -11,7 +11,7 @@ const UeberMich = () => {
       {/* Modal for enlarged image */}
       {isImageModalOpen && (
         <div
-          className="bg-opacity-80 fixed inset-0 z-50 flex items-center justify-center bg-black p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
           onClick={() => setIsImageModalOpen(false)}
         >
           <div className="relative max-h-[90vh] max-w-6xl">
@@ -48,8 +48,8 @@ const UeberMich = () => {
               className="object-cover transition-transform duration-500 hover:scale-105"
               priority
             />
-            <div className="bg-opacity-0 hover:bg-opacity-20 absolute inset-0 flex items-center justify-center bg-black opacity-0 transition-opacity duration-300 hover:opacity-100">
-              <span className="bg-opacity-50 rounded-full bg-black px-4 py-2 text-sm font-medium text-white backdrop-blur-xs">
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 hover:opacity-100">
+              <span className="rounded-full bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur-xs">
                 Vergrößern
               </span>
             </div>

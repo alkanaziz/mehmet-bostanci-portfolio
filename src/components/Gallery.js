@@ -91,7 +91,7 @@ const GalleryContent = ({ topic }) => {
   const flattenedImages = images ? Object.values(images).flat() : [];
 
   if (error) {
-    return <h2 className="text-2xl-font-bold m-4">Kein Bild gefunden!</h2>;
+    return <h2 className="m-4 text-2xl font-bold">Kein Bild gefunden!</h2>;
   }
 
   if (!images) {

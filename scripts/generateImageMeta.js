@@ -1,7 +1,7 @@
-import sizeOf from "image-size";
+import { imageSizeFromFile } from "image-size/fromFile";
 import path from "path";
 import fs from "fs/promises";
-import imageAlts from "../src/data/imageAlts.json" assert { type: "json" };
+import imageAlts from "../src/data/imageAlts.json" with { type: "json" };
 import addBlurredDataUrl from "../src/lib/getBase64.js";
 
 async function generateImageMeta() {
@@ -27,7 +27,7 @@ async function generateImageMeta() {
         const fileName = file.replace(/\.[^/.]+$/, "");
 
         try {
-          const dimensions = sizeOf(imagePath);
+          const dimensions = await imageSizeFromFile(imagePath);
 
           // Eğer dimensions geçerli değilse atla
           if (!dimensions || !dimensions.width || !dimensions.height) {

@@ -14,11 +14,6 @@ module.exports = {
       gridTemplateColumns: {
         gallery: "repeat(auto-fit, minmax(250px, 1fr))",
       },
-      screens: {
-        narrow: "(max-aspect-ratio: 3 / 2)",
-        wide: "(min-aspect-ratio: 3 / 2)",
-        "taller-than-854": "(min-height: 854px)",
-      },
     },
   },
   plugins: [],
