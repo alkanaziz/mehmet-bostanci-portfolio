@@ -32,6 +32,38 @@ body {
   color-scheme: light;
 }
 
+/*
+  Text from the CMS (WordPress block HTML), rendered with dangerouslySetInnerHTML.
+  In a layer so page-specific utility classes can still override it.
+*/
+@layer components {
+  .cms-content > * + * {
+    margin-top: 1.5rem;
+  }
+  .cms-content h2 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+  .cms-content h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: var(--color-gray-500);
+  }
+  .cms-content a:hover {
+    text-decoration: underline;
+  }
+  /* Large first letter, as on the original "Über mich" page */
+  .cms-content.dropcap > p:first-of-type::first-letter {
+    float: left;
+    margin-right: 0.75rem;
+    font-family: var(--font-serif);
+    font-size: 8rem;
+    line-height: 0.8;
+  }
+}
+
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
   img[loading="lazy"] {
     clip-path: inset(0.6px);

@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import useKeypress from "@/lib/useKeypress";
 import SharedModal from "./SharedModal";
 
-export default function Modal({ images, onClose, topic }) {
+export default function Modal({ images, onClose }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -21,8 +21,12 @@ export default function Modal({ images, onClose, topic }) {
   const [direction, setDirection] = useState(0);
   const [curIndex, setCurIndex] = useState(photoId);
 
+  // Keep other parameters (e.g. ?page=) when closing.
   function handleClose() {
-    router.replace(pathname);
+    const params = new URLSearchParams(searchParams);
+    params.delete("photoId");
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
     onClose();
   }
 
@@ -37,7 +41,7 @@ export default function Modal({ images, onClose, topic }) {
 
     const params = new URLSearchParams(searchParams);
     params.set("photoId", newId.toString());
-    router.replace(`${pathname}?${params.toString()}`);
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   }
 
   useKeypress("ArrowRight", () => {

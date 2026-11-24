@@ -1,11 +1,9 @@
 import Gallery from "@/components/Gallery";
+import { getGalleryGroups } from "@/lib/cms";
 
-const Workshop = () => {
-  return (
-    <>
-      <Gallery topic="workshop" />
-    </>
-  );
-};
+export const metadata = { title: "Workshop - Mehmet Bostanci Art" };
 
-export default Workshop;
+// Artworks of the CMS category "Workshop".
+export default async function Workshop() {
+  return <Gallery groups={await getGalleryGroups("workshop")} />;
+}

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Nav from "@/components/navbar/Nav";
 import Breadcrumb from "@/components/Breadcrumb";
+import { getMenu, getPageTitles, getSettings } from "@/lib/cms";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,17 +22,19 @@ export const metadata = {
   description: "Mehmet Bostanci Art, Malerei & Grafik Design",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const [menu, titles, settings] = await Promise.all([getMenu(), getPageTitles(), getSettings()]);
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} mx-auto flex min-h-screen max-w-6xl flex-col border-gray-500 bg-white text-black antialiased shadow-xl`}
       >
         <Header />
-        <Nav />
-        <Breadcrumb />
+        <Nav menuItems={menu} />
+        <Breadcrumb titles={titles} />
         {children}
-        <Footer />
+        <Footer settings={settings} />
       </body>
     </html>
   );

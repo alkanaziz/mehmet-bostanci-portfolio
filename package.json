@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "rm -rf .next && next dev",
     "build": "rm -rf .next out && next build",
-    "generate-image-meta": "node ./scripts/generateImageMeta.js",
     "generate-public-image-meta": "node ./scripts/generatePublicImgMeta.js"
   },
   "engines": {

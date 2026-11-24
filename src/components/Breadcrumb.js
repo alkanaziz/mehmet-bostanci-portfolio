@@ -3,28 +3,15 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import menuItems from "../data/menuItems.json";
 
-const Breadcrumb = function () {
+/** titles: path -> page title (menu, categories), read at build time in the root layout. */
+const Breadcrumb = function ({ titles }) {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
 
   if (pathNames.length === 0) return null;
 
-  const findMenuItem = (link, items) => {
-    for (const item of items) {
-      if (item.link.toLowerCase() === link.toLowerCase()) {
-        return item.title;
-      }
-      if (item.subMenu) {
-        const subItem = findMenuItem(link, item.subMenu);
-        if (subItem) {
-          return subItem;
-        }
-      }
-    }
-    return null;
-  };
+  const titleFor = (href, segment) => titles[href] ?? decodeURIComponent(segment);
 
   return (
     <nav
@@ -42,7 +29,7 @@ const Breadcrumb = function () {
             paths === href
               ? `hover:underline mx-2 font-bold underline`
               : "hover:underline mx-2 font-bold";
-          const itemLink = findMenuItem(href, menuItems);
+          const itemLink = titleFor(href, link);
           return (
             <React.Fragment key={href}>
               <li className={itemClasses}>
