@@ -2,9 +2,13 @@
 //
 //   node scripts/cms-import/build-manifest.mjs <converted-images-dir> <manifest.json>
 //
-// Artwork order reproduces the current site (src/components/Gallery.js): files in
+// Artwork order reproduces the former site (src/components/Gallery.js): files in
 // imageMeta order, aquarell newest first, then grouped by the 4-character prefix
 // in order of first appearance.
+//
+// Already used (2026-11-24). src/data/imageMeta.json was removed afterwards because
+// the site now reads WordPress; to run this again, restore it from git history:
+//   git show a2f7366:src/data/imageMeta.json > src/data/imageMeta.json
 
 import fs from "node:fs/promises";
 import path from "node:path";

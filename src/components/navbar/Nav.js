@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import menuItems from "@/data/menuItems";
 import MobileNav from "./MobileNav";
 import Dropdown from "./Dropdown";
 import Image from "next/image";
 
-const Nav = () => {
+/** menuItems: "Ana menü" from the CMS, read at build time in the root layout. */
+const Nav = ({ menuItems }) => {
   const pathname = usePathname();
   const filteredMenuItems = menuItems.filter(
     (item) => item.title !== "Impressum",

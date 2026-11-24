@@ -1,24 +1,16 @@
-"use client";
-
 import Image from "next/image";
 
+/** Gallery thumbnail: uses the small CMS size, not the full image. */
 export default function ImgContainer({ photo }) {
-  const heightWidthRatio = photo.height / photo.width;
-  const galleryHeight = Math.ceil(250 * heightWidthRatio);
-  const photoSpans = Math.ceil(galleryHeight / 10) + 1;
-
   return (
-    <div
-      className="w-62.5 justify-self-end"
-      style={{ gridRow: `span ${photoSpans}` }}
-    >
+    <div className="w-62.5 justify-self-end">
       <div className="relative overflow-hidden">
         <Image
-          src={photo.src}
+          src={photo.thumb}
           alt={photo.alt}
-          width={photo.width}
-          height={photo.height}
-          placeholder="blur"
+          width={photo.thumbWidth}
+          height={photo.thumbHeight}
+          placeholder={photo.blurDataUrl ? "blur" : "empty"}
           blurDataURL={photo.blurDataUrl}
           sizes="250px"
           className="border border-gray-300"

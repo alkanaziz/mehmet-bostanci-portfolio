@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ArrowDownTrayIcon,
   ArrowTopRightOnSquareIcon,
   ArrowUturnLeftIcon,
   ChevronLeftIcon,
@@ -13,7 +12,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { variants } from "@/lib/animationVariants";
-import downloadPhoto from "@/lib/downloadPhoto";
 import { range } from "@/lib/range";
 
 export default function SharedModal({
@@ -136,7 +134,7 @@ export default function SharedModal({
                       className={`absolute -top-12 -left-5 flex flex-row items-center gap-3 p-3 text-white ${controlsVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
                     >
                       <a
-                        href={currentImage.src}
+                        href={currentImage.full ?? currentImage.src}
                         className="z-50 rounded-full p-2 font-extrabold text-white/75 transition hover:text-white"
                         target="_blank"
                         title="Open fullsize version"
@@ -226,7 +224,7 @@ export default function SharedModal({
                 className="mx-auto mt-6 mb-6 flex aspect-3/2 h-14"
               >
                 <AnimatePresence initial={false}>
-                  {filteredImages.map(({ id, src }) => (
+                  {filteredImages.map(({ id, src, thumb }) => (
                     <motion.button
                       initial={{
                         width: "0%",
@@ -257,7 +255,7 @@ export default function SharedModal({
                             ? "brightness-110 hover:brightness-110"
                             : "brightness-50 contrast-125 hover:brightness-75"
                         } h-full transform object-cover transition`}
-                        src={src}
+                        src={thumb ?? src}
                       />
                     </motion.button>
                   ))}

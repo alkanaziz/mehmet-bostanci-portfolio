@@ -3,7 +3,6 @@ import path from "path";
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import imageAlts from "../src/data/imageAlts.json" with { type: "json" };
 import addBlurredDataUrl from "../src/lib/getBase64.js";
 
 // Get the correct project root directory
@@ -30,7 +29,7 @@ async function generatePublicImageMeta() {
 
       const dimensions = await imageSizeFromFile(imagePath);
       const fileName = file.replace(/\.[^/.]+$/, "");
-      const altText = imageAlts[fileName] || fileName;
+      const altText = fileName;
       const blurredDataUrl = await addBlurredDataUrl(
         { src: `/${file}` },
         publicDir,

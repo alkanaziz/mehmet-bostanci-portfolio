@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa6";
+import SocialLinks from "./SocialLinks";
 
-const Footer = () => {
+/** settings: contact data from "Site Ayarları" in the CMS (see lib/cms.js). */
+const Footer = ({ settings }) => {
   return (
     <footer className="flex w-full flex-col">
       <div className="inline-flex w-full items-center justify-center">
@@ -21,43 +22,26 @@ const Footer = () => {
         <div className="font-extrabold">
           <Link href="/impressum">Impressum</Link>
         </div>
-        <div>
-          <p className="font-extrabold">Address:</p>{" "}
-          <span>Nürnberg, Deutschland</span>
-        </div>
-        <div>
-          <p className="font-extrabold">Email:</p>{" "}
-          <span>info@bostanci-art.de</span>
-        </div>
-        <div>
-          <p className="font-extrabold">Soziale Medien:</p>
-          <div className="flex flex-col justify-center">
-            <Link
-              href="https://www.instagram.com/aquarelllkunst/"
-              target="_blank"
-              className="group flex max-w-max items-center gap-2 hover:underline"
-            >
-              <FaInstagram className="transform text-xl transition-transform duration-300 group-hover:translate-x-1" />
-              @aqueralllkunst
-            </Link>
-            <Link
-              href="https://www.instagram.com/grafikermehmet/"
-              target="_blank"
-              className="group flex max-w-max items-center gap-2 hover:underline"
-            >
-              <FaInstagram className="transform text-xl transition-transform duration-300 group-hover:translate-x-1" />
-              @grafikermehmet
-            </Link>
-            <Link
-              href="https://www.instagram.com/ebrulikunst/"
-              target="_blank"
-              className="group flex max-w-max items-center gap-2 hover:underline"
-            >
-              <FaInstagram className="transform text-xl transition-transform duration-300 group-hover:translate-x-1" />
-              @ebrulikunst
-            </Link>
+        {settings.address && (
+          <div>
+            <p className="font-extrabold">Address:</p>{" "}
+            <span>{settings.address}</span>
           </div>
-        </div>
+        )}
+        {settings.email && (
+          <div>
+            <p className="font-extrabold">Email:</p>{" "}
+            <a className="hover:underline" href={`mailto:${settings.email}`}>
+              {settings.email}
+            </a>
+          </div>
+        )}
+        {settings.social.length > 0 && (
+          <div>
+            <p className="font-extrabold">Soziale Medien:</p>
+            <SocialLinks links={settings.social} />
+          </div>
+        )}
       </div>
       <div className="flex w-full flex-col items-center justify-center">
         <Image

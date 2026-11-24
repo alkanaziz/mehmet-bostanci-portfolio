@@ -21,17 +21,6 @@
     "prefix": "hero",
     "format": "png"
   },
-  "home_img": {
-    "id": 2,
-    "public_id": "home_img",
-    "width": 1500,
-    "height": 2024,
-    "alt": "home_img",
-    "src": "/home_img.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAP0lEQVR4nAE0AMv/AJydlP9/f3j/+vr5/wCAgH7/EAUG/6Sdn/8ATE1M/w4HCv+Yk5T/AHBycv8iJSf/qq2v//n+HCnU4HsYAAAAAElFTkSuQmCC",
-    "prefix": "home",
-    "format": "png"
-  },
   "logo": {
     "id": 3,
     "public_id": "logo",
@@ -64,16 +53,5 @@
     "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAGUlEQVR4nGPo0As2SGY1s/w/e49eT12dKAAxcwYySaDdpAAAAABJRU5ErkJggg==",
     "prefix": "logo",
     "format": "png"
-  },
-  "ueber-mich": {
-    "id": 6,
-    "public_id": "ueber-mich",
-    "width": 3452,
-    "height": 4602,
-    "alt": "ueber-mich",
-    "src": "/ueber-mich.jpg",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAIAAADETxJQAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAMUlEQVR4nGOQYmXO9XGUZmBgsNRUmRznXx7ux5Ds7fb/+9snN84zKPIKbu5tm9TUAADbfA4VLotvbAAAAABJRU5ErkJggg==",
-    "prefix": "uebe",
-    "format": "jpg"
   }
 }
