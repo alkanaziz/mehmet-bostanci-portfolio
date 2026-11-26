@@ -8,12 +8,70 @@ import { cache } from "react";
 
 const CMS_URL = (process.env.CMS_URL || "https://cms.bostanci-art.de").replace(/\/$/, "");
 
-async function request(route) {
-  const res = await fetch(`${CMS_URL}/wp-json${route}`, { cache: "force-cache" });
-  if (!res.ok) {
-    throw new Error(`CMS request failed: ${route} -> HTTP ${res.status}`);
+// The CMS runs on a small shared webhosting. The build renders over a hundred pages
+// in parallel workers, so requests are limited in number and retried: a single
+// timed-out connection must not fail the whole build (it did once).
+const MAX_PARALLEL = 4;
+const RETRIES = 3;
+let running = 0;
+const waiting = [];
+
+async function limited(task) {
+  if (running >= MAX_PARALLEL) await new Promise((resolve) => waiting.push(resolve));
+  running++;
+  try {
+    return await task();
+  } finally {
+    running--;
+    waiting.shift()?.();
   }
-  return { data: await res.json(), totalPages: Number(res.headers.get("x-wp-totalpages") || 1) };
+}
+
+/**
+ * Fetches `url` and reads the body with `read(res)` (both inside the limit), with a
+ * time limit and retries on network errors, 429 and 5xx. Uses Next's fetch cache
+ * ("force-cache"), so each URL is downloaded once per build, not once per page.
+ */
+async function fetchWithRetry(url, read) {
+  let lastError;
+  for (let attempt = 0; attempt <= RETRIES; attempt++) {
+    if (attempt > 0) await new Promise((r) => setTimeout(r, 1000 * 2 ** (attempt - 1))); // 1 s, 2 s, 4 s
+    try {
+      return await limited(() =>
+        withTimeout(30000, async () => {
+          const res = await fetch(url, { cache: "force-cache" });
+          if (res.status === 429 || res.status >= 500) throw new Error(`HTTP ${res.status}`);
+          return read(res);
+        }),
+      );
+    } catch (error) {
+      if (error.permanent) throw error;
+      lastError = error;
+    }
+  }
+  throw new Error(`CMS not reachable after ${RETRIES + 1} attempts: ${url} (${lastError?.cause?.code ?? lastError?.message})`);
+}
+
+// A plain timeout (no AbortSignal: Next.js does not cache fetches that carry a signal).
+function withTimeout(ms, task) {
+  let timer;
+  return Promise.race([
+    task(),
+    new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error(`timeout after ${ms / 1000} s`)), ms);
+    }),
+  ]).finally(() => clearTimeout(timer));
+}
+
+async function request(route) {
+  return fetchWithRetry(`${CMS_URL}/wp-json${route}`, async (res) => {
+    if (!res.ok) {
+      const error = new Error(`CMS request failed: ${route} -> HTTP ${res.status}`);
+      error.permanent = true; // e.g. 404: retrying does not help
+      throw error;
+    }
+    return { data: await res.json(), totalPages: Number(res.headers.get("x-wp-totalpages") || 1) };
+  });
 }
 
 async function requestAll(route) {
@@ -50,15 +108,13 @@ function normalizePath(path) {
 /** Tiny blurred preview shown while the real image loads. */
 const blurDataUrl = cache(async (url) => {
   try {
-    const res = await fetch(url, { cache: "force-cache" });
-    if (!res.ok) return undefined;
+    const buffer = await fetchWithRetry(url, async (res) => (res.ok ? Buffer.from(await res.arrayBuffer()) : null));
+    if (!buffer) return undefined;
     const { default: sharp } = await import("sharp");
-    const tiny = await sharp(Buffer.from(await res.arrayBuffer()))
-      .resize(10, 10, { fit: "inside" })
-      .jpeg({ quality: 60 })
-      .toBuffer();
+    const tiny = await sharp(buffer).resize(10, 10, { fit: "inside" }).jpeg({ quality: 60 }).toBuffer();
     return `data:image/jpeg;base64,${tiny.toString("base64")}`;
-  } catch {
+  } catch (error) {
+    if (process.env.DEBUG_BLUR) console.error("blur failed:", url, error.message);
     return undefined; // a missing preview must not break the build
   }
 });
