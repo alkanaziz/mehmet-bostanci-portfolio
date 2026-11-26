@@ -28,7 +28,7 @@ export default function Modal({ images, activeId, onChange, onClose }) {
   });
 
   return (
-    <Dialog open={true} onClose={onClose} className="fixed inset-0 z-40 flex items-center justify-center">
+    <Dialog open={true} onClose={onClose} aria-label="Bildansicht" className="fixed inset-0 z-40 flex items-center justify-center">
       <div className="fixed inset-0">
         <div className="fixed inset-0 z-30 bg-black/70" />
       </div>

@@ -1,15 +1,4 @@
 {
-  "banner": {
-    "id": 0,
-    "public_id": "banner",
-    "width": 1924,
-    "height": 266,
-    "alt": "banner",
-    "src": "/banner.png",
-    "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAACXBIWXMAAAsSAAALEgHS3X78AAAAGklEQVR4nGO4dGTv/+fXzvz7dvn4f0l+we8AbaYLmUOKFaQAAAAASUVORK5CYII=",
-    "prefix": "bann",
-    "format": "png"
-  },
   "hero_img": {
     "id": 1,
     "public_id": "hero_img",

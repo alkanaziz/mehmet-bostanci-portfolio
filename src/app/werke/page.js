@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BiRightArrow } from "react-icons/bi";
 import JsonLd from "@/components/JsonLd";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { getCategories, getPage } from "@/lib/cms";
 import { absoluteUrl, breadcrumbSchema, describe, pageMetadata } from "@/lib/seo";
 
@@ -31,14 +31,12 @@ export default async function Werke() {
       />
       {page.image && (
         <div className="w-full overflow-hidden">
-          <Image
-            className="w-full object-cover object-top"
-            src={page.image.src}
+          <ResponsiveImage
+            image={page.image}
             alt={page.image.alt || "Werke von Mehmet Bostanci"}
-            width={page.image.width}
-            height={page.image.height}
-            placeholder={page.image.blurDataUrl ? "blur" : "empty"}
-            blurDataURL={page.image.blurDataUrl}
+            sizes="(min-width: 1152px) 1152px, 100vw"
+            priority
+            className="h-auto w-full object-cover object-top"
           />
         </div>
       )}

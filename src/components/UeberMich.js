@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 /** page: { title, excerpt, html, image } of the CMS page "ueber-mich". */
 export default function UeberMich({ page }) {
@@ -23,12 +23,11 @@ export default function UeberMich({ page }) {
             >
               Schließen ✕
             </button>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-              className="max-h-[85vh] w-auto rounded-lg object-contain"
+            <ResponsiveImage
+              image={image}
+              sizes="(min-width: 1152px) 1152px, 90vw"
+              priority
+              className="h-auto max-h-[85vh] w-auto rounded-lg object-contain"
             />
           </div>
         </div>
@@ -43,16 +42,11 @@ export default function UeberMich({ page }) {
               className="relative transform cursor-pointer overflow-hidden rounded-t-lg shadow-lg transition-all duration-300 hover:shadow-2xl md:rounded-none md:rounded-tl-lg"
               onClick={() => setIsImageModalOpen(true)}
             >
-              <Image
-                src={image.thumb}
-                alt={image.alt}
-                width={image.thumbWidth}
-                height={image.thumbHeight}
+              <ResponsiveImage
+                image={image}
                 sizes="(min-width: 768px) 400px, 100vw"
-                placeholder={image.blurDataUrl ? "blur" : "empty"}
-                blurDataURL={image.blurDataUrl}
-                className="object-cover transition-transform duration-500 hover:scale-105"
                 priority
+                className="h-auto w-full object-cover transition-transform duration-500 hover:scale-105"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                 <span className="rounded-full bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur-xs">

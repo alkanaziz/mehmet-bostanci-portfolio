@@ -9,7 +9,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { useCallback, useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { variants } from "@/lib/animationVariants";
 import { range } from "@/lib/range";
@@ -24,7 +25,10 @@ export default function SharedModal({
   direction,
 }) {
   const [loaded, setLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  // Id of the photo whose image has finished loading. Derived instead of reset in an
+  // effect: a cached or preloaded image reports "loaded" before effects run.
+  const [loadedId, setLoadedId] = useState(null);
+  const isLoading = loadedId !== index;
   const [controlsVisible, setControlsVisible] = useState(true);
 
   // Hide controls after 1 second on initial load
@@ -46,9 +50,9 @@ export default function SharedModal({
     setControlsVisible(!controlsVisible);
   };
 
-  // if index is changed, set loaded to false
-  useEffect(() => {
-    setIsLoading(true);
+  const handleImageLoad = useCallback(() => {
+    setLoaded(true);
+    setLoadedId(index);
   }, [index]);
 
   // Find the current image's index in the array
@@ -121,6 +125,7 @@ export default function SharedModal({
                     <div className="absolute -top-12 -right-5 flex flex-row items-center gap-3 p-3 text-white sm:-right-12">
                       <button
                         onClick={() => closeModal()}
+                        aria-label="Schließen"
                         className="z-50 rounded-full p-2 font-extrabold text-white/75 transition hover:text-white"
                       >
                         {navigation ? (
@@ -137,22 +142,19 @@ export default function SharedModal({
                         href={currentImage.full ?? currentImage.src}
                         className="z-50 rounded-full p-2 font-extrabold text-white/75 transition hover:text-white"
                         target="_blank"
-                        title="Open fullsize version"
+                        title="Bild in voller Größe öffnen"
+                        aria-label="Bild in voller Größe öffnen"
                         rel="noreferrer"
                       >
                         <ArrowTopRightOnSquareIcon className="h-6 w-6 stroke-2" />
                       </a>
                     </div>
-                    <Image
-                      src={currentImage.src}
-                      priority
+                    <ResponsiveImage
+                      image={currentImage}
                       alt={currentImage.alt}
-                      onLoad={() => {
-                        setLoaded(true);
-                        setIsLoading(false);
-                      }}
-                      width={currentImage.width}
-                      height={currentImage.height}
+                      sizes="(min-width: 1280px) 1152px, 90vw"
+                      priority
+                      onLoad={handleImageLoad}
                       className={`m-4 h-auto max-h-[90%] w-auto max-w-[90%] border border-gray-300 ${
                         isLoading ? "opacity-0" : "opacity-100"
                       }`}
@@ -189,6 +191,7 @@ export default function SharedModal({
                       <button
                         className="absolute top-[calc(50%-16px)] left-3 rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-hidden"
                         style={{ transform: "translate3d(0, 0, 0)" }}
+                        aria-label="Vorheriges Werk"
                         onClick={(e) => {
                           e.stopPropagation();
                           changePhotoId(images[arrayIndex - 1].id);
@@ -201,6 +204,7 @@ export default function SharedModal({
                       <button
                         className="absolute top-[calc(50%-16px)] right-3 rounded-full bg-black/50 p-3 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white focus:outline-hidden"
                         style={{ transform: "translate3d(0, 0, 0)" }}
+                        aria-label="Nächstes Werk"
                         onClick={(e) => {
                           e.stopPropagation();
                           changePhotoId(images[arrayIndex + 1].id);
@@ -224,8 +228,9 @@ export default function SharedModal({
                 className="mx-auto mt-6 mb-6 flex aspect-3/2 h-14"
               >
                 <AnimatePresence initial={false}>
-                  {filteredImages.map(({ id, src, thumb }) => (
+                  {filteredImages.map(({ id, src, thumb, alt }) => (
                     <motion.button
+                      aria-label={alt}
                       initial={{
                         width: "0%",
                         x: `${Math.max((arrayIndex - 1) * -100, 15 * -100)}%`,
@@ -247,7 +252,7 @@ export default function SharedModal({
                       } relative inline-block w-full shrink-0 transform-gpu overflow-hidden focus:outline-hidden`}
                     >
                       <Image
-                        alt="small photos on the bottom"
+                        alt=""
                         width={180}
                         height={120}
                         className={`${
