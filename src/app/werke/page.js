@@ -1,21 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BiRightArrow } from "react-icons/bi";
+import JsonLd from "@/components/JsonLd";
 import { getCategories, getPage } from "@/lib/cms";
-
-const DESCRIPTION =
-  "Entdecken Sie die Kunstwerke von Mehmet Bostancı - Aquarelle, Digitale Werke, Gemälde und Logo-Designs.";
+import { absoluteUrl, breadcrumbSchema, describe, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata() {
-  const { image } = await getPage("werke");
-  const images = image ? [{ url: image.src, width: image.width, height: image.height, alt: "Bostanci Art Werke" }] : [];
-  return {
-    metadataBase: new URL("https://bostanci-art.de"),
-    title: "Werke - Mehmet Bostanci Art",
-    description: DESCRIPTION,
-    openGraph: { title: "Werke - Mehmet Bostanci Art", description: DESCRIPTION, images },
-    twitter: { card: "summary_large_image", title: "Werke - Mehmet Bostanci Art", description: DESCRIPTION, images },
-  };
+  const page = await getPage("werke");
+  return pageMetadata({ title: "Werke", description: describe(page.html), path: "/werke", image: page.image });
 }
 
 // Text and image from the CMS page "werke"; the list links every gallery category.
@@ -25,12 +17,24 @@ export default async function Werke() {
 
   return (
     <div className="flex w-full flex-col items-center gap-10">
+      <JsonLd
+        items={[
+          {
+            "@type": "CollectionPage",
+            url: absoluteUrl("/werke"),
+            name: "Werke von Mehmet Bostanci",
+            description: describe(page.html),
+            hasPart: galleries.map((c) => ({ "@type": "ImageGallery", name: c.name, url: absoluteUrl(`/werke/${c.slug}`) })),
+          },
+          breadcrumbSchema([{ name: "Werke", path: "/werke" }]),
+        ]}
+      />
       {page.image && (
         <div className="w-full overflow-hidden">
           <Image
             className="w-full object-cover object-top"
             src={page.image.src}
-            alt="Bostanci Art Werke Page Image"
+            alt={page.image.alt || "Werke von Mehmet Bostanci"}
             width={page.image.width}
             height={page.image.height}
             placeholder={page.image.blurDataUrl ? "blur" : "empty"}
@@ -40,7 +44,7 @@ export default async function Werke() {
       )}
 
       <div className="flex w-full max-w-(--breakpoint-lg) flex-col items-center gap-5 sm:flex-row sm:items-start sm:justify-between sm:px-10">
-        <h2 className="text-2xl font-bold">{page.title}</h2>
+        <h1 className="text-2xl font-bold">{page.title}</h1>
         <div className="text flex w-3/5 flex-col gap-5">
           <div className="cms-content" dangerouslySetInnerHTML={{ __html: page.html }} />
           <ul>

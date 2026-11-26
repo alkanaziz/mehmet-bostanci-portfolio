@@ -1,6 +1,17 @@
 import { getPage, pageExists } from "@/lib/cms";
+import { fallbackImage, pageMetadata } from "@/lib/seo";
 
-export const metadata = { title: "Datenschutzerklärung - Mehmet Bostanci Art" };
+// Hidden from search engines while it is only a placeholder.
+export async function generateMetadata() {
+  const exists = await pageExists("datenschutz");
+  return pageMetadata({
+    title: "Datenschutzerklärung",
+    description: exists ? "Datenschutzerklärung von Mehmet Bostanci Art: welche Daten beim Besuch dieser Website verarbeitet werden." : undefined,
+    path: "/datenschutz",
+    image: await fallbackImage(),
+    noindex: !exists,
+  });
+}
 
 // Text from the CMS page "datenschutz". Until that page exists, a placeholder is
 // shown; footer and contact form only link here once it exists.

@@ -1,5 +1,7 @@
 import Gallery from "@/components/Gallery";
+import JsonLd from "@/components/JsonLd";
 import { descriptionToBlocks, getCategories, getGalleryGroups } from "@/lib/cms";
+import { breadcrumbSchema, gallerySchema, galleryDescription, pageMetadata } from "@/lib/seo";
 
 // One static page per category in the CMS; "workshop" has its own page.
 export const dynamicParams = false;
@@ -13,24 +15,50 @@ export async function generateStaticParams() {
   return categories.filter((c) => c.slug !== "workshop").map((c) => ({ kategori: c.slug }));
 }
 
+async function loadCategory(slug) {
+  const [category, groups] = await Promise.all([findCategory(slug), getGalleryGroups(slug)]);
+  const photos = groups.flatMap((g) => g.photos);
+  return { category, groups, photos, description: galleryDescription(category.name, category.description, photos) };
+}
+
 export async function generateMetadata({ params }) {
-  const category = await findCategory((await params).kategori);
-  return { title: `${category.name} - Mehmet Bostanci Art` };
+  const { kategori } = await params;
+  const { category, photos, description } = await loadCategory(kategori);
+  return pageMetadata({ title: category.name, description, path: `/werke/${kategori}`, image: photos[0] });
 }
 
 export default async function CategoryPage({ params }) {
   const { kategori } = await params;
-  const [category, groups] = await Promise.all([findCategory(kategori), getGalleryGroups(kategori)]);
+  const { category, groups, photos, description } = await loadCategory(kategori);
   const { heading, paragraphs } = descriptionToBlocks(category.description);
+  const path = `/werke/${kategori}`;
+  const structuredData = (
+    <JsonLd
+      items={[
+        gallerySchema({ name: `${category.name} von Mehmet Bostanci`, description, path, photos }),
+        breadcrumbSchema([
+          { name: "Werke", path: "/werke" },
+          { name: category.name, path },
+        ]),
+      ]}
+    />
+  );
 
   // Without a description in the CMS the page is just the gallery.
   if (!heading && paragraphs.length === 0) {
-    return <Gallery groups={groups} />;
+    return (
+      <>
+        {structuredData}
+        <h1 className="sr-only">{category.name} – Werke von Mehmet Bostanci</h1>
+        <Gallery groups={groups} />
+      </>
+    );
   }
 
   // With a description: text next to the gallery (layout of the former logo page).
   return (
     <div className="m-4 md:mx-10 lg:mx-12">
+      {structuredData}
       <div className="md:flex md:gap-12">
         <div>
           {heading && (
