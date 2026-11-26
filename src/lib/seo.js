@@ -81,7 +81,21 @@ export function pageMetadata({ title, description, path, image, noindex = false,
 // Structured data (schema.org JSON-LD)
 // ---------------------------------------------------------------------------
 
-/** The artist, referenced by @id from all other entities. */
+/**
+ * Short artist reference for creator, author, publisher etc. It carries @type and
+ * name itself, because Google validates each page on its own and the full artist
+ * entity (artistSchema) is only on some pages.
+ */
+export function artistRef() {
+  return { "@type": "Person", "@id": ARTIST_ID, name: ARTIST_NAME, url: absoluteUrl("/ueber-mich") };
+}
+
+/** Short website reference (see artistRef). */
+export function websiteRef() {
+  return { "@type": "WebSite", "@id": WEBSITE_ID, name: SITE_NAME, url: absoluteUrl("/") };
+}
+
+/** The full artist entity (home and Über mich). */
 export function artistSchema({ settings, portrait }) {
   return {
     "@type": "Person",
@@ -104,7 +118,7 @@ export function websiteSchema() {
     url: absoluteUrl("/"),
     name: SITE_NAME,
     inLanguage: "de",
-    publisher: { "@id": ARTIST_ID },
+    publisher: artistRef(),
   };
 }
 
@@ -121,9 +135,9 @@ export function imageSchema(photo) {
     caption: photo.alt,
     width: photo.width,
     height: photo.height,
-    creator: { "@id": ARTIST_ID },
+    creator: artistRef(),
     creditText: ARTIST_NAME,
-    copyrightHolder: { "@id": ARTIST_ID },
+    copyrightHolder: artistRef(),
     copyrightNotice: `© ${ARTIST_NAME}`,
     license: absoluteUrl("/impressum"),
     acquireLicensePage: absoluteUrl("/kontakt"),
@@ -139,8 +153,8 @@ export function gallerySchema({ name, description, path, photos }) {
     name,
     description,
     inLanguage: "de",
-    isPartOf: { "@id": WEBSITE_ID },
-    author: { "@id": ARTIST_ID },
+    isPartOf: websiteRef(),
+    author: artistRef(),
     image: photos.map(imageSchema),
   };
 }

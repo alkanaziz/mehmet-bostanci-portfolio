@@ -1,7 +1,7 @@
 import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
 import { getPage, getSettings, pageExists } from "@/lib/cms";
-import { ARTIST_ID, absoluteUrl, breadcrumbSchema, describe, fallbackImage, pageMetadata } from "@/lib/seo";
+import { absoluteUrl, artistRef, breadcrumbSchema, describe, fallbackImage, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata() {
   const page = await getPage("kontakt");
@@ -26,7 +26,7 @@ export default async function Kontakt() {
     <div className="px-4 py-8 sm:px-10 lg:px-12">
       <JsonLd
         items={[
-          { "@type": "ContactPage", url: absoluteUrl("/kontakt"), name: "Kontakt – Mehmet Bostanci", about: { "@id": ARTIST_ID } },
+          { "@type": "ContactPage", url: absoluteUrl("/kontakt"), name: "Kontakt – Mehmet Bostanci", about: artistRef() },
           breadcrumbSchema([{ name: "Kontakt", path: "/kontakt" }]),
         ]}
       />
