@@ -1,5 +1,5 @@
-import Image from "next/image";
 import JsonLd from "@/components/JsonLd";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import publicImageMeta from "@/data/publicImageMeta";
 import { getPage, getSettings } from "@/lib/cms";
 import { DEFAULT_DESCRIPTION, artistSchema, pageMetadata, websiteSchema } from "@/lib/seo";
@@ -27,15 +27,13 @@ export default async function Home() {
       <JsonLd items={[websiteSchema(), artistSchema({ settings, portrait: aboutPage.image })]} />
       {/* The page has no visible heading; this one is for search engines and screen readers. */}
       <h1 className="sr-only">Mehmet Bostanci – Künstler und Grafikdesigner aus Nürnberg</h1>
-      <Image
-        className="w-full"
-        src={image.src}
+      {/* Main image of the page (LCP): high priority, size chosen by screen width */}
+      <ResponsiveImage
+        image={image}
         alt={image.alt || "Aquarell von Mehmet Bostanci"}
-        width={image.width}
-        height={image.height}
-        placeholder={image.blurDataUrl ? "blur" : "empty"}
-        blurDataURL={image.blurDataUrl}
+        sizes="(min-width: 1152px) 1152px, 100vw"
         priority
+        className="h-auto w-full"
       />
     </div>
   );

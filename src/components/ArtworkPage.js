@@ -1,3 +1,4 @@
+import { preload } from "react-dom";
 import CategoryGallery from "@/components/CategoryGallery";
 import JsonLd from "@/components/JsonLd";
 import { galleryPath, getCategories, getGalleryGroups } from "@/lib/cms";
@@ -43,6 +44,14 @@ export async function artworkMetadata(categorySlug, slug) {
 export default async function ArtworkPage({ categorySlug, slug }) {
   const { category, groups, photo } = await loadArtwork(categorySlug, slug);
   const basePath = galleryPath(categorySlug);
+  // The lightbox renders only after JavaScript has loaded; preloading its image
+  // (same srcset/sizes as in SharedModal) starts the download right away.
+  preload(photo.src, {
+    as: "image",
+    imageSrcSet: photo.srcSet || undefined,
+    imageSizes: photo.srcSet ? "(min-width: 1280px) 1152px, 90vw" : undefined,
+    fetchPriority: "high",
+  });
   const trail =
     categorySlug === "workshop"
       ? [{ name: "Workshop", path: basePath }]

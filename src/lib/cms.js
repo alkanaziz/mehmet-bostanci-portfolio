@@ -78,6 +78,16 @@ async function toImage(source, alt) {
   const sizes = source.sizes ?? {};
   const large = pickSize(sizes, ["1536x1536", "large"], full);
   const thumb = pickSize(sizes, ["medium_large", "large"], full);
+  // All sizes of the same aspect ratio (WordPress crops "thumbnail"), one per width.
+  const byWidth = new Map();
+  for (const s of [...Object.values(sizes), full]) {
+    const sameRatio = Math.abs(s.width / s.height - full.width / full.height) < 0.02;
+    if (s?.url && sameRatio && !byWidth.has(s.width)) byWidth.set(s.width, s.url);
+  }
+  const srcSet = [...byWidth]
+    .sort((a, b) => a[0] - b[0])
+    .map(([width, url]) => `${url} ${width}w`)
+    .join(", ");
   return {
     alt: alt || source.alt || "",
     src: large.url,
@@ -87,6 +97,7 @@ async function toImage(source, alt) {
     thumbWidth: thumb.width,
     thumbHeight: thumb.height,
     full: full.url,
+    srcSet,
     blurDataUrl: await blurDataUrl(thumb.url),
   };
 }

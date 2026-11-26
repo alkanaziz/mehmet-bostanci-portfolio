@@ -53,7 +53,8 @@ export default function Dropdown({ item, closeMenu }) {
         {item.subMenu && (
           <button
             onClick={toggle}
-            aria-label="Toggle submenu"
+            aria-label={`Untermenü ${item.title} ${isOpen ? "schließen" : "öffnen"}`}
+            aria-expanded={isOpen}
             className="shrink-0"
           >
             {isOpen ? (

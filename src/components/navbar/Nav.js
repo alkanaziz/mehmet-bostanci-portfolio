@@ -23,6 +23,7 @@ const Nav = ({ menuItems }) => {
             alt="Logo"
             width={75}
             height={75}
+            loading="eager"
             className="mx-2"
           />
         </Link>
