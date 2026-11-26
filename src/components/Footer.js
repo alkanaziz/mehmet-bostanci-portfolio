@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import SocialLinks from "./SocialLinks";
 
-/** settings: contact data from "Site Ayarları" in the CMS (see lib/cms.js). */
-const Footer = ({ settings }) => {
+/**
+ * settings: contact data from "Site Ayarları" in the CMS (see lib/cms.js).
+ * hasPrivacyPage: a "datenschutz" page exists in the CMS.
+ */
+const Footer = ({ settings, hasPrivacyPage }) => {
   return (
     <footer className="flex w-full flex-col">
       <div className="inline-flex w-full items-center justify-center">
@@ -19,8 +22,9 @@ const Footer = ({ settings }) => {
         </div>
       </div>
       <div className="m-auto flex w-full flex-col justify-start gap-5 px-4 sm:px-10 lg:px-12">
-        <div className="font-extrabold">
+        <div className="flex gap-6 font-extrabold">
           <Link href="/impressum">Impressum</Link>
+          {hasPrivacyPage && <Link href="/datenschutz">Datenschutz</Link>}
         </div>
         {settings.address && (
           <div>

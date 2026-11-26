@@ -168,6 +168,12 @@ export const getPage = cache(async (slug) => {
   };
 });
 
+/** True if a published page with this slug exists (e.g. an optional "datenschutz"). */
+export const pageExists = cache(async (slug) => {
+  const { data } = await request(`/wp/v2/pages?slug=${encodeURIComponent(slug)}&_fields=id`);
+  return data.length > 0;
+});
+
 function socialLabel(url) {
   const { hostname, pathname } = new URL(url);
   const handle = pathname.split("/").filter(Boolean)[0];
@@ -207,7 +213,13 @@ export const getMenu = cache(async () => {
 
 /** Path -> title, for the breadcrumb. */
 export const getPageTitles = cache(async () => {
-  const titles = { "/impressum": "Impressum", "/neues": "Neues", "/shop": "Shop", "/aktuelle-ausstellung": "Aktuelle Ausstellung" };
+  const titles = {
+    "/impressum": "Impressum",
+    "/datenschutz": "Datenschutz",
+    "/neues": "Neues",
+    "/shop": "Shop",
+    "/aktuelle-ausstellung": "Aktuelle Ausstellung",
+  };
   for (const category of await getCategories()) titles[`/werke/${category.slug}`] = category.name;
   const addMenu = (items) => {
     for (const item of items) {

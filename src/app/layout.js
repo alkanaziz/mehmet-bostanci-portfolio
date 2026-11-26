@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Nav from "@/components/navbar/Nav";
 import Breadcrumb from "@/components/Breadcrumb";
-import { getMenu, getPageTitles, getSettings } from "@/lib/cms";
+import { getMenu, getPageTitles, getSettings, pageExists } from "@/lib/cms";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +23,12 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const [menu, titles, settings] = await Promise.all([getMenu(), getPageTitles(), getSettings()]);
+  const [menu, titles, settings, hasPrivacyPage] = await Promise.all([
+    getMenu(),
+    getPageTitles(),
+    getSettings(),
+    pageExists("datenschutz"),
+  ]);
 
   return (
     <html lang="en">
@@ -34,7 +39,7 @@ export default async function RootLayout({ children }) {
         <Nav menuItems={menu} />
         <Breadcrumb titles={titles} />
         {children}
-        <Footer settings={settings} />
+        <Footer settings={settings} hasPrivacyPage={hasPrivacyPage} />
       </body>
     </html>
   );
