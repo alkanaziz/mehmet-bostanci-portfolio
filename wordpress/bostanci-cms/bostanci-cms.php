@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Bostanci CMS
  * Description:       Headless CMS for bostanci-art.de: artworks (Eserler), site settings, menu, automatic site rebuild via GitHub Actions.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 6.5
  * Requires PHP:      8.1
  * License:           GPL-2.0-or-later
@@ -186,6 +186,97 @@ add_action(
 		}
 		$group = isset( $_POST['bostanci_grup_kodu'] ) ? sanitize_text_field( wp_unslash( $_POST['bostanci_grup_kodu'] ) ) : '';
 		update_post_meta( $post_id, 'grup_kodu', bostanci_sanitize_group( $group ) );
+	}
+);
+
+/* -------------------------------------------------------------------------
+ * 2b. Artwork addresses (slugs): the site shows every artwork at
+ *     /werke/<category>/<slug>/. Slugs use German transliteration (ü -> ue,
+ *     although the admin language is Turkish) and leave out the dimensions.
+ *     A slug never changes after the artwork is published (stable URLs).
+ * ---------------------------------------------------------------------- */
+
+/** Slug base for a caption: "Die Kettenbrücke - NÜRNBERG 2025 / 65 x 50 cm" -> "die-kettenbruecke-nuernberg-2025". */
+function bostanci_artwork_slug_base( $title ) {
+	$title = html_entity_decode( (string) $title, ENT_QUOTES, 'UTF-8' );
+	$title = preg_replace( '/\d+(?:[.,]\d+)?\s*[x×]\s*\d+(?:[.,]\d+)?\s*(?:cm|mm)?/iu', ' ', $title );
+	$title = remove_accents( $title, 'de_DE' );
+	$slug  = sanitize_title( $title );
+	return '' !== $slug ? $slug : 'eser';
+}
+
+// New artworks: build the slug from the caption, unless one was entered by hand.
+add_filter(
+	'wp_insert_post_data',
+	static function ( $data, $postarr ) {
+		if ( 'eser' !== $data['post_type'] || ! empty( $postarr['post_name'] ) ) {
+			return $data;
+		}
+		if ( in_array( $data['post_status'], array( 'draft', 'pending', 'auto-draft' ), true ) ) {
+			return $data; // WordPress assigns slugs when publishing
+		}
+		$data['post_name'] = wp_unique_post_slug(
+			bostanci_artwork_slug_base( $data['post_title'] ),
+			(int) ( $postarr['ID'] ?? 0 ),
+			$data['post_status'],
+			'eser',
+			0
+		);
+		return $data;
+	},
+	10,
+	2
+);
+
+/**
+ * One-time update of the slugs created before 1.0.3 (they had "nurnberg" and
+ * the dimensions in them). Runs once when an administrator opens the admin.
+ * Order = order on the site, so "-2", "-3" follow the gallery order.
+ */
+add_action(
+	'admin_init',
+	static function () {
+		if ( 'done' === get_option( 'bostanci_slugs_v2' ) || ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		update_option( 'bostanci_slugs_v2', 'done', false ); // first, so it can never run twice
+
+		global $wpdb;
+		$ids = get_posts(
+			array(
+				'post_type'      => 'eser',
+				'post_status'    => 'any',
+				'posts_per_page' => -1,
+				'orderby'        => array( 'menu_order' => 'ASC', 'date' => 'DESC' ),
+				'fields'         => 'ids',
+			)
+		);
+		// Free all current slugs first, so the new ones are assigned in order.
+		foreach ( $ids as $id ) {
+			$wpdb->update( $wpdb->posts, array( 'post_name' => 'bostanci-tmp-' . $id ), array( 'ID' => $id ) );
+		}
+		$changed = 0;
+		foreach ( $ids as $id ) {
+			$post = get_post( $id );
+			clean_post_cache( $id );
+			$slug = wp_unique_post_slug( bostanci_artwork_slug_base( $post->post_title ), $id, 'publish', 'eser', 0 );
+			$wpdb->update( $wpdb->posts, array( 'post_name' => $slug ), array( 'ID' => $id ) );
+			clean_post_cache( $id );
+			++$changed;
+		}
+		update_option( 'bostanci_slugs_v2_count', $changed, false );
+		bostanci_request_rebuild();
+	}
+);
+
+add_action(
+	'admin_notices',
+	static function () {
+		$count = (int) get_option( 'bostanci_slugs_v2_count' );
+		if ( $count && current_user_can( 'manage_options' ) ) {
+			delete_option( 'bostanci_slugs_v2_count' );
+			printf( '<div class="notice notice-success is-dismissible"><p>%d eserin site adresi güncellendi.</p></div>', (int) $count );
+		}
 	}
 );
 

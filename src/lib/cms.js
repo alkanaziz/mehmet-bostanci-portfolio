@@ -113,7 +113,7 @@ export const getCategories = cache(async () => {
 });
 
 const getArtworks = cache(async () => {
-  const items = await requestAll("/wp/v2/eserler?_fields=id,date,title,menu_order,meta,kategoriler,gorsel");
+  const items = await requestAll("/wp/v2/eserler?_fields=id,slug,date,title,menu_order,meta,kategoriler,gorsel");
   const artworks = await Promise.all(
     items
       .filter((item) => item.gorsel) // artworks without an image are not shown
@@ -121,6 +121,7 @@ const getArtworks = cache(async () => {
         const title = decodeEntities(item.title.rendered);
         return {
           id: item.id,
+          slug: item.slug,
           title,
           date: item.date,
           order: item.menu_order,
@@ -134,19 +135,26 @@ const getArtworks = cache(async () => {
   return artworks.sort((a, b) => a.order - b.order || b.date.localeCompare(a.date));
 });
 
+/** URL path of a category's gallery; "workshop" has its own top-level page. */
+export function galleryPath(categorySlug) {
+  return categorySlug === "workshop" ? "/workshop" : `/werke/${categorySlug}`;
+}
+
 /**
  * Artworks of one category, grouped for the gallery rows: artworks with the same
  * group code are shown side by side, in the order their group first appears.
+ * Each photo knows the path of its own page (gallery path + WordPress slug).
  */
 export const getGalleryGroups = cache(async (categorySlug) => {
   const category = (await getCategories()).find((c) => c.slug === categorySlug);
   if (!category) return [];
+  const basePath = galleryPath(categorySlug);
   const groups = new Map();
   for (const artwork of await getArtworks()) {
     if (!artwork.categoryIds.includes(category.id)) continue;
     const key = artwork.group || `single-${artwork.id}`;
     if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push({ id: artwork.id, ...artwork.image });
+    groups.get(key).push({ id: artwork.id, slug: artwork.slug, path: `${basePath}/${artwork.slug}`, ...artwork.image });
   }
   return [...groups].map(([key, photos]) => ({ key, photos }));
 });

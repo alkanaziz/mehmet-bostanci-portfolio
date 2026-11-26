@@ -7,7 +7,12 @@ import Link from "next/link";
 /** titles: path -> page title (menu, categories), read at build time in the root layout. */
 const Breadcrumb = function ({ titles }) {
   const paths = usePathname();
-  const pathNames = paths.split("/").filter((path) => path);
+  const allNames = paths.split("/").filter((path) => path);
+  // An artwork page (/werke/aquarelle/<slug>) shows the same breadcrumb as its
+  // gallery: a last segment without a known title is left out.
+  const lastHref = "/" + allNames.join("/");
+  const pathNames = allNames.length > 1 && !titles[lastHref] ? allNames.slice(0, -1) : allNames;
+  const currentHref = "/" + pathNames.join("/");
 
   if (pathNames.length === 0) return null;
 
@@ -26,7 +31,7 @@ const Breadcrumb = function ({ titles }) {
         {pathNames.map((link, index) => {
           const href = "/" + pathNames.slice(0, index + 1).join("/");
           const itemClasses =
-            paths === href
+            currentHref === href
               ? `hover:underline mx-2 font-bold underline`
               : "hover:underline mx-2 font-bold";
           const itemLink = titleFor(href, link);

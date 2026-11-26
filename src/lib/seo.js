@@ -3,7 +3,7 @@
 // bostanci-art.de; the mirror on alkanaziz.com serves the same HTML but is
 // noindex (public/.htaccess), so its pages point here.
 
-import { decodeEntities, getSettings } from "@/lib/cms";
+import { decodeEntities, galleryPath, getSettings } from "@/lib/cms";
 
 export const SITE_URL = "https://bostanci-art.de";
 export const SITE_NAME = "Mehmet Bostanci Art";
@@ -66,7 +66,7 @@ function ogImage(image, alt) {
 export function pageMetadata({ title, description, path, image, noindex = false, type = "website" }) {
   const url = absoluteUrl(path);
   const images = ogImage(image, title || SITE_NAME);
-  const fullTitle = title ? `${title} - ${SITE_NAME}` : `${SITE_NAME} – Aquarelle, Malerei & Grafikdesign`;
+  const fullTitle = title ? documentTitle(title) : `${SITE_NAME} – Aquarelle, Malerei & Grafikdesign`;
   return {
     title: { absolute: fullTitle },
     description,
@@ -170,5 +170,78 @@ export function breadcrumbSchema(items) {
       name: item.name,
       item: absoluteUrl(item.path),
     })),
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Artwork pages
+// ---------------------------------------------------------------------------
+
+// Technique (German, singular) by category; new categories fall back to their name.
+const TECHNIQUES = {
+  aquarelle: "Aquarell",
+  "digitale-werke": "Digitale Kunst",
+  gemaelde: "Gemälde",
+  logo: "Logo-Design",
+  workshop: "Workshop",
+};
+
+export function techniqueFor(category) {
+  return TECHNIQUES[category.slug] ?? category.name;
+}
+
+/** First part of the caption ("Kleine Synagoge / ERFURT / 2021 / 20 x 30 cm" -> "Kleine Synagoge"). */
+export function artworkShortTitle(caption) {
+  return caption.split(" / ")[0].trim() || caption;
+}
+
+/** A four-digit year in the caption, if there is exactly one. */
+function yearIn(caption) {
+  const years = caption.match(/\b(19|20)\d{2}\b/g);
+  return years?.length === 1 ? years[0] : undefined;
+}
+
+/** Title of an artwork page without the site name; workshop photos need no technique. */
+export function artworkPageTitle(photo, category) {
+  const short = artworkShortTitle(photo.alt);
+  return category.slug === "workshop" ? short : `${short} – ${techniqueFor(category)}`;
+}
+
+/** Full document title, as pageMetadata builds it (used for the browser tab in the gallery). */
+export function documentTitle(title) {
+  return `${title} - ${SITE_NAME}`;
+}
+
+export function artworkDescription(photo, category) {
+  const technique = techniqueFor(category);
+  return category.slug === "workshop"
+    ? describe(`${photo.alt}. Workshop mit Mehmet Bostanci in Nürnberg.`)
+    : describe(`${technique} von Mehmet Bostanci: ${photo.alt}. Aus der Sammlung „${category.name}“.`);
+}
+
+/**
+ * Structured data of one artwork page. Workshop photos document events, so they
+ * are plain images; everything else is a VisualArtwork by the artist.
+ */
+export function artworkSchema(photo, category) {
+  const url = absoluteUrl(photo.path);
+  const image = imageSchema(photo);
+  if (category.slug === "workshop") {
+    return { ...image, "@id": `${url}#image`, url };
+  }
+  const year = yearIn(photo.alt);
+  return {
+    "@type": "VisualArtwork",
+    "@id": `${url}#artwork`,
+    url,
+    name: photo.alt,
+    description: artworkDescription(photo, category),
+    artform: techniqueFor(category),
+    ...(year ? { dateCreated: year } : {}),
+    creator: artistRef(),
+    copyrightHolder: artistRef(),
+    copyrightNotice: `© ${ARTIST_NAME}`,
+    image,
+    isPartOf: { "@type": "ImageGallery", name: category.name, url: absoluteUrl(galleryPath(category.slug)) },
   };
 }

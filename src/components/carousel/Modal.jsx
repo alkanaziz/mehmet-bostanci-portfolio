@@ -1,80 +1,45 @@
 "use client";
 
 import { Dialog } from "@headlessui/react";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import useKeypress from "@/lib/useKeypress";
 import SharedModal from "./SharedModal";
 
-export default function Modal({ images, onClose }) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const photoId = Number(searchParams.get("photoId"));
-
-  // Ensure images is an array and add null check
-  const imageArray = Array.isArray(images) ? images : [];
-
-  // Find the index of current image based on its ID
-  const currentImageIndex = imageArray.findIndex((img) => img.id === photoId);
-
+/**
+ * Lightbox for one photo of `images`. Controlled by the gallery: the shown photo
+ * comes from the address (each artwork has its own URL), onChange/onClose update it.
+ */
+export default function Modal({ images, activeId, onChange, onClose }) {
   const [direction, setDirection] = useState(0);
-  const [curIndex, setCurIndex] = useState(photoId);
-
-  // Keep other parameters (e.g. ?page=) when closing.
-  function handleClose() {
-    const params = new URLSearchParams(searchParams);
-    params.delete("photoId");
-    const query = params.toString();
-    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
-    onClose();
-  }
+  const currentIndex = images.findIndex((img) => img.id === activeId);
 
   function changePhotoId(newId) {
-    const newIndex = imageArray.findIndex((img) => img.id === newId);
-    if (newIndex > currentImageIndex) {
-      setDirection(1);
-    } else {
-      setDirection(-1);
-    }
-    setCurIndex(newId);
-
-    const params = new URLSearchParams(searchParams);
-    params.set("photoId", newId.toString());
-    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    const newIndex = images.findIndex((img) => img.id === newId);
+    setDirection(newIndex > currentIndex ? 1 : -1);
+    onChange(newId);
   }
 
   useKeypress("ArrowRight", () => {
-    const currentIndex = imageArray.findIndex((img) => img.id === curIndex);
-    if (currentIndex < imageArray.length - 1) {
-      changePhotoId(imageArray[currentIndex + 1].id);
-    }
+    if (currentIndex < images.length - 1) changePhotoId(images[currentIndex + 1].id);
   });
 
   useKeypress("ArrowLeft", () => {
-    const currentIndex = imageArray.findIndex((img) => img.id === curIndex);
-    if (currentIndex > 0) {
-      changePhotoId(imageArray[currentIndex - 1].id);
-    }
+    if (currentIndex > 0) changePhotoId(images[currentIndex - 1].id);
   });
 
   return (
-    <Dialog
-      open={true}
-      onClose={handleClose}
-      className="fixed inset-0 z-40 flex items-center justify-center"
-    >
+    <Dialog open={true} onClose={onClose} className="fixed inset-0 z-40 flex items-center justify-center">
       <div className="fixed inset-0">
         <div className="fixed inset-0 z-30 bg-black/70" />
       </div>
 
       <div className="relative z-50 w-full max-w-7xl">
         <SharedModal
-          index={curIndex}
+          index={activeId}
           direction={direction}
-          images={imageArray}
+          images={images}
           changePhotoId={changePhotoId}
-          closeModal={handleClose}
+          closeModal={onClose}
           navigation={true}
         />
       </div>
